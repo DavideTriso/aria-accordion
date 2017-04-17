@@ -1,0 +1,42 @@
+%appearance-none {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+//BLOCK
+//.accordion-group {}
+//
+//ELEMENTS
+.accordion-group__accordion {
+  border: 1px solid #c41c1c;
+  margin-top: 1rem;
+}
+.accordion-group__accordion-head {
+  margin: 0;
+  padding: 0;
+}
+.accordion-group__accordion-heading {
+  margin: 0;
+}
+.accordion-group__accordion-btn {
+  @extend %appearance-none;
+  background-color: #d32222;
+  border: none;
+  color: #fff;
+  height: 100%;
+  padding: 0.5rem;
+  text-align: left;
+  width: 100%;
+}
+.accordion-group__accordion-collapse {
+  padding: 0.5rem;
+}
+//
+//MODIFIERS
+//.accordion-group__accordion {}
+.accordion-group__accordion-btn_expanded {
+  background-color: #a81111;
+}
+.accordion-group__accordion-collapse_expanded {
+  background-color: #fff;
+}
