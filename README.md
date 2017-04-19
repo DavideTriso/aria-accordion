@@ -55,7 +55,7 @@ Use following HTML markup to implement an acordion widget:
 <!-- WIDGET BEGIN / GROUP OF ACCORDIONS -->
 <section class="accordion-group" id="accordion-group-1">
 
-
+    <!-- ACCORDION BEGIN -->
     <div class="accordion-group__accordion">
       <header class="accordion-group__accordion-head">
         <h3 class="accordion-group__accordion-heading"><button type="button" class="accordion-group__accordion-btn">Accordion 1 <span>Expand/Close</span></button></h3>
@@ -67,7 +67,10 @@ Use following HTML markup to implement an acordion widget:
         </div>
       </div>
     </div>
+    <!-- ACCORDION END -->
     
+    
+    <!-- ACCORDION BEGIN -->
     <div class="accordion-group__accordion">
       <header class="accordion-group__accordion-head">
         <h3 class="accordion-group__accordion-heading"><button type="button" class="accordion-group__accordion-btn">Accordion 1 <span>Expand/Close</span></button></h3>
@@ -79,6 +82,7 @@ Use following HTML markup to implement an acordion widget:
         </div>
       </div>
     </div>
+    <!-- ACCORDION END -->
     
   </section>
 ```
