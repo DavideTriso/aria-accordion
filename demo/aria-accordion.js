@@ -48,18 +48,20 @@
       }
     }
   }
-
-  //return the url hash if present
-  /*
-  function getUrlHash() {
-    return document.location.hash.length > 0 ? document.location.hash : false;
+  
+  
+  function checkForSpecialKeys(event) {
+    if (!event.shiftKey && !event.ctrlKey && !event.altKey && !event.metaKey) {
+      //none is pressed
+      return true;
+    }
+    return false;
   }
-  */
   //-----------------------------------------------
 
 
   //PLUGIN METHODS
-  //INIT DIALOG
+  //INIT ACCORDION WIDGET
   //-----------------------------------------------
   methods.init = function (userSettings, accordionGroup) {
     var settings = $.extend({
@@ -70,14 +72,14 @@
         accCollapseClass: 'accordion-group__accordion-collapse',
         accContentClass: 'accordion-group__accordion-content',
         accContentRole: 'document',
-        animationSpeed: 300,
+        fadeSpeed: 300,
         accExpandedClass: 'accordion-group__accordion_expanded',
         accBtnExpandedClass: 'accordion-group__accordion-btn_expanded',
         accCollapseExpandedClass: 'accordion-group__accordion-collapse_expanded',
         expandOnPageLoad: true,
         expandOnlyOne: false,
-        specialKeysNavigation: true,
-        deepLinking: false
+        keyInteraction: true
+        //deepLinking: false
       }, userSettings),
       elements = {
         group: accordionGroup,
@@ -91,7 +93,6 @@
       accordionGroupId = '',
       accordionsIds = [],
       accordionsArray = [],
-      //hash = getUrlHash(),
       i = 0,
       l = 0;
 
@@ -135,15 +136,6 @@
 
 
     //expand or collapse accordions on load based on settings
-    /*if (elements.group.has(hash).length > 0 && settings.expandWithAnchor === true) {
-      elements.acc.each(function (index) {
-        if ($(elements.accBtn[index]).is('[id="' + hash.slice(1) + '"]')) {
-          methods.expand(getAccordionsIndexes($(this)), false);
-        } else {
-          methods.collapse(getAccordionsIndexes($(this)), false);
-        }
-      });
-    } else */
     if (settings.expandOnPageLoad) {
       elements.acc.each(function (index) {
         if (index === 0) {
@@ -173,14 +165,14 @@
     });
 
     //keyboard navigation
-    if (settings.specialKeysNavigation) {
+    if (settings.keyInteraction) {
       $(window).unbind('keydown').on('keydown', function (event) {
         var key = event.keyCode,
           activEl = $(':focus'),
           indexes = {},
           elements = {};
         //move focus with arrow keys or special keys if focus is on a button
-        if (!event.ctrlKey && activEl.hasClass(settings.accBtnClass)) {
+        if (checkForSpecialKeys(event) === true && activEl.hasClass(settings.accBtnClass)) {
           indexes = getAccordionsIndexes(activEl.closest('.' + settings.accClass));
           elements = accordionGroupsArray[indexes.indexAccordionGroup][1];
           switch (key) {
@@ -208,7 +200,7 @@
         }
 
         //page up and page down when focus is on panel or inside panel or on header
-        if (event.ctrlKey &&
+        if (event.ctrlKey && !event.shiftKey && !event.metaKey && !event.altKey &&
           (activEl.hasClass(settings.accCollapseClass) || activEl.closest('.' + settings.accCollapseClass).length > 0 || activEl.hasClass(settings.accBtnClass))) {
           indexes = getAccordionsIndexes(activEl.closest('.' + settings.accClass));
           elements = accordionGroupsArray[indexes.indexAccordionGroup][1];
@@ -246,7 +238,7 @@
 
     $(elements.acc[indexes.indexAccordion])
       .addClass(settings.accExpandedClass);
-    
+
     $(elements.accBtn[indexes.indexAccordion])
       .addClass(settings.accBtnExpandedClass)
       .attr(a.aEx, a.t)
@@ -259,7 +251,7 @@
 
     if (animation) {
       accordionCollapse
-        .slideDown(settings.animationSpeed);
+        .slideDown(settings.fadeSpeed);
     } else {
       accordionCollapse.show();
     }
@@ -273,10 +265,10 @@
     var elements = accordionGroupsArray[indexes.indexAccordionGroup][1],
       settings = accordionGroupsArray[indexes.indexAccordionGroup][2],
       accordionCollapse = $(elements.accCollapse[indexes.indexAccordion]);
-    
+
     $(elements.acc[indexes.indexAccordion])
       .removeClass(settings.accExpandedClass);
-    
+
     $(elements.accBtn[indexes.indexAccordion])
       .removeClass(settings.accBtnExpandedClass)
       .attr(a.aEx, a.f)
@@ -289,7 +281,7 @@
 
     if (animation) {
       accordionCollapse
-        .slideUp(settings.animationSpeed);
+        .slideUp(settings.fadeSpeed);
     } else {
       accordionCollapse.hide();
     }
@@ -307,24 +299,6 @@
     }
   };
 
-
-  /*
-  //DESTROY ACCORDION
-  //-----------------------------------------------
-  methods.destroy = function (accordion) {
-
-  };
-
-
-
-  //REMOVE ACCORDION
-  //-----------------------------------------------
-  methods.remove = function (accordion) {
-
-  };
-  */
-
-
   //PLUGIN
   //-----------------------------------------------
   $.fn.ariaAccordion = function (userSettings) {
@@ -334,41 +308,45 @@
       });
     }
     if (userSettings === 'expand') {
-      methods.expand(getAccordionsIndexes($(this)), true);
+      this.each(function () {
+        methods.expand(getAccordionsIndexes($(this)), true);
+      });
     }
     if (userSettings === 'show') {
-      methods.expand(getAccordionsIndexes($(this)), false);
+      this.each(function () {
+        methods.expand(getAccordionsIndexes($(this)), false);
+      });
     }
     if (userSettings === 'collapse') {
-      methods.collapse(getAccordionsIndexes($(this)), true);
+      this.each(function () {
+        methods.collapse(getAccordionsIndexes($(this)), true);
+      });
     }
     if (userSettings === 'hide') {
-      methods.collapse(getAccordionsIndexes($(this)), false);
+      this.each(function () {
+        methods.collapse(getAccordionsIndexes($(this)), false);
+      });
+
     }
     if (userSettings === 'toggle') {
-      methods.toggle(getAccordionsIndexes($(this)));
+      this.each(function () {
+        methods.toggle(getAccordionsIndexes($(this)));
+      });
     }
-    /*
-    if (userSettings === 'destroy') {
-      methods.destroy($(this));
-    }
-    if (userSettings === 'remove') {
-      methods.remove($(this));
-    }*/
   };
 }(jQuery));
+
 
 $(document).ready(function () {
   'use strict';
   $('#accordion-group-1').ariaAccordion({
-    animationSpeed: 800,
+    fadeSpeed: 800,
     expandOnPageLoad: true,
-    expandOnlyOne: true,
-    expandWithAnchor: true
+    expandOnlyOne: true
   });
 
   $('#accordion-group-2').ariaAccordion({
-    animationSpeed: 400,
+    fadeSpeed: 400,
     expandOnPageLoad: false,
     expandOnlyOne: false
   });

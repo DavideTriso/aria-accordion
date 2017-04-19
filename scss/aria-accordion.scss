@@ -1,0 +1,65 @@
+//IMPORT
+//-----------------------------
+@import 'breakpoints';
+@import 'placeholders/placeholders';
+@import 'css-mixins/css-mixins';
+//-----------------------------
+//VARIABLES
+//General styles
+$accordionMargins: 0.5rem;
+
+//Accordion style
+$accordionBorder: 0.1rem solid #c41c1c;
+$accordionBorderRadius: 0.2rem;
+
+//Accordion heading
+$accordionBtnColor: #fff;
+$accordionBtnBackgroundColor: #d32222;
+$accordionBtnPadding: 0.5rem;
+
+//Accordion collapse
+$accordionCollapsePadding: 0.5rem;
+
+//-----------------------------
+//BLOCK
+//-----------------------------
+.accordion-group {
+  //
+}
+//ELEMENTS
+//-----------------------------
+.accordion-group__accordion {
+  border: $accordionBorder;
+  border-radius: $accordionBorderRadius;
+  margin-top: $accordionMargins;
+}
+.accordion-group__accordion-head {
+  @extend %margin-0;
+  @extend %padding-0;
+}
+.accordion-group__accordion-heading {
+  @extend %margin-0;
+}
+.accordion-group__accordion-btn {
+  @extend %appearance-none;
+  background-color: $accordionBtnBackgroundColor;
+  @extend %border-none;
+  color: $accordionBtnColor;
+  padding: $accordionBtnPadding;
+  @extend %text-align-left;
+  @extend %width-100;
+}
+.accordion-group__accordion-collapse {
+  padding: $accordionCollapsePadding;
+}
+//MODIFIERS
+//-----------------------------
+.accordion-group__accordion {
+  //
+}
+.accordion-group__accordion-btn_expanded {
+  //
+}
+.accordion-group__accordion-collapse_expanded {
+  //
+}

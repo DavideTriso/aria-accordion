@@ -1,0 +1,219 @@
+@mixin access {
+  left: -99999px;
+  position: absolute;
+}
+@mixin access-focus {
+  left: -99999px;
+  opacity: 0;
+  position: absolute;
+  @include transition (opacity, .3s, ease-in);
+  &:focus {
+    opacity: 1;
+    position: static;
+  }
+}
+//The backface-visibility property defines whether or not an element should be visible when not facing the screen.
+//This property is useful when an element is rotated, and you do not want to see its backside.
+@mixin backface-visibility($visibility) {
+  -webkit-backface-visibility: $visibility;
+  -moz-backface-visibility: $visibility;
+  backface-visibility: $visibility;
+}
+//Method of applying filter effects (like blur, grayscale or hue) to content/elements below the target element.
+@mixin backdrop-filter ($filter) {
+  -webkit-backdrop-filter: $filter;
+  -moz-backdrop-filter: $filter; //maybe will be supported in the future...
+  -o-backdrop-filter: $filter; //maybe will be supported in the future...
+  -ms-backdrop-filter: $filter; //maybe will be supported in the future...
+  backdrop-filter: $filter;
+}
+//The box-shadow property attaches one or more shadows to an element.
+@mixin box-shadow($boxShadow) {
+  -webkit-box-shadow: $boxShadow;
+  -moz-box-shadow: $boxShadow;
+  box-shadow: $boxShadow;
+}
+//bootstrap clearfix placeholder
+%clearfix {
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+//
+//multi column layout
+//The column-count property specifies the number of columns an element should be divided into.
+@mixin column-count ($columnCount) {
+  -webkit-column-count: $columnCount;
+  -moz-column-count: $columnCount;
+  column-count: $columnCount;
+}
+//
+@mixin column-design ($columGap, $columnWidth, $columnRuleType, $columnRuleWidth, $columnRuleColor) {
+  -webkit-column-gap: $columGap;
+  -moz-column-gap: $columGap;
+  column-gap: $columGap;
+  //
+  -webkit-column-width: $columnWidth;
+  -moz-column-width: $columnWidth;
+  column-width: $columnWidth;
+  //
+  -webkit-column-rule: $columnRuleWidth $columnRuleType $columnRuleColor;
+  -moz-column-rule: $columnRuleWidth $columnRuleType $columnRuleColor;
+  column-rule: $columnRuleWidth $columnRuleType $columnRuleColor;
+}
+//The filter property defines visual effects (like blur and saturation) to an element (often <img>).
+@mixin filter ($filter) {
+  -webkit-filter: $filter;
+  filter: $filter;
+}
+//The overflow-x property specifies what to do with the left/right edges of the content - if it overflows the element's content area.
+@mixin overflow-x ($value) {
+  -ms-overflow-x: $value;
+  overflow-x: $value;
+}
+//The overflow-y property specifies what to do with the top/bottom edges of the content - if it overflows the element's content area.
+@mixin overflow-y ($value) {
+  -ms-overflow-y: $value;
+  overflow-y: $value;
+}
+//The perspective property defines how many pixels a 3D element is placed from the view. This property allows you to change the perspective on how 3D elements are viewed.
+//When defining the perspective property for an element, it is the CHILD elements that get the perspective view, NOT the element itself.
+//Note: This property must be used together with the perspective property, and only affects 3D transformed elements.
+@mixin perspective ($length, $origin) {
+  -webkit-perspective: $length;
+  -moz-perspective: $length;
+  perspective: $length;
+  -webkit-perspective-origin: $origin;
+  -moz-perspective-origin: $origin;
+  perspective-origin: $origin;
+}
+//Input and Textarea placeholder color
+@mixin placeholder-color ($color) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  &::-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &:-moz-placeholder {
+    color: $color;
+  }
+}
+// Transformations
+@mixin scale($ratioX, $ratioY) {
+  -webkit-transform: scale($ratioX, $ratioY);
+  -moz-transform: scale($ratioX, $ratioY);
+  -ms-transform: scale($ratioX, $ratioY); // IE9 only
+  -o-transform: scale($ratioX, $ratioY);
+  transform: scale($ratioX, $ratioY);
+}
+@mixin scaleX($ratio) {
+  -webkit-transform: scaleX($ratio);
+  -moz-transform: scaleX($ratio);
+  -ms-transform: scaleX($ratio); // IE9 only
+  -o-transform: scaleX($ratio);
+  transform: scaleX($ratio);
+}
+@mixin scaleY($ratio) {
+  -webkit-transform: scaleY($ratio);
+  -moz-transform: scaleX($ratio);
+  -ms-transform: scaleY($ratio); // IE9 only
+  -o-transform: scaleY($ratio);
+  transform: scaleY($ratio);
+}
+@mixin skew($x, $y) {
+  -webkit-transform: skewX($x) skewY($y);
+  -moz-transform: skewX($x) skewY($y);
+  -ms-transform: skewX($x) skewY($y); // See https://github.com/twbs/bootstrap/issues/4885; IE9+
+  -o-transform: skewX($x) skewY($y);
+  transform: skewX($x) skewY($y);
+}
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -ms-transform: translate($x, $y); // IE9 only
+  -o-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+@mixin translate3d($x, $y, $z) {
+  -webkit-transform: translate3d($x, $y, $z);
+  -moz-transform: translate3d($x, $y, $z);
+  -ms-transform: translate3d($x, $y, $z);
+  -o-transform: translate3d($x, $y, $z);
+  transform: translate3d($x, $y, $z);
+}
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+  -moz-transform: rotate($degrees);
+  -ms-transform: rotate($degrees); // IE9 only
+  -o-transform: rotate($degrees);
+  transform: rotate($degrees);
+}
+@mixin rotateX($degrees) {
+  -webkit-transform: rotateX($degrees);
+  -moz-transform: rotateX($degrees);
+  -ms-transform: rotateX($degrees); // IE9 only
+  -o-transform: rotateX($degrees);
+  transform: rotateX($degrees);
+}
+@mixin rotateY($degrees) {
+  -webkit-transform: rotateY($degrees);
+  -moz-transform: rotateY($degrees);
+  -ms-transform: rotateY($degrees); // IE9 only
+  -o-transform: rotateY($degrees);
+  transform: rotateY($degrees);
+}
+@mixin perspective($perspective) {
+  -webkit-perspective: $perspective;
+  -moz-perspective: $perspective;
+  perspective: $perspective;
+}
+@mixin perspective-origin($perspective) {
+  -webkit-perspective-origin: $perspective;
+  -moz-perspective-origin: $perspective;
+  perspective-origin: $perspective;
+}
+@mixin transform-origin($origin) {
+  -webkit-transform-origin: $origin;
+  -moz-transform-origin: $origin;
+  -ms-transform-origin: $origin; // IE9 only
+  -o-transform-origin: $origin;
+  transform-origin: $origin;
+}
+//The transition property is a shorthand property for the four transition properties: transition-property, transition-duration, transition-timing-function, and transition-delay.
+@mixin transition ($property, $seconds, $easing) {
+  -webkit-transition: $property $seconds $easing;
+  -moz-transition: $property $seconds $easing;
+  -o-transition: $property $seconds $easing;
+  transition: $property $seconds $easing;
+}
+@mixin double-transition ($property1, $seconds1, $easing1, $property2, $seconds2, $easing2) {
+  -webkit-transition: $property1 $seconds1 $easing1, $property2 $seconds2 $easing2;
+  -moz-transition: $property1 $seconds1 $easing1, $property2 $seconds2 $easing2;
+  -o-transition: $property1 $seconds1 $easing1, $property2 $seconds2 $easing2;
+  transition: $property1 $seconds1 $easing1, $property2 $seconds2 $easing2;
+}
+@mixin triple-transition ($property1, $seconds1, $easing1, $property2, $seconds2, $easing2, $property3, $seconds3, $easing3) {
+  -webkit-transition: $property1 $seconds1 $easing1, $property2 $seconds2 $easing2, $property3 $seconds3 $easing3;
+  -moz-transition: $property1 $seconds1 $easing1, $property2 $seconds2 $easing2, $property3 $seconds3 $easing3;
+  -o-transition: $property1 $seconds1 $easing1, $property2 $seconds2 $easing2, $property3 $seconds3 $easing3;
+  transition: $property1 $seconds1 $easing1, $property2 $seconds2 $easing2, $property3 $seconds3 $easing3;
+}
+//Background color for user selected text
+@mixin text-selection-color ($color) {
+  &::selection {
+    background: $color;
+  }
+  &::-moz-selection {
+    background: $color;
+  }
+}

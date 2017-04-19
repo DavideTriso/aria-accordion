@@ -1,0 +1,1380 @@
+@media screen and (min-width: $w5) {
+  %desktop-tablet-appearance-none {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  %desktop-tablet-backface-visibility-visible {
+    backface-visibility: visible;
+  }
+  %desktop-tablet-backface-visibility-hidden {
+    backface-visibility: hidden;
+  }
+  %desktop-tablet-background-attachment-scroll {
+    background-attachment: scroll;
+  }
+  %desktop-tablet-background-attachment-fixed {
+    background-attachment: fixed;
+  }
+  %desktop-tablet-background-attachment-local {
+    background-attachment: local;
+  }
+  %desktop-tablet-background-clip-border-box {
+    background-clip: border-box;
+  }
+  %desktop-tablet-background-clip-padding-box {
+    background-clip: padding-box;
+  }
+  %desktop-tablet-background-clip-content-box {
+    background-clip: content-box;
+  }
+  %desktop-tablet-background-color-1 {
+    background-color: #fff;
+  }
+  %desktop-tablet-background-color-2 {
+    background-color: #000;
+  }
+  %desktop-tablet-background-origin-padding-box {
+    background-origin: padding-box;
+  }
+  %desktop-tablet-background-origin-border-box {
+    background-origin: border-box;
+  }
+  %desktop-tablet-background-origin-content-box {
+    background-origin: content-box;
+  }
+  %desktop-tablet-background-position-left-top {
+    background-position: left top;
+  }
+  %desktop-tablet-background-position-left-center {
+    background-position: left center;
+  }
+  %desktop-tablet-background-position-left-bottom {
+    background-position: left bottom;
+  }
+  %desktop-tablet-background-position-right-top {
+    background-position: right top;
+  }
+  %desktop-tablet-background-position-right-center {
+    background-position: right center;
+  }
+  %desktop-tablet-background-position-right-bottom {
+    background-position: right bottom;
+  }
+  %desktop-tablet-background-position-center-top {
+    background-position: center top;
+  }
+  %desktop-tablet-background-position-center-center {
+    background-position: center center;
+  }
+  %desktop-tablet-background-position-center-bottom {
+    background-position: center bottom;
+  }
+  %desktop-tablet-background-repeat-repeat {
+    background-repeat: repeat;
+  }
+  %desktop-tablet-background-repeat-repeat-x {
+    background-repeat: repeat-x;
+  }
+  %desktop-tablet-background-repeat-repeat-y {
+    background-repeat: repeat-y;
+  }
+  %desktop-tablet-background-repeat-no-repeat {
+    background-repeat: no-repeat;
+  }
+  %desktop-tablet-background-size-auto {
+    background-size: auto;
+  }
+  %desktop-tablet-background-size-cover {
+    background-size: cover;
+  }
+  %desktop-tablet-background-size-contain {
+    background-size: contain;
+  }
+  %desktop-tablet-border-none {
+    border: none;
+  }
+  %desktop-tablet-border-0 {
+    border: 0;
+  }
+  %desktop-tablet-border-bottom-none {
+    border-bottom: none;
+  }
+  %desktop-tablet-border-bottom-0 {
+    border-bottom: 0;
+  }
+  %desktop-tablet-border-bottom-color-transparent {
+    border-bottom-color: transparent;
+  }
+  %desktop-tablet-border-bottom-style-none {
+    border-bottom-style: none;
+  }
+  %desktop-tablet-border-bottom-style-hidden {
+    border-bottom-style: hidden;
+  }
+  %desktop-tablet-border-bottom-style-dotted {
+    border-bottom-style: hidden;
+  }
+  %desktop-tablet-border-bottom-style-dashed {
+    border-bottom-style: dashed;
+  }
+  %desktop-tablet-border-bottom-style-solid {
+    border-bottom-style: solid;
+  }
+  %desktop-tablet-border-bottom-style-double {
+    border-bottom-style: double;
+  }
+  %desktop-tablet-border-bottom-style-groove {
+    border-bottom-style: groove;
+  }
+  %desktop-tablet-border-bottom-style-ridge {
+    border-bottom-style: ridge;
+  }
+  %desktop-tablet-border-bottom-style-inset {
+    border-bottom-style: inset;
+  }
+  %desktop-tablet-border-bottom-style-outset {
+    border-bottom-style: outset;
+  }
+  %desktop-tablet-border-collapse-separate {
+    border-collapse: separate;
+  }
+  %desktop-tablet-border-collapse-collapse {
+    border-collapse: collapse;
+  }
+  %desktop-tablet-border-image-repeat-stretch {
+    border-image-repeat: stretch;
+  }
+  %desktop-tablet-border-image-repeat-repeat {
+    border-image-repeat: repeat
+  }
+  %desktop-tablet-border-image-repeat-round {
+    border-image-repeat: round;
+  }
+  %desktop-tablet-border-image-slice-0 {
+    border-image-slice: 0;
+  }
+  %desktop-tablet-border-image-slice-100 {
+    border-image-slice: 100%;
+  }
+  %desktop-tablet-border-image-slice-fill {
+    border-image-slice: fill;
+  }
+  %desktop-tablet-border-image-source-none {
+    border-image-source: none;
+  }
+  %desktop-tablet-border-image-width-0 {
+    border-image-width: 0;
+  }
+  %desktop-tablet-border-image-width-100 {
+    border-image-width: 100%;
+  }
+  %desktop-tablet-border-image-width-auto {
+    border-image-width: auto;
+  }
+  %desktop-tablet-border-left-none {
+    border-left: none;
+  }
+  %desktop-tablet-border-left-0 {
+    border-left: 0;
+  }
+  %desktop-tablet-border-left-color-transparent {
+    border-left-color: transparent;
+  }
+  %desktop-tablet-border-left-style-none {
+    border-left-style: none;
+  }
+  %desktop-tablet-border-left-style-hidden {
+    border-left-style: hidden;
+  }
+  %desktop-tablet-border-left-style-dotted {
+    border-left-style: dotted;
+  }
+  %desktop-tablet-border-left-style-dashed {
+    border-left-style: dashed;
+  }
+  %desktop-tablet-border-left-style-solid {
+    border-left-style: solid;
+  }
+  %desktop-tablet-border-left-style-double {
+    border-left-style: double;
+  }
+  %desktop-tablet-border-left-style-groove {
+    border-left-style: groove;
+  }
+  %desktop-tablet-border-left-style-ridge {
+    border-left-style: ridge;
+  }
+  %desktop-tablet-border-left-style-inset {
+    border-left-style: inset;
+  }
+  %desktop-tablet-border-left-style-outset {
+    border-left-style: outset;
+  }
+  %desktop-tablet-border-radius-100 {
+    border-radius: 100%;
+  }
+  %desktop-tablet-border-radius-0 {
+    border-radius: 0;
+  }
+  %desktop-tablet-border-right-none {
+    border-right: none;
+  }
+  %desktop-tablet-border-right-0 {
+    border-right: 0;
+  }
+  %desktop-tablet-border-right-color-1 {
+    border-right-color: #fff;
+  }
+  %desktop-tablet-border-right-color-2 {
+    border-right-color: #000;
+  }
+  %desktop-tablet-border-right-style-none {
+    border-right-style: none;
+  }
+  %desktop-tablet-border-right-style-hidden {
+    border-right-style: hidden;
+  }
+  %desktop-tablet-border-right-style-dotted {
+    border-right-style: dotted;
+  }
+  %desktop-tablet-border-right-style-dashed {
+    border-right-style: dashed;
+  }
+  %desktop-tablet-border-right-style-solid {
+    border-right-style: solid;
+  }
+  %desktop-tablet-border-right-style-double {
+    border-right-style: double;
+  }
+  %desktop-tablet-border-right-style-groove {
+    border-right-style: groove;
+  }
+  %desktop-tablet-border-right-style-ridge {
+    border-right-style: ridge;
+  }
+  %desktop-tablet-border-right-style-inset {
+    border-right-style: inset;
+  }
+  %desktop-tablet-border-right-style-outset {
+    border-right-style: outset;
+  }
+  %desktop-tablet-border-style-none {
+    border-style: none;
+  }
+  %desktop-tablet-border-style-hidden {
+    border-style: hidden;
+  }
+  %desktop-tablet-border-style-dotted {
+    border-style: dotted;
+  }
+  %desktop-tablet-border-style-dashed {
+    border-style: dashed;
+  }
+  %desktop-tablet-border-style-solid {
+    border-style: solid;
+  }
+  %desktop-tablet-border-style-double {
+    border-style: double;
+  }
+  %desktop-tablet-border-style-groove {
+    border-style: groove;
+  }
+  %desktop-tablet-border-style-ridge {
+    border-style: ridge;
+  }
+  %desktop-tablet-border-style-inset {
+    border-style: inset;
+  }
+  %desktop-tablet-border-style-outset {
+    border-style: outset;
+  }
+  %desktop-tablet-border-top-none {
+    border-top: none;
+  }
+  %desktop-tablet-border-top-0 {
+    border-top: 0;
+  }
+  %desktop-tablet-border-top-color-1 {
+    border-top-color: #fff;
+  }
+  %desktop-tablet-border-top-color-2 {
+    border-top-color: #000;
+  }
+  %desktop-tablet-border-top-style-none {
+    border-top-style: none;
+  }
+  %desktop-tablet-border-top-style-hidden {
+    border-top-style: hidden;
+  }
+  %desktop-tablet-border-top-style-dotted {
+    border-top-style: dotted;
+  }
+  %desktop-tablet-border-top-style-dashed {
+    border-top-style: dashed;
+  }
+  %desktop-tablet-border-top-style-solid {
+    border-top-style: solid;
+  }
+  %desktop-tablet-border-top-style-double {
+    border-top-style: double;
+  }
+  %desktop-tablet-border-top-style-groove {
+    border-top-style: groove;
+  }
+  %desktop-tablet-border-top-style-ridge {
+    border-top-style: ridge;
+  }
+  %desktop-tablet-border-top-style-inset {
+    border-top-style: inset;
+  }
+  %desktop-tablet-border-top-style-outset {
+    border-top-style: outset;
+  }
+  %desktop-tablet-bottom-auto {
+    bottom: auto;
+  }
+  %desktop-tablet-bottom-0 {
+    bottom: 0;
+  }
+  %desktop-tablet-box-shadow-none {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+  %desktop-tablet-box-sizing-content-box {
+    box-sizing: content-box;
+  }
+  %desktop-tablet-box-sizing-border-box {
+    box-sizing: border-box;
+  }
+  %desktop-tablet-caption-side-top {
+    caption-side: top;
+  }
+  %desktop-tablet-caption-side-bottom {
+    caption-side: bottom;
+  }
+  %desktop-tablet-clear-none {
+    clear: none;
+  }
+  %desktop-tablet-clear-left {
+    clear: left;
+  }
+  %desktop-tablet-clear-right {
+    clear: right;
+  }
+  %desktop-tablet-clear-both {
+    clear: both;
+  }
+  %desktop-tablet-clip-auto {
+    clip: auto;
+  }
+  %desktop-tablet-color-1 {
+    color: #fff;
+  }
+  %desktop-tablet-color-2 {
+    color: #000;
+  }
+  %desktop-tablet-column-count-auto {
+    -webkit-column-count: auto;
+    -moz-column-count: auto;
+    column-count: auto;
+  }
+  %desktop-tablet-column-fill-auto {
+    -webkit-column-fill: auto;
+    -moz-column-fill: auto;
+    column-fill: auto;
+  }
+  %desktop-tablet-column-fill-balance {
+    -webkit-column-fill: balance;
+    -moz-column-fill: balance;
+    column-fill: balance;
+  }
+  %desktop-tablet-column-gap-normal {
+    -webkit-column-gap: normal;
+    -moz-column-gap: normal;
+    column-gap: normal;
+  }
+  %desktop-tablet-colum-gap-0 {
+    -webkit-column-gap: 0;
+    -moz-column-gap: 0;
+    column-gap: 0;
+  }
+  %desktop-tablet-column-rule-color-1 {
+    -webkit-column-rule-color: #fff;
+    -moz-column-rule-color: #fff;
+    column-rule-color: #fff;
+  }
+  %desktop-tablet-column-rule-color-2 {
+    -webkit-column-rule-color: #000;
+    -moz-column-rule-color: #000;
+    column-rule-color: #000;
+  }
+  %desktop-tablet-column-rule-style-none {
+    -webkit-column-rule-style: none;
+    -moz-column-rule-style: none;
+    column-rule-style: none;
+  }
+  %desktop-tablet-column-rule-style-hidden {
+    -webkit-column-rule-style: hidden;
+    -moz-column-rule-style: hidden;
+    column-rule-style: hidden;
+  }
+  %desktop-tablet-column-rule-style-dotted {
+    -webkit-column-rule-style: dotted;
+    -moz-column-rule-style: dotted;
+    column-rule-style: dotted;
+  }
+  %desktop-tablet-column-rule-style-dashed {
+    -webkit-column-rule-style: dashed;
+    -moz-column-rule-style: dashed;
+    column-rule-style: dashed;
+  }
+  %desktop-tablet-column-rule-style-solid {
+    -webkit-column-rule-style: solid;
+    -moz-column-rule-style: solid;
+    column-rule-style: solid;
+  }
+  %desktop-tablet-column-rule-style-double {
+    -webkit-column-rule-style: double;
+    -moz-column-rule-style: double;
+    column-rule-style: double;
+  }
+  %desktop-tablet-column-rule-style-groove {
+    -webkit-column-rule-style: groove;
+    -moz-column-rule-style: groove;
+    column-rule-style: groove;
+  }
+  %desktop-tablet-column-rule-style-ridge {
+    -webkit-column-rule-style: ridge;
+    -moz-column-rule-style: ridge;
+    column-rule-style: ridge;
+  }
+  %desktop-tablet-column-rule-style-inset {
+    -webkit-column-rule-style: inset;
+    -moz-column-rule-style: inset;
+    column-rule-style: inset;
+  }
+  %desktop-tablet-column-rule-style-outset {
+    -webkit-column-rule-style: outset;
+    -moz-column-rule-style: outset;
+    column-rule-style: outset;
+  }
+  %desktop-tablet-column-span-1 {
+    -webkit-column-span: 1;
+    column-span: 1;
+  }
+  %desktop-tablet-column-span-all {
+    -webkit-column-span: all;
+    column-span: all;
+  }
+  %desktop-tablet-column-width-auto {
+    -webkit-column-width: auto;
+    -moz-column-width: auto;
+    column-width: auto;
+  }
+  %desktop-tablet-content {
+    content: "";
+  }
+  %desktop-tablet-content-none {
+    content: none;
+  }
+  %desktop-tablet-content-counter {
+    content: counter;
+  }
+  %desktop-tablet-content-open-quote {
+    content: open-quote;
+  }
+  %desktop-tablet-content-close-quote {
+    content: close-quote;
+  }
+  %desktop-tablet-content-no-open-quote {
+    content: no-open-quote;
+  }
+  %desktop-tablet-content-no-close-quote {
+    content: no-close-quote;
+  }
+  %desktop-tablet-counter-increment-none {
+    counter-increment: none;
+  }
+  %desktop-tablet-counter-reset-none {
+    counter-reset: none;
+  }
+  %desktop-tablet-cursor-alias {
+    cursor: alias;
+  }
+  %desktop-tablet-cursor-all-scroll {
+    cursor: all-scroll;
+  }
+  %desktop-tablet-cursor-auto {
+    cursor: auto;
+  }
+  %desktop-tablet-cursor-cell {
+    cursor: cell;
+  }
+  %desktop-tablet-cursor-context-menu {
+    cursor: context-menu;
+  }
+  %desktop-tablet-cursor-col-resize {
+    cursor: col-resize;
+  }
+  %desktop-tablet-cursor-copy {
+    cursor: copy;
+  }
+  %desktop-tablet-cursor-crosshair {
+    cursor: crosshair;
+  }
+  %desktop-tablet-cursor-default {
+    cursor: default;
+  }
+  %desktop-tablet-cursor-e-resize {
+    cursor: e-resize;
+  }
+  %desktop-tablet-cursor-ew-resize {
+    cursor: ew-resize;
+  }
+  %desktop-tablet-cursor-grab {
+    cursor: grab;
+  }
+  %desktop-tablet-cursor-grabbing {
+    cursor: grabbing;
+  }
+  %desktop-tablet-cursor-help {
+    cursor: help;
+  }
+  %desktop-tablet-cursor-move {
+    cursor: move;
+  }
+  %desktop-tablet-cursor-n-resize {
+    cursor: n-resize;
+  }
+  %desktop-tablet-cursor-ne-resize {
+    cursor: ne-resize;
+  }
+  %desktop-tablet-cursor-nesw-resize {
+    cursor: nesw-resize;
+  }
+  %desktop-tablet-cursor-ns-resize {
+    cursor: ns-resize;
+  }
+  %desktop-tablet-cursor-nw-resize {
+    cursor: nw-resize;
+  }
+  %desktop-tablet-cursor-nwse-resize {
+    cursor: nwse-resize;
+  }
+  %desktop-tablet-cursor-no-drop {
+    cursor: no-drop;
+  }
+  %desktop-tablet-cursor-none {
+    cursor: none;
+  }
+  %desktop-tablet-cursor-not-allowed {
+    cursor: not-allowed;
+  }
+  %desktop-tablet-cursor-pointer {
+    cursor: pointer;
+  }
+  %desktop-tablet-cursor-progress {
+    cursor: progress;
+  }
+  %desktop-tablet-cursor-row-resize {
+    cursor: row-resize;
+  }
+  %desktop-tablet-cursor-s-resize {
+    cursor: s-resize;
+  }
+  %desktop-tablet-cursor-se-resize {
+    cursor: se-resize;
+  }
+  %desktop-tablet-cursor-sw-resize {
+    cursor: sw-resize;
+  }
+  %desktop-tablet-cursor-text {
+    cursor: text
+  }
+  %desktop-tablet-cursor-vertical-text {
+    cursor: vertical-text;
+  }
+  %desktop-tablet-cursor-w-resize {
+    cursor: w-resize;
+  }
+  %desktop-tablet-cursor-wait {
+    cursor: wait;
+  }
+  %desktop-tablet-cursor-zoom-in {
+    cursor: zoom-in;
+  }
+  %desktop-tablet-cursor-zoom-out {
+    cursor: zoom-out;
+  }
+  %desktop-tablet-direction-ltr {
+    direction: ltr;
+  }
+  %desktop-tablet-direction-rtl {
+    direction: rtl;
+  }
+  %desktop-tablet-display-inline {
+    display: inline;
+  }
+  %desktop-tablet-display-block {
+    display: block;
+  }
+  %desktop-tablet-display-flex {
+    -webkit-display: flex;
+    -ms-display: flex;
+    display: flex;
+  }
+  %desktop-tablet-display-inline-block {
+    display: inline-block;
+  }
+  %desktop-tablet-display-inline-flex {
+    -webkit-display: inline-flex;
+    -ms-display: inline-flex;
+    display: inline-flex
+  }
+  %desktop-tablet-display-inline-table {
+    display: inline-table;
+  }
+  %desktop-tablet-display-list-item {
+    display: list-item;
+  }
+  %desktop-tablet-display-run-in {
+    display: run-in;
+  }
+  %desktop-tablet-display-table {
+    display: table;
+  }
+  %desktop-tablet-display-table-caption {
+    display: table-caption;
+  }
+  %desktop-tablet-display-table-column-group {
+    display: table-column-group
+  }
+  %desktop-tablet-display-table-header-group {
+    display: table-header-group;
+  }
+  %desktop-tablet-display-table-footer-group {
+    display: table-footer-group;
+  }
+  %desktop-tablet-display-table-row-group {
+    display: table-row-group
+  }
+  %desktop-tablet-display-table-cell {
+    display: table-cell;
+  }
+  %desktop-tablet-display-table-column {
+    display: table-column;
+  }
+  %desktop-tablet-display-table-row {
+    display: table-row;
+  }
+  %desktop-tablet-display-none {
+    display: none;
+  }
+  %desktop-tablet-empty-cells-hide {
+    empty-cells: hide;
+  }
+  %desktop-tablet-empty-cells-show {
+    empty-cells: show;
+  }
+  %desktop-tablet-flex-auto {
+    -webkit-flex: auto;
+    -ms-flex: auto;
+    flex: auto;
+  }
+  %desktop-tablet-flex-basis-auto {
+    -webkit-flex-basis: auto;
+    flex-basis: auto;
+  }
+  %desktop-tablet-flex-direction-row {
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  }
+  %desktop-tablet-flex-direction-row-reverse {
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  }
+  %desktop-tablet-flex-direction-column {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+  %desktop-tablet-flex-direction-column-reverse {
+    -webkit-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+  %desktop-tablet-flex-wrap-nowrap {
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+  %desktop-tablet-flex-wrap-wrap {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  %desktop-tablet-flex-wrap-wrap-reverse {
+    -webkit-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+  }
+  %desktop-tablet-float-none {
+    float: none;
+  }
+  %desktop-tablet-float-left {
+    float: left;
+  }
+  %desktop-tablet-float-right {
+    float: right;
+  }
+  %desktop-tablet-font-style-normal {
+    font-style: normal;
+  }
+  %desktop-tablet-font-style-italic {
+    font-style: italic;
+  }
+  %desktop-tablet-font-style-oblique {
+    font-style: oblique;
+  }
+  %desktop-tablet-font-variant-normal {
+    font-variant: normal;
+  }
+  %desktop-tablet-font-variant-small-caps {
+    font-variant: small-caps;
+  }
+  %desktop-tablet-font-weight-normal {
+    font-weight: normal;
+  }
+  %desktop-tablet-font-weight-bold {
+    font-weight: bold;
+  }
+  %desktop-tablet-font-weight-bolder {
+    font-weight: bolder;
+  }
+  %desktop-tablet-font-weight-lighter {
+    font-weight: lighter;
+  }
+  %desktop-tablet-font-weight-100 {
+    font-weight: 100;
+  }
+  %desktop-tablet-font-weight-200 {
+    font-weight: 200;
+  }
+  %desktop-tablet-font-weight-300 {
+    font-weight: 300;
+  }
+  %desktop-tablet-font-weight-400 {
+    font-weight: 400;
+  }
+  %desktop-tablet-font-weight-500 {
+    font-weight: 500;
+  }
+  %desktop-tablet-font-weight-600 {
+    font-weight: 600;
+  }
+  %desktop-tablet-font-weight-700 {
+    font-weight: 700;
+  }
+  %desktop-tablet-font-weight-800 {
+    font-weight: 800;
+  }
+  %desktop-tablet-font-weight-900 {
+    font-weight: 900;
+  }
+  %desktop-tablet-height-auto {
+    height: auto;
+  }
+  %desktop-tablet-height-0 {
+    height: 0;
+  }
+  %desktop-tablet-justify-content-flex-start {
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+  }
+  %desktop-tablet-justify-content-flex-end {
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+  }
+  %desktop-tablet-justify-content-center {
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+  %desktop-tablet-justify-content-space-between {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+  }
+  %desktop-tablet-justify-content-space-around {
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+  }
+  %desktop-tablet-left-auto {
+    left: auto;
+  }
+  %desktop-tablet-left-0 {
+    left: 0;
+  }
+  %desktop-tablet-letter-spacing-normal {
+    letter-spacing: normal;
+  }
+  %desktop-tablet-line-height-normal {
+    line-height: normal;
+  }
+  %desktop-tablet-list-style-none {
+    list-style: none;
+  }
+  %desktop-tablet-list-style-armenian {
+    list-style: armenian;
+  }
+  %desktop-tablet-list-style-circle {
+    list-style: circle;
+  }
+  %desktop-tablet-list-style-decimal {
+    list-style: decimal;
+  }
+  %desktop-tablet-list-style-decimal-leading-zero {
+    list-style: decimal-leading-zero;
+  }
+  %desktop-tablet-list-style-disc {
+    list-style: disc;
+  }
+  %desktop-tablet-list-style-gregorian {
+    list-style: georgian;
+  }
+  %desktop-tablet-list-style-inside {
+    list-style: inside;
+  }
+  %desktop-tablet-list-style-lower-alpha {
+    list-style: lower-alpha;
+  }
+  %desktop-tablet-list-style-lower-greek {
+    list-style: lower-greek;
+  }
+  %desktop-tablet-list-style-lower-latin {
+    list-style: lower-latin;
+  }
+  %desktop-tablet-list-style-lower-roman {
+    list-style: lower-roman;
+  }
+  %desktop-tablet-list-style-outside {
+    list-style: outside;
+  }
+  %desktop-tablet-list-style-square {
+    list-style: square;
+  }
+  %desktop-tablet-list-style-unset {
+    list-style: unset;
+  }
+  %desktop-tablet-list-style-upper-alpha {
+    list-style: upper-alpha;
+  }
+  %desktop-tablet-list-style-upper-latin {
+    list-style: upper-latin;
+  }
+  %desktop-tablet-list-style-upper-roman {
+    list-style: upper-roman;
+  }
+  %desktop-tablet-list-style-position-inside {
+    list-style-position: inside;
+  }
+  %desktop-tablet-list-style-position-outside {
+    list-style-position: outside;
+  }
+  %desktop-tablet-list-style-type-none {
+    list-style-type: none;
+  }
+  %desktop-tablet-list-style-type-armenian {
+    list-style-type: armenian;
+  }
+  %desktop-tablet-list-style-type-circle {
+    list-style-type: circle;
+  }
+  %desktop-tablet-list-style-type-decimal {
+    list-style-type: decimal;
+  }
+  %desktop-tablet-list-style-type-decimal-leading-zero {
+    list-style-type: decimal-leading-zero;
+  }
+  %desktop-tablet-list-style-type-disc {
+    list-style-type: disc;
+  }
+  %desktop-tablet-list-style-type-gregorian {
+    list-style-type: georgian;
+  }
+  %desktop-tablet-list-style-type-inside {
+    list-style-type: inside;
+  }
+  %desktop-tablet-list-style-type-lower-alpha {
+    list-style-type: lower-alpha;
+  }
+  %desktop-tablet-list-style-type-lower-greek {
+    list-style-type: lower-greek;
+  }
+  %desktop-tablet-list-style-type-lower-latin {
+    list-style-type: lower-latin;
+  }
+  %desktop-tablet-list-style-type-lower-roman {
+    list-style-type: lower-roman;
+  }
+  %desktop-tablet-list-style-type-outside {
+    list-style-type: outside;
+  }
+  %desktop-tablet-list-style-type-square {
+    list-style-type: square;
+  }
+  %desktop-tablet-list-style-type-unset {
+    list-style-type: unset;
+  }
+  %desktop-tablet-list-style-type-upper-alpha {
+    list-style-type: upper-alpha;
+  }
+  %desktop-tablet-list-style-type-upper-latin {
+    list-style-type: upper-latin;
+  }
+  %desktop-tablet-list-style-type-upper-roman {
+    list-style-type: upper-roman;
+  }
+  %desktop-tablet-margin-auto {
+    margin: auto;
+  }
+  %desktop-tablet-margin-0 {
+    margin: 0;
+  }
+  %desktop-tablet-margin-bottom-auto {
+    margin-bottom: auto;
+  }
+  %desktop-tablet-margin-bottom-0 {
+    margin-bottom: 0;
+  }
+  %desktop-tablet-margin-left-auto {
+    margin-left: auto;
+  }
+  %desktop-tablet-margin-left-0 {
+    margin-left: 0;
+  }
+  %desktop-tablet-margin-right-auto {
+    margin-right: auto;
+  }
+  %desktop-tablet-margin-right-0 {
+    margin-right: 0;
+  }
+  %desktop-tablet-margin-top-auto {
+    margin-top: auto;
+  }
+  %desktop-tablet-margin-top-0 {
+    margin-top: 0;
+  }
+  %desktop-tablet-max-width-100 {
+    max-width: 100%;
+  }
+  %desktop-tablet-min-width-100 {
+    min-width: 100%;
+  }
+  %desktop-tablet-opacity-1 {
+    opacity: 1;
+  }
+  %desktop-tablet-opacity-09 {
+    opacity: .9;
+  }
+  %desktop-tablet-opacity-08 {
+    opacity: .8;
+  }
+  %desktop-tablet-opacity-07 {
+    opacity: .7;
+  }
+  %desktop-tablet-opacity-06 {
+    opacity: .6;
+  }
+  %desktop-tablet-opacity-05 {
+    opacity: .5;
+  }
+  %desktop-tablet-opacity-04 {
+    opacity: .4;
+  }
+  %desktop-tablet-opacity-03 {
+    opacity: .3;
+  }
+  %desktop-tablet-opacity-02 {
+    opacity: .2;
+  }
+  %desktop-tablet-opacity-01 {
+    opacity: .1;
+  }
+  %desktop-tablet-opacity-0 {
+    opacity: 0;
+  }
+  %desktop-tablet-outline-none {
+    outline: none;
+  }
+  %desktop-tablet-outline-color-1 {
+    outline-color: #fff;
+  }
+  %desktop-tablet-outline-color-2 {
+    outline-color: #000;
+  }
+  %desktop-tablet-outline-style-none {
+    outline-style: none;
+  }
+  %desktop-tablet-outline-style-hidden {
+    outline-style: hidden;
+  }
+  %desktop-tablet-outline-style-dotted {
+    outline-style: dotted;
+  }
+  %desktop-tablet-outline-style-dashed {
+    outline-style: dashed;
+  }
+  %desktop-tablet-outline-style-solid {
+    outline-style: solid;
+  }
+  %desktop-tablet-outline-style-double {
+    outline-style: double;
+  }
+  %desktop-tablet-outline-style-groove {
+    outline-style: groove;
+  }
+  %desktop-tablet-outline-style-ridge {
+    outline-style: ridge;
+  }
+  %desktop-tablet-outline-style-inset {
+    outline-style: inset;
+  }
+  %desktop-tablet-outline-style-outset {
+    outline-style: outset;
+  }
+  %desktop-tablet-overflow-visible {
+    overflow: visible;
+  }
+  %desktop-tablet-overflow-hidden {
+    overflow: hidden;
+  }
+  %desktop-tablet-overflow-scroll {
+    overflow: scroll;
+  }
+  %desktop-tablet-overflow-auto {
+    overflow: auto;
+  }
+  %desktop-tablet-overflow-x-visible {
+    overflow: visible;
+  }
+  %desktop-tablet-overflow-x-hidden {
+    overflow: hidden;
+  }
+  %desktop-tablet-overflow-x-scroll {
+    overflow: scroll;
+  }
+  %desktop-tablet-overflow-x-auto {
+    overflow: auto;
+  }
+  %desktop-tablet-overflow-y-visible {
+    overflow: visible;
+  }
+  %desktop-tablet-overflow-y-hidden {
+    overflow: hidden;
+  }
+  %desktop-tablet-overflow-y-scroll {
+    overflow: scroll;
+  }
+  %desktop-tablet-overflow-y-auto {
+    overflow: auto;
+  }
+  %desktop-tablet-padding-0 {
+    padding: 0;
+  }
+  %desktop-tablet-padding-bottom-0 {
+    padding-bottom: 0;
+  }
+  %desktop-tablet-padding-left-0 {
+    padding-left: 0;
+  }
+  %desktop-tablet-padding-right {
+    padding-right: 0;
+  }
+  %desktop-tablet-padding-top {
+    padding-top: 0;
+  }
+  %desktop-tablet-page-break-after-auto {
+    page-break-after: auto;
+  }
+  %desktop-tablet-page-break-after-always {
+    page-break-after: always;
+  }
+  %desktop-tablet-page-break-after-avoid {
+    page-break-after: avoid;
+  }
+  %desktop-tablet-page-break-after-left {
+    page-break-after: left;
+  }
+  %desktop-tablet-page-break-after-right {
+    page-break-after: right;
+  }
+  %desktop-tablet-page-break-before-auto {
+    page-break-before: auto;
+  }
+  %desktop-tablet-page-break-before-always {
+    page-break-before: always;
+  }
+  %desktop-tablet-page-break-before-avoid {
+    page-break-before: avoid;
+  }
+  %desktop-tablet-page-break-before-left {
+    page-break-before: left;
+  }
+  %desktop-tablet-page-break-before-right {
+    page-break-before: right;
+  }
+  %desktop-tablet-page-break-inside-auto {
+    page-break-inside: auto;
+  }
+  %desktop-tablet-page-break-inside-avoide {
+    page-break-inside: avoid;
+  }
+  %desktop-tablet-perspective-none {
+    -webkit-perspective: none;
+    perspective: none;
+  }
+  %desktop-tablet-position-static {
+    position: static;
+  }
+  %desktop-tablet-position-absolute {
+    position: absolute;
+  }
+  %desktop-tablet-position-fixed {
+    position: fixed;
+  }
+  %desktop-tablet-position-relative {
+    position: relative;
+  }
+  %desktop-tablet-quotes-none {
+    quotes: none;
+  }
+  %desktop-tablet-resize-none {
+    resize: none;
+  }
+  %desktop-tablet-resize-both {
+    resize: both;
+  }
+  %desktop-tablet-resize-horizontal {
+    resize: horizontal;
+  }
+  %desktop-tablet-resize-vertical {
+    resize: vertical;
+  }
+  %desktop-tablet-right-auto {
+    right: auto;
+  }
+  %desktop-tablet-right-0 {
+    right: 0;
+  }
+  %desktop-tablet-table-layout-auto {
+    table-layout: auto;
+  }
+  %desktop-tablet-table-layout-fixed {
+    table-layout: fixed;
+  }
+  %desktop-tablet-text-align-left {
+    text-align: left;
+  }
+  %desktop-tablet-text-align-right {
+    text-align: right;
+  }
+  %desktop-tablet-text-align-center {
+    text-align: center;
+  }
+  %desktop-tablet-text-align-justify {
+    text-align: justify;
+  }
+  %desktop-tablet-text-align-last-left {
+    text-align-last: left;
+  }
+  %desktop-tablet-text-align-last-right {
+    text-align-last: right;
+  }
+  %desktop-tablet-text-align-last-center {
+    text-align-last: center;
+  }
+  %desktop-tablet-text-align-last-justify {
+    text-align-last: justify;
+  }
+  %desktop-tablet-text-align-last-start {
+    text-align-last: start;
+  }
+  %desktop-tablet-text-align-last-end {
+    text-align-last: end;
+  }
+  %desktop-tablet-text-decoration-none {
+    text-decoration: none;
+  }
+  %desktop-tablet-text-decoration-underline {
+    text-decoration: underline;
+  }
+  %desktop-tablet-text-decoration-overline {
+    text-decoration: overline;
+  }
+  %desktop-tablet-text-decoration-line-through {
+    text-decoration: line-through;
+  }
+  %desktop-tablet-text-indent-0 {
+    text-indent: 0;
+  }
+  %desktop-tablet-text-overflow-clip {
+    text-overflow: clip;
+  }
+  %desktop-tablet-text-overflow-ellipsis {
+    text-overflow: ellipsis;
+  }
+  %desktop-tablet-text-shadow-none {
+    text-shadow: none;
+  }
+  %desktop-tablet-text-transform-none {
+    text-transform: none;
+  }
+  %desktop-tablet-text-transform-capitalize {
+    text-transform: capitalize;
+  }
+  %desktop-tablet-text-transform-uppercase {
+    text-transform: uppercase;
+  }
+  %desktop-tablet-text-transform-lowercase {
+    text-transform: lowercase;
+  }
+  %desktop-tablet-top-auto {
+    top: auto;
+  }
+  %desktop-tablet-top-0 {
+    top: 0;
+  }
+  %desktop-tablet-unicode-bidi-normal {
+    unicode-bidi: normal;
+  }
+  %desktop-tablet-unicode-bidi-embed {
+    unicode-bidi: embed;
+  }
+  %desktop-tablet-unicode-bidi-bidi-overrid {
+    unicode-bidi: bidi-override;
+  }
+  %desktop-tablet-user-select-auto {
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+  }
+  %desktop-tablet-user-select-none {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  %desktop-tablet-user-select-text {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+  %desktop-tablet-user-select-all {
+    -webkit-user-select: all;
+    -moz-user-select: all;
+    -ms-user-select: all;
+    user-select: all;
+  }
+  %desktop-tablet-vertical-align-baseline {
+    vertical-align: baseline;
+  }
+  %desktop-tablet-vertical-align-sub {
+    vertical-align: sub;
+  }
+  %desktop-tablet-vertical-align-super {
+    vertical-align: super;
+  }
+  %desktop-tablet-vertical-align-top {
+    vertical-align: top;
+  }
+  %desktop-tablet-vertical-align-text-top {
+    vertical-align: text-top;
+  }
+  %desktop-tablet-vertical-align-middle {
+    vertical-align: middle;
+  }
+  %desktop-tablet-vertical-align-bottom {
+    vertical-align: bottom;
+  }
+  %desktop-tablet-vertical-align-text-bottom {
+    vertical-align: text-bottom;
+  }
+  %desktop-tablet-visibility-visible {
+    visibility: visible;
+  }
+  %desktop-tablet-visibility-hidden {
+    visibility: hidden;
+  }
+  %desktop-tablet-visibility-collapse {
+    visibility: collapse;
+  }
+  %desktop-tablet-white-space-normal {
+    white-space: normal;
+  }
+  %desktop-tablet-white-space-nowrap {
+    white-space: nowrap;
+  }
+  %desktop-tablet-white-space-pre {
+    white-space: pre;
+  }
+  %desktop-tablet-white-space-pre-line {
+    white-space: pre-line;
+  }
+  %desktop-tablet-white-space-pre-wrap {
+    white-space: pre-wrap;
+  }
+  %desktop-tablet-width-auto {
+    width: auto;
+  }
+  %desktop-tablet-width-0 {
+    width: 0;
+  }
+  %desktop-tablet-width-100 {
+    width: 100%;
+  }
+  %desktop-tablet-word-break-normal {
+    word-break: normal;
+  }
+  %desktop-tablet-word-break-break-all {
+    word-break: break-all;
+  }
+  %desktop-tablet-word-break-keep-all {
+    word-break: keep-all;
+  }
+  %desktop-tablet-word-spacing-normal {
+    word-spacing: normal;
+  }
+  %desktop-tablet-word-wrap-normal {
+    word-wrap: normal;
+  }
+  %desktop-tablet-word-wrap-break-word {
+    word-wrap: break-word;
+  }
+  %desktop-tablet-z-index-0 {
+    z-index: 0;
+  }
+  %desktop-tablet-z-index-1 {
+    z-index: 1;
+  }
+  %desktop-tablet-z-index-10 {
+    z-index: 10;
+  }
+  %desktop-tablet-z-index-11 {
+    z-index: 11;
+  }
+  %desktop-tablet-z-index-100 {
+    z-index: 100;
+  }
+  %desktop-tablet-z-index-101 {
+    z-index: 101;
+  }
+  %desktop-tablet-z-index-1000 {
+    z-index: 1000;
+  }
+  %desktop-tablet-z-index-1001 {
+    z-index: 1001;
+  }
+  %desktop-tablet-z-index-10000 {
+    z-index: 10000;
+  }
+  %desktop-tablet-z-index-10001 {
+    z-index: 1001;
+  }
+}
