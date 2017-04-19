@@ -12,6 +12,7 @@ jQuery plugin for **accessible** accordions: **WAI ARIA 1.1** compliant.
 ## Dependencies
 
 **jQuery**
+
 Developed and tested with jQuery 3.2.1
 
 ## Cross-browser tests
