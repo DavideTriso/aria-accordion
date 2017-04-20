@@ -20,7 +20,8 @@
   //-----------------------------------------------
   //set id if element does not have one
   function setId(element, id, i) {
-    if (element.id === undefined || element.id === '' || element.id === null) {
+    var elementId = element.id;
+    if (elementId === undefined || elementId === '' || elementId === null) {
       element.id = id + (i + 1);
     }
   }

@@ -20,7 +20,8 @@
   //-----------------------------------------------
   //set id if element does not have one
   function setId(element, id, i) {
-    if (element.id === undefined || element.id === '' || element.id === null) {
+    var elementId = element.id;
+    if (elementId === undefined || elementId === '' || elementId === null) {
       element.id = id + (i + 1);
     }
   }
@@ -48,8 +49,8 @@
       }
     }
   }
-  
-  
+
+
   function checkForSpecialKeys(event) {
     if (!event.shiftKey && !event.ctrlKey && !event.altKey && !event.metaKey) {
       //none is pressed
@@ -79,7 +80,7 @@
         expandOnPageLoad: true,
         expandOnlyOne: false,
         keyInteraction: true
-        //deepLinking: false
+          //deepLinking: false
       }, userSettings),
       elements = {
         group: accordionGroup,
