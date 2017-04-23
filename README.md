@@ -4,9 +4,9 @@
 
 jQuery plugin for **accessible** accordions: **WAI ARIA 1.1** compliant.
 
-* Simple to customize.
+* Easy to customize.
 * Only 5KB (minified).
-* SASS/SCSS files (developed following **BEM principles**).
+* SASS/SCSS files.
 * Fully compatible with **t-css-framework**
 
 ## Dependencies
@@ -17,7 +17,7 @@ Developed and tested with jQuery 3.2.1
 
 ## Cross-browser tests
 
-* Tested on **Google Chrome 57** / macOS Sierra 10. No issues found.
+* Tested on **Google Chrome 57** / macOS Sierra 10.
 
 ## Options
 
