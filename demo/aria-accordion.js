@@ -49,8 +49,8 @@
       }
     }
   }
-  
-  
+
+
   function checkForSpecialKeys(event) {
     if (!event.shiftKey && !event.ctrlKey && !event.altKey && !event.metaKey) {
       //none is pressed
@@ -307,32 +307,35 @@
       this.each(function () {
         methods.init(userSettings, $(this));
       });
-    }
-    if (userSettings === 'expand') {
-      this.each(function () {
-        methods.expand(getAccordionsIndexes($(this)), true);
-      });
-    }
-    if (userSettings === 'show') {
-      this.each(function () {
-        methods.expand(getAccordionsIndexes($(this)), false);
-      });
-    }
-    if (userSettings === 'collapse') {
-      this.each(function () {
-        methods.collapse(getAccordionsIndexes($(this)), true);
-      });
-    }
-    if (userSettings === 'hide') {
-      this.each(function () {
-        methods.collapse(getAccordionsIndexes($(this)), false);
-      });
-
-    }
-    if (userSettings === 'toggle') {
-      this.each(function () {
-        methods.toggle(getAccordionsIndexes($(this)));
-      });
+      return;
+    } else {
+      switch (userSettings) {
+        case 'expand':
+          this.each(function () {
+            methods.expand(getAccordionsIndexes($(this)), true);
+          });
+          break;
+        case 'show':
+          this.each(function () {
+            methods.expand(getAccordionsIndexes($(this)), false);
+          });
+          break;
+        case 'collapse':
+          this.each(function () {
+            methods.collapse(getAccordionsIndexes($(this)), true);
+          });
+          break;
+        case 'hide':
+          this.each(function () {
+            methods.collapse(getAccordionsIndexes($(this)), false);
+          });
+          break;
+        case 'toggle':
+          this.each(function () {
+            methods.toggle(getAccordionsIndexes($(this)));
+          });
+          break;
+      }
     }
   };
 }(jQuery));
