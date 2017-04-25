@@ -8,6 +8,7 @@ jQuery plugin for **accessible** accordions: **WAI ARIA 1.1** compliant.
 * Only 5KB (minified).
 * SASS/SCSS files.
 * Fully compatible with **t-css-framework**
+* Runs in strict mode.
 
 ## Dependencies
 
