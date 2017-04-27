@@ -4,9 +4,9 @@
 
 jQuery plugin for **accessible** accordions: **WAI ARIA 1.1** compliant.
 
-* Easy to customize.
+* Easy to customize tanks to a small but usefull set of options.
+* SASS/SCSS files for simple and quick UI customisations.
 * Only 5KB (minified).
-* SASS/SCSS files.
 * Fully compatible with **t-css-framework**
 * Runs in strict mode.
 
@@ -147,3 +147,8 @@ $('#accordion-id').ariaAccordion('trigger');
 ````
 
 **NOTE:** All the methods can be called both on a single accordion element, or on a set of elements.
+
+
+# LICENSE
+
+**FLOSS** - Free/Libre and Open Source Software.
