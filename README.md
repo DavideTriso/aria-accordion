@@ -149,6 +149,8 @@ $('#accordion-id').ariaAccordion('trigger');
 **NOTE:** All the methods can be called both on a single accordion element, or on a set of elements.
 
 
-# LICENSE
+## LICENSE
 
-**FLOSS** - Free/Libre and Open Source Software.
+This project is licensed under the terms of the **MIT license**.
+
+See [LICENSE.md](LICENSE.md) for detailed informations.
