@@ -1,0 +1,1489 @@
+@media screen and (min-width: $w5) {
+  %desktop-align-content-stretch {
+    -webkit-align-content: stretch;
+    align-content: stretch;
+  }
+  %desktop-align-content-center {
+    -webkit-align-content: center;
+    align-content: center;
+  }
+  %desktop-align-content-flex-start {
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
+  }
+  %desktop-align-content-flex-end {
+    -webkit-align-content: flex-end;
+    align-content: flex-end;
+  }
+  %desktop-align-content-space-between {
+    -webkit-align-content: space-between;
+    align-content: space-between;
+  }
+  %desktop-align-content-space-around {
+    -webkit-align-content: space-around;
+    align-content: space-around;
+  }
+  %desktop-align-content-initial {
+    -webkit-align-content: initial;
+    align-content: initial;
+  }
+  %desktop-align-content-inherit {
+    -webkit-align-content: inherit;
+    align-content: inherit;
+  }
+  %desktop-align-items-stretch {
+    -webkit-align-items: stretch;
+    align-items: stretch;
+  }
+  %desktop-align-items-center {
+    -webkit-align-content: center;
+    align-items: center;
+  }
+  %desktop-align-items-flex-start {
+    -webkit-align-content: flex-start;
+    align-items: flex-start;
+  }
+  %desktop-align-items-flex-end {
+    -webkit-align-content: flex-end;
+    align-items: flex-end;
+  }
+  %desktop-align-items-baseline {
+    -webkit-align-content: baseline;
+    align-items: baseline;
+  }
+  %desktop-align-items-initial {
+    -webkit-align-content: initial;
+    align-items: initial;
+  }
+  %desktop-align-items-inherit {
+    -webkit-align-content: inherit;
+    align-items: inherit;
+  }
+  %desktop-align-self-auto {
+    -webkit-align-self: auto;
+    align-self: auto;
+  }
+  %desktop-align-self-stretch {
+    -webkit-align-self: stretch;
+    align-self: stretch;
+  }
+  %desktop-align-self-center {
+    -webkit-align-self: center;
+    align-self: center;
+  }
+  %desktop-align-self-flex-start {
+    -webkit-align-self: flex-start;
+    align-self: flex-start;
+  }
+  %desktop-align-self-flex-end {
+    -webkit-align-self: flex-end;
+    align-self: flex-end;
+  }
+  %desktop-align-self-baseline {
+    -webkit-align-self: baseline;
+    align-self: baseline;
+  }
+  %desktop-align-self-initial {
+    -webkit-align-self: initial;
+    align-self: initial;
+  }
+  %desktop-align-self-inherit {
+    -webkit-align-self: inherit;
+    align-self: inherit;
+  }
+  %desktop-appearance-none {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  %desktop-backface-visibility-visible {
+    backface-visibility: visible;
+  }
+  %desktop-backface-visibility-hidden {
+    backface-visibility: hidden;
+  }
+  %desktop-background-attachment-scroll {
+    background-attachment: scroll;
+  }
+  %desktop-background-attachment-fixed {
+    background-attachment: fixed;
+  }
+  %desktop-background-attachment-local {
+    background-attachment: local;
+  }
+  %desktop-background-clip-border-box {
+    background-clip: border-box;
+  }
+  %desktop-background-clip-padding-box {
+    background-clip: padding-box;
+  }
+  %desktop-background-clip-content-box {
+    background-clip: content-box;
+  }
+  %desktop-background-color-1 {
+    background-color: #fff;
+  }
+  %desktop-background-color-2 {
+    background-color: #000;
+  }
+  %desktop-background-origin-padding-box {
+    background-origin: padding-box;
+  }
+  %desktop-background-origin-border-box {
+    background-origin: border-box;
+  }
+  %desktop-background-origin-content-box {
+    background-origin: content-box;
+  }
+  %desktop-background-position-left-top {
+    background-position: left top;
+  }
+  %desktop-background-position-left-center {
+    background-position: left center;
+  }
+  %desktop-background-position-left-bottom {
+    background-position: left bottom;
+  }
+  %desktop-background-position-right-top {
+    background-position: right top;
+  }
+  %desktop-background-position-right-center {
+    background-position: right center;
+  }
+  %desktop-background-position-right-bottom {
+    background-position: right bottom;
+  }
+  %desktop-background-position-center-top {
+    background-position: center top;
+  }
+  %desktop-background-position-center-center {
+    background-position: center center;
+  }
+  %desktop-background-position-center-bottom {
+    background-position: center bottom;
+  }
+  %desktop-background-repeat-repeat {
+    background-repeat: repeat;
+  }
+  %desktop-background-repeat-repeat-x {
+    background-repeat: repeat-x;
+  }
+  %desktop-background-repeat-repeat-y {
+    background-repeat: repeat-y;
+  }
+  %desktop-background-repeat-no-repeat {
+    background-repeat: no-repeat;
+  }
+  %desktop-background-size-auto {
+    background-size: auto;
+  }
+  %desktop-background-size-cover {
+    background-size: cover;
+  }
+  %desktop-background-size-contain {
+    background-size: contain;
+  }
+  %desktop-border-none {
+    border: none;
+  }
+  %desktop-border-0 {
+    border: 0;
+  }
+  %desktop-border-bottom-none {
+    border-bottom: none;
+  }
+  %desktop-border-bottom-0 {
+    border-bottom: 0;
+  }
+  %desktop-border-bottom-color-transparent {
+    border-bottom-color: transparent;
+  }
+  %desktop-border-bottom-style-none {
+    border-bottom-style: none;
+  }
+  %desktop-border-bottom-style-hidden {
+    border-bottom-style: hidden;
+  }
+  %desktop-border-bottom-style-dotted {
+    border-bottom-style: hidden;
+  }
+  %desktop-border-bottom-style-dashed {
+    border-bottom-style: dashed;
+  }
+  %desktop-border-bottom-style-solid {
+    border-bottom-style: solid;
+  }
+  %desktop-border-bottom-style-double {
+    border-bottom-style: double;
+  }
+  %desktop-border-bottom-style-groove {
+    border-bottom-style: groove;
+  }
+  %desktop-border-bottom-style-ridge {
+    border-bottom-style: ridge;
+  }
+  %desktop-border-bottom-style-inset {
+    border-bottom-style: inset;
+  }
+  %desktop-border-bottom-style-outset {
+    border-bottom-style: outset;
+  }
+  %desktop-border-collapse-separate {
+    border-collapse: separate;
+  }
+  %desktop-border-collapse-collapse {
+    border-collapse: collapse;
+  }
+  %desktop-border-image-repeat-stretch {
+    border-image-repeat: stretch;
+  }
+  %desktop-border-image-repeat-repeat {
+    border-image-repeat: repeat
+  }
+  %desktop-border-image-repeat-round {
+    border-image-repeat: round;
+  }
+  %desktop-border-image-slice-0 {
+    border-image-slice: 0;
+  }
+  %desktop-border-image-slice-100 {
+    border-image-slice: 100%;
+  }
+  %desktop-border-image-slice-fill {
+    border-image-slice: fill;
+  }
+  %desktop-border-image-source-none {
+    border-image-source: none;
+  }
+  %desktop-border-image-width-0 {
+    border-image-width: 0;
+  }
+  %desktop-border-image-width-100 {
+    border-image-width: 100%;
+  }
+  %desktop-border-image-width-auto {
+    border-image-width: auto;
+  }
+  %desktop-border-left-none {
+    border-left: none;
+  }
+  %desktop-border-left-0 {
+    border-left: 0;
+  }
+  %desktop-border-left-color-transparent {
+    border-left-color: transparent;
+  }
+  %desktop-border-left-style-none {
+    border-left-style: none;
+  }
+  %desktop-border-left-style-hidden {
+    border-left-style: hidden;
+  }
+  %desktop-border-left-style-dotted {
+    border-left-style: dotted;
+  }
+  %desktop-border-left-style-dashed {
+    border-left-style: dashed;
+  }
+  %desktop-border-left-style-solid {
+    border-left-style: solid;
+  }
+  %desktop-border-left-style-double {
+    border-left-style: double;
+  }
+  %desktop-border-left-style-groove {
+    border-left-style: groove;
+  }
+  %desktop-border-left-style-ridge {
+    border-left-style: ridge;
+  }
+  %desktop-border-left-style-inset {
+    border-left-style: inset;
+  }
+  %desktop-border-left-style-outset {
+    border-left-style: outset;
+  }
+  %desktop-border-radius-100 {
+    border-radius: 100%;
+  }
+  %desktop-border-radius-0 {
+    border-radius: 0;
+  }
+  %desktop-border-right-none {
+    border-right: none;
+  }
+  %desktop-border-right-0 {
+    border-right: 0;
+  }
+  %desktop-border-right-color-1 {
+    border-right-color: #fff;
+  }
+  %desktop-border-right-color-2 {
+    border-right-color: #000;
+  }
+  %desktop-border-right-style-none {
+    border-right-style: none;
+  }
+  %desktop-border-right-style-hidden {
+    border-right-style: hidden;
+  }
+  %desktop-border-right-style-dotted {
+    border-right-style: dotted;
+  }
+  %desktop-border-right-style-dashed {
+    border-right-style: dashed;
+  }
+  %desktop-border-right-style-solid {
+    border-right-style: solid;
+  }
+  %desktop-border-right-style-double {
+    border-right-style: double;
+  }
+  %desktop-border-right-style-groove {
+    border-right-style: groove;
+  }
+  %desktop-border-right-style-ridge {
+    border-right-style: ridge;
+  }
+  %desktop-border-right-style-inset {
+    border-right-style: inset;
+  }
+  %desktop-border-right-style-outset {
+    border-right-style: outset;
+  }
+  %desktop-border-style-none {
+    border-style: none;
+  }
+  %desktop-border-style-hidden {
+    border-style: hidden;
+  }
+  %desktop-border-style-dotted {
+    border-style: dotted;
+  }
+  %desktop-border-style-dashed {
+    border-style: dashed;
+  }
+  %desktop-border-style-solid {
+    border-style: solid;
+  }
+  %desktop-border-style-double {
+    border-style: double;
+  }
+  %desktop-border-style-groove {
+    border-style: groove;
+  }
+  %desktop-border-style-ridge {
+    border-style: ridge;
+  }
+  %desktop-border-style-inset {
+    border-style: inset;
+  }
+  %desktop-border-style-outset {
+    border-style: outset;
+  }
+  %desktop-border-top-none {
+    border-top: none;
+  }
+  %desktop-border-top-0 {
+    border-top: 0;
+  }
+  %desktop-border-top-color-1 {
+    border-top-color: #fff;
+  }
+  %desktop-border-top-color-2 {
+    border-top-color: #000;
+  }
+  %desktop-border-top-style-none {
+    border-top-style: none;
+  }
+  %desktop-border-top-style-hidden {
+    border-top-style: hidden;
+  }
+  %desktop-border-top-style-dotted {
+    border-top-style: dotted;
+  }
+  %desktop-border-top-style-dashed {
+    border-top-style: dashed;
+  }
+  %desktop-border-top-style-solid {
+    border-top-style: solid;
+  }
+  %desktop-border-top-style-double {
+    border-top-style: double;
+  }
+  %desktop-border-top-style-groove {
+    border-top-style: groove;
+  }
+  %desktop-border-top-style-ridge {
+    border-top-style: ridge;
+  }
+  %desktop-border-top-style-inset {
+    border-top-style: inset;
+  }
+  %desktop-border-top-style-outset {
+    border-top-style: outset;
+  }
+  %desktop-bottom-auto {
+    bottom: auto;
+  }
+  %desktop-bottom-0 {
+    bottom: 0;
+  }
+  %desktop-box-shadow-none {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+  %desktop-box-sizing-content-box {
+    box-sizing: content-box;
+  }
+  %desktop-box-sizing-border-box {
+    box-sizing: border-box;
+  }
+  %desktop-caption-side-top {
+    caption-side: top;
+  }
+  %desktop-caption-side-bottom {
+    caption-side: bottom;
+  }
+  %desktop-clear-none {
+    clear: none;
+  }
+  %desktop-clear-left {
+    clear: left;
+  }
+  %desktop-clear-right {
+    clear: right;
+  }
+  %desktop-clear-both {
+    clear: both;
+  }
+  %desktop-clip-auto {
+    clip: auto;
+  }
+  %desktop-color-1 {
+    color: #fff;
+  }
+  %desktop-color-2 {
+    color: #000;
+  }
+  %desktop-column-count-auto {
+    -webkit-column-count: auto;
+    -moz-column-count: auto;
+    column-count: auto;
+  }
+  %desktop-column-fill-auto {
+    -webkit-column-fill: auto;
+    -moz-column-fill: auto;
+    column-fill: auto;
+  }
+  %desktop-column-fill-balance {
+    -webkit-column-fill: balance;
+    -moz-column-fill: balance;
+    column-fill: balance;
+  }
+  %desktop-column-gap-normal {
+    -webkit-column-gap: normal;
+    -moz-column-gap: normal;
+    column-gap: normal;
+  }
+  %desktop-colum-gap-0 {
+    -webkit-column-gap: 0;
+    -moz-column-gap: 0;
+    column-gap: 0;
+  }
+  %desktop-column-rule-color-1 {
+    -webkit-column-rule-color: #fff;
+    -moz-column-rule-color: #fff;
+    column-rule-color: #fff;
+  }
+  %desktop-column-rule-color-2 {
+    -webkit-column-rule-color: #000;
+    -moz-column-rule-color: #000;
+    column-rule-color: #000;
+  }
+  %desktop-column-rule-style-none {
+    -webkit-column-rule-style: none;
+    -moz-column-rule-style: none;
+    column-rule-style: none;
+  }
+  %desktop-column-rule-style-hidden {
+    -webkit-column-rule-style: hidden;
+    -moz-column-rule-style: hidden;
+    column-rule-style: hidden;
+  }
+  %desktop-column-rule-style-dotted {
+    -webkit-column-rule-style: dotted;
+    -moz-column-rule-style: dotted;
+    column-rule-style: dotted;
+  }
+  %desktop-column-rule-style-dashed {
+    -webkit-column-rule-style: dashed;
+    -moz-column-rule-style: dashed;
+    column-rule-style: dashed;
+  }
+  %desktop-column-rule-style-solid {
+    -webkit-column-rule-style: solid;
+    -moz-column-rule-style: solid;
+    column-rule-style: solid;
+  }
+  %desktop-column-rule-style-double {
+    -webkit-column-rule-style: double;
+    -moz-column-rule-style: double;
+    column-rule-style: double;
+  }
+  %desktop-column-rule-style-groove {
+    -webkit-column-rule-style: groove;
+    -moz-column-rule-style: groove;
+    column-rule-style: groove;
+  }
+  %desktop-column-rule-style-ridge {
+    -webkit-column-rule-style: ridge;
+    -moz-column-rule-style: ridge;
+    column-rule-style: ridge;
+  }
+  %desktop-column-rule-style-inset {
+    -webkit-column-rule-style: inset;
+    -moz-column-rule-style: inset;
+    column-rule-style: inset;
+  }
+  %desktop-column-rule-style-outset {
+    -webkit-column-rule-style: outset;
+    -moz-column-rule-style: outset;
+    column-rule-style: outset;
+  }
+  %desktop-column-span-1 {
+    -webkit-column-span: 1;
+    column-span: 1;
+  }
+  %desktop-column-span-all {
+    -webkit-column-span: all;
+    column-span: all;
+  }
+  %desktop-column-width-auto {
+    -webkit-column-width: auto;
+    -moz-column-width: auto;
+    column-width: auto;
+  }
+  %desktop-content {
+    content: "";
+  }
+  %desktop-content-none {
+    content: none;
+  }
+  %desktop-content-counter {
+    content: counter;
+  }
+  %desktop-content-open-quote {
+    content: open-quote;
+  }
+  %desktop-content-close-quote {
+    content: close-quote;
+  }
+  %desktop-content-no-open-quote {
+    content: no-open-quote;
+  }
+  %desktop-content-no-close-quote {
+    content: no-close-quote;
+  }
+  %desktop-counter-increment-none {
+    counter-increment: none;
+  }
+  %desktop-counter-reset-none {
+    counter-reset: none;
+  }
+  %desktop-cursor-alias {
+    cursor: alias;
+  }
+  %desktop-cursor-all-scroll {
+    cursor: all-scroll;
+  }
+  %desktop-cursor-auto {
+    cursor: auto;
+  }
+  %desktop-cursor-cell {
+    cursor: cell;
+  }
+  %desktop-cursor-context-menu {
+    cursor: context-menu;
+  }
+  %desktop-cursor-col-resize {
+    cursor: col-resize;
+  }
+  %desktop-cursor-copy {
+    cursor: copy;
+  }
+  %desktop-cursor-crosshair {
+    cursor: crosshair;
+  }
+  %desktop-cursor-default {
+    cursor: default;
+  }
+  %desktop-cursor-e-resize {
+    cursor: e-resize;
+  }
+  %desktop-cursor-ew-resize {
+    cursor: ew-resize;
+  }
+  %desktop-cursor-grab {
+    cursor: grab;
+  }
+  %desktop-cursor-grabbing {
+    cursor: grabbing;
+  }
+  %desktop-cursor-help {
+    cursor: help;
+  }
+  %desktop-cursor-move {
+    cursor: move;
+  }
+  %desktop-cursor-n-resize {
+    cursor: n-resize;
+  }
+  %desktop-cursor-ne-resize {
+    cursor: ne-resize;
+  }
+  %desktop-cursor-nesw-resize {
+    cursor: nesw-resize;
+  }
+  %desktop-cursor-ns-resize {
+    cursor: ns-resize;
+  }
+  %desktop-cursor-nw-resize {
+    cursor: nw-resize;
+  }
+  %desktop-cursor-nwse-resize {
+    cursor: nwse-resize;
+  }
+  %desktop-cursor-no-drop {
+    cursor: no-drop;
+  }
+  %desktop-cursor-none {
+    cursor: none;
+  }
+  %desktop-cursor-not-allowed {
+    cursor: not-allowed;
+  }
+  %desktop-cursor-pointer {
+    cursor: pointer;
+  }
+  %desktop-cursor-progress {
+    cursor: progress;
+  }
+  %desktop-cursor-row-resize {
+    cursor: row-resize;
+  }
+  %desktop-cursor-s-resize {
+    cursor: s-resize;
+  }
+  %desktop-cursor-se-resize {
+    cursor: se-resize;
+  }
+  %desktop-cursor-sw-resize {
+    cursor: sw-resize;
+  }
+  %desktop-cursor-text {
+    cursor: text
+  }
+  %desktop-cursor-vertical-text {
+    cursor: vertical-text;
+  }
+  %desktop-cursor-w-resize {
+    cursor: w-resize;
+  }
+  %desktop-cursor-wait {
+    cursor: wait;
+  }
+  %desktop-cursor-zoom-in {
+    cursor: zoom-in;
+  }
+  %desktop-cursor-zoom-out {
+    cursor: zoom-out;
+  }
+  %desktop-direction-ltr {
+    direction: ltr;
+  }
+  %desktop-direction-rtl {
+    direction: rtl;
+  }
+  %desktop-display-inline {
+    display: inline;
+  }
+  %desktop-display-block {
+    display: block;
+  }
+  %desktop-display-flex {
+    -webkit-display: flex;
+    -ms-display: flex;
+    display: -webkit-flex;
+    display: flex;
+  }
+  %desktop-display-inline-block {
+    display: inline-block;
+  }
+  %desktop-display-inline-flex {
+    -webkit-display: inline-flex;
+    -ms-display: inline-flex;
+    display: inline-flex
+  }
+  %desktop-display-inline-table {
+    display: inline-table;
+  }
+  %desktop-display-list-item {
+    display: list-item;
+  }
+  %desktop-display-run-in {
+    display: run-in;
+  }
+  %desktop-display-table {
+    display: table;
+  }
+  %desktop-display-table-caption {
+    display: table-caption;
+  }
+  %desktop-display-table-column-group {
+    display: table-column-group
+  }
+  %desktop-display-table-header-group {
+    display: table-header-group;
+  }
+  %desktop-display-table-footer-group {
+    display: table-footer-group;
+  }
+  %desktop-display-table-row-group {
+    display: table-row-group
+  }
+  %desktop-display-table-cell {
+    display: table-cell;
+  }
+  %desktop-display-table-column {
+    display: table-column;
+  }
+  %desktop-display-table-row {
+    display: table-row;
+  }
+  %desktop-display-none {
+    display: none;
+  }
+  %desktop-empty-cells-hide {
+    empty-cells: hide;
+  }
+  %desktop-empty-cells-show {
+    empty-cells: show;
+  }
+  %desktop-flex-auto {
+    -webkit-flex: auto;
+    -ms-flex: auto;
+    flex: auto;
+  }
+  %desktop-flex-basis-auto {
+    -webkit-flex-basis: auto;
+    flex-basis: auto;
+  }
+  %desktop-flex-direction-row {
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  }
+  %desktop-flex-direction-row-reverse {
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  }
+  %desktop-flex-direction-column {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+  %desktop-flex-direction-column-reverse {
+    -webkit-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+  %desktop-flex-grow-initial {
+    -webkit-flex-grow: initial;
+    flex-grow: initial;
+  }
+  %desktop-flex-grow-inherit {
+    -webkit-flex-grow: inherit;
+    flex-grow: inherit;
+  }
+  %desktop-flex-shrink-initial {
+    -webkit-flex-shrink: initial;
+    flex-shrink: initial;
+  }
+  %desktop-flex-shrink-inherit {
+    -webkit-flex-shrink: inherit;
+    flex-shrink: inherit;
+  }
+  %desktop-flex-wrap-nowrap {
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+  %desktop-flex-wrap-wrap {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  %desktop-flex-wrap-wrap-reverse {
+    -webkit-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+  }
+  %desktop-float-none {
+    float: none;
+  }
+  %desktop-float-left {
+    float: left;
+  }
+  %desktop-float-right {
+    float: right;
+  }
+  %desktop-font-style-normal {
+    font-style: normal;
+  }
+  %desktop-font-style-italic {
+    font-style: italic;
+  }
+  %desktop-font-style-oblique {
+    font-style: oblique;
+  }
+  %desktop-font-variant-normal {
+    font-variant: normal;
+  }
+  %desktop-font-variant-small-caps {
+    font-variant: small-caps;
+  }
+  %desktop-font-weight-normal {
+    font-weight: normal;
+  }
+  %desktop-font-weight-bold {
+    font-weight: bold;
+  }
+  %desktop-font-weight-bolder {
+    font-weight: bolder;
+  }
+  %desktop-font-weight-lighter {
+    font-weight: lighter;
+  }
+  %desktop-font-weight-100 {
+    font-weight: 100;
+  }
+  %desktop-font-weight-200 {
+    font-weight: 200;
+  }
+  %desktop-font-weight-300 {
+    font-weight: 300;
+  }
+  %desktop-font-weight-400 {
+    font-weight: 400;
+  }
+  %desktop-font-weight-500 {
+    font-weight: 500;
+  }
+  %desktop-font-weight-600 {
+    font-weight: 600;
+  }
+  %desktop-font-weight-700 {
+    font-weight: 700;
+  }
+  %desktop-font-weight-800 {
+    font-weight: 800;
+  }
+  %desktop-font-weight-900 {
+    font-weight: 900;
+  }
+  %desktop-height-auto {
+    height: auto;
+  }
+  %desktop-height-0 {
+    height: 0;
+  }
+  %desktop-justify-content-flex-start {
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+  }
+  %desktop-justify-content-flex-end {
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+  }
+  %desktop-justify-content-center {
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+  %desktop-justify-content-space-between {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+  }
+  %desktop-justify-content-space-around {
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+  }
+  %desktop-left-auto {
+    left: auto;
+  }
+  %desktop-left-0 {
+    left: 0;
+  }
+  %desktop-letter-spacing-normal {
+    letter-spacing: normal;
+  }
+  %desktop-line-height-normal {
+    line-height: normal;
+  }
+  %desktop-list-style-none {
+    list-style: none;
+  }
+  %desktop-list-style-armenian {
+    list-style: armenian;
+  }
+  %desktop-list-style-circle {
+    list-style: circle;
+  }
+  %desktop-list-style-decimal {
+    list-style: decimal;
+  }
+  %desktop-list-style-decimal-leading-zero {
+    list-style: decimal-leading-zero;
+  }
+  %desktop-list-style-disc {
+    list-style: disc;
+  }
+  %desktop-list-style-gregorian {
+    list-style: georgian;
+  }
+  %desktop-list-style-inside {
+    list-style: inside;
+  }
+  %desktop-list-style-lower-alpha {
+    list-style: lower-alpha;
+  }
+  %desktop-list-style-lower-greek {
+    list-style: lower-greek;
+  }
+  %desktop-list-style-lower-latin {
+    list-style: lower-latin;
+  }
+  %desktop-list-style-lower-roman {
+    list-style: lower-roman;
+  }
+  %desktop-list-style-outside {
+    list-style: outside;
+  }
+  %desktop-list-style-square {
+    list-style: square;
+  }
+  %desktop-list-style-unset {
+    list-style: unset;
+  }
+  %desktop-list-style-upper-alpha {
+    list-style: upper-alpha;
+  }
+  %desktop-list-style-upper-latin {
+    list-style: upper-latin;
+  }
+  %desktop-list-style-upper-roman {
+    list-style: upper-roman;
+  }
+  %desktop-list-style-position-inside {
+    list-style-position: inside;
+  }
+  %desktop-list-style-position-outside {
+    list-style-position: outside;
+  }
+  %desktop-list-style-type-none {
+    list-style-type: none;
+  }
+  %desktop-list-style-type-armenian {
+    list-style-type: armenian;
+  }
+  %desktop-list-style-type-circle {
+    list-style-type: circle;
+  }
+  %desktop-list-style-type-decimal {
+    list-style-type: decimal;
+  }
+  %desktop-list-style-type-decimal-leading-zero {
+    list-style-type: decimal-leading-zero;
+  }
+  %desktop-list-style-type-disc {
+    list-style-type: disc;
+  }
+  %desktop-list-style-type-gregorian {
+    list-style-type: georgian;
+  }
+  %desktop-list-style-type-inside {
+    list-style-type: inside;
+  }
+  %desktop-list-style-type-lower-alpha {
+    list-style-type: lower-alpha;
+  }
+  %desktop-list-style-type-lower-greek {
+    list-style-type: lower-greek;
+  }
+  %desktop-list-style-type-lower-latin {
+    list-style-type: lower-latin;
+  }
+  %desktop-list-style-type-lower-roman {
+    list-style-type: lower-roman;
+  }
+  %desktop-list-style-type-outside {
+    list-style-type: outside;
+  }
+  %desktop-list-style-type-square {
+    list-style-type: square;
+  }
+  %desktop-list-style-type-unset {
+    list-style-type: unset;
+  }
+  %desktop-list-style-type-upper-alpha {
+    list-style-type: upper-alpha;
+  }
+  %desktop-list-style-type-upper-latin {
+    list-style-type: upper-latin;
+  }
+  %desktop-list-style-type-upper-roman {
+    list-style-type: upper-roman;
+  }
+  %desktop-margin-auto {
+    margin: auto;
+  }
+  %desktop-margin-0 {
+    margin: 0;
+  }
+  %desktop-margin-bottom-auto {
+    margin-bottom: auto;
+  }
+  %desktop-margin-bottom-0 {
+    margin-bottom: 0;
+  }
+  %desktop-margin-left-auto {
+    margin-left: auto;
+  }
+  %desktop-margin-left-0 {
+    margin-left: 0;
+  }
+  %desktop-margin-right-auto {
+    margin-right: auto;
+  }
+  %desktop-margin-right-0 {
+    margin-right: 0;
+  }
+  %desktop-margin-top-auto {
+    margin-top: auto;
+  }
+  %desktop-margin-top-0 {
+    margin-top: 0;
+  }
+  %desktop-max-width-100 {
+    max-width: 100%;
+  }
+  %desktop-min-width-100 {
+    min-width: 100%;
+  }
+  %desktop-opacity-1 {
+    opacity: 1;
+  }
+  %desktop-opacity-09 {
+    opacity: .9;
+  }
+  %desktop-opacity-08 {
+    opacity: .8;
+  }
+  %desktop-opacity-07 {
+    opacity: .7;
+  }
+  %desktop-opacity-06 {
+    opacity: .6;
+  }
+  %desktop-opacity-05 {
+    opacity: .5;
+  }
+  %desktop-opacity-04 {
+    opacity: .4;
+  }
+  %desktop-opacity-03 {
+    opacity: .3;
+  }
+  %desktop-opacity-02 {
+    opacity: .2;
+  }
+  %desktop-opacity-01 {
+    opacity: .1;
+  }
+  %desktop-opacity-0 {
+    opacity: 0;
+  }
+  %desktop-outline-none {
+    outline: none;
+  }
+  %desktop-outline-color-1 {
+    outline-color: #fff;
+  }
+  %desktop-outline-color-2 {
+    outline-color: #000;
+  }
+  %desktop-outline-style-none {
+    outline-style: none;
+  }
+  %desktop-outline-style-hidden {
+    outline-style: hidden;
+  }
+  %desktop-outline-style-dotted {
+    outline-style: dotted;
+  }
+  %desktop-outline-style-dashed {
+    outline-style: dashed;
+  }
+  %desktop-outline-style-solid {
+    outline-style: solid;
+  }
+  %desktop-outline-style-double {
+    outline-style: double;
+  }
+  %desktop-outline-style-groove {
+    outline-style: groove;
+  }
+  %desktop-outline-style-ridge {
+    outline-style: ridge;
+  }
+  %desktop-outline-style-inset {
+    outline-style: inset;
+  }
+  %desktop-outline-style-outset {
+    outline-style: outset;
+  }
+  %desktop-overflow-visible {
+    overflow: visible;
+  }
+  %desktop-overflow-hidden {
+    overflow: hidden;
+  }
+  %desktop-overflow-scroll {
+    overflow: scroll;
+  }
+  %desktop-overflow-auto {
+    overflow: auto;
+  }
+  %desktop-overflow-x-visible {
+    overflow: visible;
+  }
+  %desktop-overflow-x-hidden {
+    overflow: hidden;
+  }
+  %desktop-overflow-x-scroll {
+    overflow: scroll;
+  }
+  %desktop-overflow-x-auto {
+    overflow: auto;
+  }
+  %desktop-overflow-y-visible {
+    overflow: visible;
+  }
+  %desktop-overflow-y-hidden {
+    overflow: hidden;
+  }
+  %desktop-overflow-y-scroll {
+    overflow: scroll;
+  }
+  %desktop-overflow-y-auto {
+    overflow: auto;
+  }
+  %desktop-padding-0 {
+    padding: 0;
+  }
+  %desktop-padding-bottom-0 {
+    padding-bottom: 0;
+  }
+  %desktop-padding-left-0 {
+    padding-left: 0;
+  }
+  %desktop-padding-right {
+    padding-right: 0;
+  }
+  %desktop-padding-top {
+    padding-top: 0;
+  }
+  %desktop-page-break-after-auto {
+    page-break-after: auto;
+  }
+  %desktop-page-break-after-always {
+    page-break-after: always;
+  }
+  %desktop-page-break-after-avoid {
+    page-break-after: avoid;
+  }
+  %desktop-page-break-after-left {
+    page-break-after: left;
+  }
+  %desktop-page-break-after-right {
+    page-break-after: right;
+  }
+  %desktop-page-break-before-auto {
+    page-break-before: auto;
+  }
+  %desktop-page-break-before-always {
+    page-break-before: always;
+  }
+  %desktop-page-break-before-avoid {
+    page-break-before: avoid;
+  }
+  %desktop-page-break-before-left {
+    page-break-before: left;
+  }
+  %desktop-page-break-before-right {
+    page-break-before: right;
+  }
+  %desktop-page-break-inside-auto {
+    page-break-inside: auto;
+  }
+  %desktop-page-break-inside-avoide {
+    page-break-inside: avoid;
+  }
+  %desktop-perspective-none {
+    -webkit-perspective: none;
+    perspective: none;
+  }
+  %desktop-position-static {
+    position: static;
+  }
+  %desktop-position-absolute {
+    position: absolute;
+  }
+  %desktop-position-fixed {
+    position: fixed;
+  }
+  %desktop-position-relative {
+    position: relative;
+  }
+  %desktop-quotes-none {
+    quotes: none;
+  }
+  %desktop-resize-none {
+    resize: none;
+  }
+  %desktop-resize-both {
+    resize: both;
+  }
+  %desktop-resize-horizontal {
+    resize: horizontal;
+  }
+  %desktop-resize-vertical {
+    resize: vertical;
+  }
+  %desktop-right-auto {
+    right: auto;
+  }
+  %desktop-right-0 {
+    right: 0;
+  }
+  %desktop-table-layout-auto {
+    table-layout: auto;
+  }
+  %desktop-table-layout-fixed {
+    table-layout: fixed;
+  }
+  %desktop-text-align-left {
+    text-align: left;
+  }
+  %desktop-text-align-right {
+    text-align: right;
+  }
+  %desktop-text-align-center {
+    text-align: center;
+  }
+  %desktop-text-align-justify {
+    text-align: justify;
+  }
+  %desktop-text-align-last-left {
+    text-align-last: left;
+  }
+  %desktop-text-align-last-right {
+    text-align-last: right;
+  }
+  %desktop-text-align-last-center {
+    text-align-last: center;
+  }
+  %desktop-text-align-last-justify {
+    text-align-last: justify;
+  }
+  %desktop-text-align-last-start {
+    text-align-last: start;
+  }
+  %desktop-text-align-last-end {
+    text-align-last: end;
+  }
+  %desktop-text-decoration-none {
+    text-decoration: none;
+  }
+  %desktop-text-decoration-underline {
+    text-decoration: underline;
+  }
+  %desktop-text-decoration-overline {
+    text-decoration: overline;
+  }
+  %desktop-text-decoration-line-through {
+    text-decoration: line-through;
+  }
+  %desktop-text-indent-0 {
+    text-indent: 0;
+  }
+  %desktop-text-overflow-clip {
+    text-overflow: clip;
+  }
+  %desktop-text-overflow-ellipsis {
+    text-overflow: ellipsis;
+  }
+  %desktop-text-shadow-none {
+    text-shadow: none;
+  }
+  %desktop-text-transform-none {
+    text-transform: none;
+  }
+  %desktop-text-transform-capitalize {
+    text-transform: capitalize;
+  }
+  %desktop-text-transform-uppercase {
+    text-transform: uppercase;
+  }
+  %desktop-text-transform-lowercase {
+    text-transform: lowercase;
+  }
+  %desktop-top-auto {
+    top: auto;
+  }
+  %desktop-top-0 {
+    top: 0;
+  }
+  %desktop-unicode-bidi-normal {
+    unicode-bidi: normal;
+  }
+  %desktop-unicode-bidi-embed {
+    unicode-bidi: embed;
+  }
+  %desktop-unicode-bidi-bidi-overrid {
+    unicode-bidi: bidi-override;
+  }
+  %desktop-user-select-auto {
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+  }
+  %desktop-user-select-none {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  %desktop-user-select-text {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+  %desktop-user-select-all {
+    -webkit-user-select: all;
+    -moz-user-select: all;
+    -ms-user-select: all;
+    user-select: all;
+  }
+  %desktop-vertical-align-baseline {
+    vertical-align: baseline;
+  }
+  %desktop-vertical-align-sub {
+    vertical-align: sub;
+  }
+  %desktop-vertical-align-super {
+    vertical-align: super;
+  }
+  %desktop-vertical-align-top {
+    vertical-align: top;
+  }
+  %desktop-vertical-align-text-top {
+    vertical-align: text-top;
+  }
+  %desktop-vertical-align-middle {
+    vertical-align: middle;
+  }
+  %desktop-vertical-align-bottom {
+    vertical-align: bottom;
+  }
+  %desktop-vertical-align-text-bottom {
+    vertical-align: text-bottom;
+  }
+  %desktop-visibility-visible {
+    visibility: visible;
+  }
+  %desktop-visibility-hidden {
+    visibility: hidden;
+  }
+  %desktop-visibility-collapse {
+    visibility: collapse;
+  }
+  %desktop-white-space-normal {
+    white-space: normal;
+  }
+  %desktop-white-space-nowrap {
+    white-space: nowrap;
+  }
+  %desktop-white-space-pre {
+    white-space: pre;
+  }
+  %desktop-white-space-pre-line {
+    white-space: pre-line;
+  }
+  %desktop-white-space-pre-wrap {
+    white-space: pre-wrap;
+  }
+  %desktop-width-auto {
+    width: auto;
+  }
+  %desktop-width-0 {
+    width: 0;
+  }
+  %desktop-width-100 {
+    width: 100%;
+  }
+  %desktop-word-break-normal {
+    word-break: normal;
+  }
+  %desktop-word-break-break-all {
+    word-break: break-all;
+  }
+  %desktop-word-break-keep-all {
+    word-break: keep-all;
+  }
+  %desktop-word-spacing-normal {
+    word-spacing: normal;
+  }
+  %desktop-word-wrap-normal {
+    word-wrap: normal;
+  }
+  %desktop-word-wrap-break-word {
+    word-wrap: break-word;
+  }
+  %desktop-z-index-0 {
+    z-index: 0;
+  }
+  %desktop-z-index-1 {
+    z-index: 1;
+  }
+  %desktop-z-index-10 {
+    z-index: 10;
+  }
+  %desktop-z-index-11 {
+    z-index: 11;
+  }
+  %desktop-z-index-100 {
+    z-index: 100;
+  }
+  %desktop-z-index-101 {
+    z-index: 101;
+  }
+  %desktop-z-index-1000 {
+    z-index: 1000;
+  }
+  %desktop-z-index-1001 {
+    z-index: 1001;
+  }
+  %desktop-z-index-10000 {
+    z-index: 10000;
+  }
+  %desktop-z-index-10001 {
+    z-index: 1001;
+  }
+}

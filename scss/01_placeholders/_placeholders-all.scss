@@ -1,3 +1,95 @@
+%align-content-stretch {
+  -webkit-align-content: stretch;
+  align-content: stretch;
+}
+%align-content-center {
+  -webkit-align-content: center;
+  align-content: center;
+}
+%align-content-flex-start {
+  -webkit-align-content: flex-start;
+  align-content: flex-start;
+}
+%align-content-flex-end {
+  -webkit-align-content: flex-end;
+  align-content: flex-end;
+}
+%align-content-space-between {
+  -webkit-align-content: space-between;
+  align-content: space-between;
+}
+%align-content-space-around {
+  -webkit-align-content: space-around;
+  align-content: space-around;
+}
+%align-content-initial {
+  -webkit-align-content: initial;
+  align-content: initial;
+}
+%align-content-inherit {
+  -webkit-align-content: inherit;
+  align-content: inherit;
+}
+%align-items-stretch {
+  -webkit-align-items: stretch;
+  align-items: stretch;
+}
+%align-items-center {
+  -webkit-align-content: center;
+  align-items: center;
+}
+%align-items-flex-start {
+  -webkit-align-content: flex-start;
+  align-items: flex-start;
+}
+%align-items-flex-end {
+  -webkit-align-content: flex-end;
+  align-items: flex-end;
+}
+%align-items-baseline {
+  -webkit-align-content: baseline;
+  align-items: baseline;
+}
+%align-items-initial {
+  -webkit-align-content: initial;
+  align-items: initial;
+}
+%align-items-inherit {
+  -webkit-align-content: inherit;
+  align-items: inherit;
+}
+%align-self-auto {
+  -webkit-align-self: auto;
+  align-self: auto;
+}
+%align-self-stretch {
+  -webkit-align-self: stretch;
+  align-self: stretch;
+}
+%align-self-center {
+  -webkit-align-self: center;
+  align-self: center;
+}
+%align-self-flex-start {
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
+}
+%align-self-flex-end {
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+}
+%align-self-baseline {
+  -webkit-align-self: baseline;
+  align-self: baseline;
+}
+%align-self-initial {
+  -webkit-align-self: initial;
+  align-self: initial;
+}
+%align-self-inherit {
+  -webkit-align-self: inherit;
+  align-self: inherit;
+}
 %appearance-none {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -621,6 +713,7 @@
 %display-flex {
   -webkit-display: flex;
   -ms-display: flex;
+  display: -webkit-flex;
   display: flex;
 }
 %display-inline-block {
@@ -700,6 +793,22 @@
 %flex-direction-column-reverse {
   -webkit-flex-direction: column-reverse;
   flex-direction: column-reverse;
+}
+%flex-grow-initial {
+  -webkit-flex-grow: initial;
+  flex-grow: initial;
+}
+%flex-grow-inherit {
+  -webkit-flex-grow: inherit;
+  flex-grow: inherit;
+}
+%flex-shrink-initial {
+  -webkit-flex-shrink: initial;
+  flex-shrink: initial;
+}
+%flex-shrink-inherit {
+  -webkit-flex-shrink: inherit;
+  flex-shrink: inherit;
 }
 %flex-wrap-nowrap {
   -webkit-flex-wrap: nowrap;
