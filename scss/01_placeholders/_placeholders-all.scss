@@ -39,23 +39,23 @@
   align-items: center;
 }
 %align-items-flex-start {
-  -webkit-align-content: flex-start;
+  -webkit-align-items: flex-start;
   align-items: flex-start;
 }
 %align-items-flex-end {
-  -webkit-align-content: flex-end;
+  -webkit-align-items: flex-end;
   align-items: flex-end;
 }
 %align-items-baseline {
-  -webkit-align-content: baseline;
+  -webkit-align-items: baseline;
   align-items: baseline;
 }
 %align-items-initial {
-  -webkit-align-content: initial;
+  -webkit-align-items: initial;
   align-items: initial;
 }
 %align-items-inherit {
-  -webkit-align-content: inherit;
+  -webkit-align-items: inherit;
   align-items: inherit;
 }
 %align-self-auto {
@@ -96,9 +96,13 @@
   appearance: none;
 }
 %backface-visibility-visible {
+  -webkit-backface-visibility: visible;
+  -moz-backface-visibility: visible;
   backface-visibility: visible;
 }
 %backface-visibility-hidden {
+  -webkit-backface-visibility: hidden;
+  -mox-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 %background-attachment-scroll {
@@ -429,13 +433,17 @@
   bottom: 0;
 }
 %box-shadow-none {
-  box-shadow: none;
   -webkit-box-shadow: none;
+  box-shadow: none;
 }
 %box-sizing-content-box {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 %box-sizing-border-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 %caption-side-top {
@@ -722,7 +730,8 @@
 %display-inline-flex {
   -webkit-display: inline-flex;
   -ms-display: inline-flex;
-  display: inline-flex
+  display: -webkit-inline-flex;
+  display: inline-flex;
 }
 %display-inline-table {
   display: inline-table;
@@ -1321,9 +1330,11 @@
   text-indent: 0;
 }
 %text-overflow-clip {
+  -o-text-overflow: clip;
   text-overflow: clip;
 }
 %text-overflow-ellipsis {
+  -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
 }
 %text-shadow-none {

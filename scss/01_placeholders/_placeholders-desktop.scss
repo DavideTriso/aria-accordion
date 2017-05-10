@@ -36,27 +36,27 @@
     align-items: stretch;
   }
   %desktop-align-items-center {
-    -webkit-align-content: center;
+    -webkit-align-items: center;
     align-items: center;
   }
   %desktop-align-items-flex-start {
-    -webkit-align-content: flex-start;
+    -webkit-align-items: flex-start;
     align-items: flex-start;
   }
   %desktop-align-items-flex-end {
-    -webkit-align-content: flex-end;
+    -webkit-align-items: flex-end;
     align-items: flex-end;
   }
   %desktop-align-items-baseline {
-    -webkit-align-content: baseline;
+    -webkit-align-items: baseline;
     align-items: baseline;
   }
   %desktop-align-items-initial {
-    -webkit-align-content: initial;
+    -webkit-align-items: initial;
     align-items: initial;
   }
   %desktop-align-items-inherit {
-    -webkit-align-content: inherit;
+    -webkit-align-items: inherit;
     align-items: inherit;
   }
   %desktop-align-self-auto {
@@ -97,9 +97,13 @@
     appearance: none;
   }
   %desktop-backface-visibility-visible {
+    -webkit-backface-visibility: visible;
+    -moz-backface-visibility: visible;
     backface-visibility: visible;
   }
   %desktop-backface-visibility-hidden {
+    -webkit-backface-visibility: hidden;
+    -mox-backface-visibility: hidden;
     backface-visibility: hidden;
   }
   %desktop-background-attachment-scroll {
@@ -430,13 +434,17 @@
     bottom: 0;
   }
   %desktop-box-shadow-none {
-    box-shadow: none;
     -webkit-box-shadow: none;
+    box-shadow: none;
   }
   %desktop-box-sizing-content-box {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
     box-sizing: content-box;
   }
   %desktop-box-sizing-border-box {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
   %desktop-caption-side-top {
@@ -723,6 +731,7 @@
   %desktop-display-inline-flex {
     -webkit-display: inline-flex;
     -ms-display: inline-flex;
+    display: -webkit-inline-flex;
     display: inline-flex
   }
   %desktop-display-inline-table {
@@ -1322,9 +1331,11 @@
     text-indent: 0;
   }
   %desktop-text-overflow-clip {
+    -o-text-overflow: clip;
     text-overflow: clip;
   }
   %desktop-text-overflow-ellipsis {
+    -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
   }
   %desktop-text-shadow-none {

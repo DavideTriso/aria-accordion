@@ -1,16 +1,31 @@
-
-//The backface-visibility property defines whether or not an element should be visible when not facing the screen. This property is useful when an element is rotated, and you do not want to see its backside.
+@mixin align-content($value) {
+  -webkit-align-content: $value;
+  align-content: $value;
+}
+@mixin align-items($value) {
+  -webkit-align-items: $value;
+  align-items: $value;
+}
+/*
+@mixins align-self ($value) {
+  -webkit-align-self: $value;
+  align-self: $value;
+}*/
 @mixin backface-visibility($visibility) {
   -webkit-backface-visibility: $visibility;
   -moz-backface-visibility: $visibility;
   backface-visibility: $visibility;
 }
-//Method of applying filter effects (like blur, grayscale or hue) to content/elements below the target element.
 @mixin backdrop-filter ($filter) {
   -webkit-backdrop-filter: $filter;
   backdrop-filter: $filter;
 }
-//The box-shadow property attaches one or more shadows to an element.
+@mixin border-image ($borderImage) {
+  -webkit-border-image: $borderImage;
+  -moz-border-image: $borderImage;
+  -o-border-image: $borderImage;
+  border-image: $borderImage;
+}
 @mixin box-shadow($boxShadow) {
   -webkit-box-shadow: $boxShadow;
   -moz-box-shadow: $boxShadow;
@@ -28,13 +43,11 @@
     clear: both;
   }
 }
-//The column-count property specifies the number of columns an element should be divided into.
 @mixin column-count ($columnCount) {
   -webkit-column-count: $columnCount;
   -moz-column-count: $columnCount;
   column-count: $columnCount;
 }
-//
 @mixin column-design ($columGap, $columnWidth, $columnRuleType, $columnRuleWidth, $columnRuleColor) {
   -webkit-column-gap: $columGap;
   -moz-column-gap: $columGap;
@@ -48,14 +61,10 @@
   -moz-column-rule: $columnRuleWidth $columnRuleType $columnRuleColor;
   column-rule: $columnRuleWidth $columnRuleType $columnRuleColor;
 }
-//The filter property defines visual effects (like blur and saturation) to an element (often <img>).
 @mixin filter ($filter) {
   -webkit-filter: $filter;
   filter: $filter;
 }
-//The perspective property defines how many pixels a 3D element is placed from the view. This property allows you to change the perspective on how 3D elements are viewed.
-//When defining the perspective property for an element, it is the CHILD elements that get the perspective view, NOT the element itself.
-//Note: This property must be used together with the perspective property, and only affects 3D transformed elements.
 @mixin perspective ($length, $origin) {
   -webkit-perspective: $length;
   -moz-perspective: $length;
@@ -64,7 +73,6 @@
   -moz-perspective-origin: $origin;
   perspective-origin: $origin;
 }
-//Input and Textarea placeholder color
 @mixin placeholder-color ($color) {
   &::-webkit-input-placeholder {
     color: $color;
@@ -79,25 +87,29 @@
     color: $color;
   }
 }
-// Transformations
+@mixin tab-size ($value) {
+  -moz-tab-size: $value;
+  -o-tab-size: $value;
+  tab-size: $value;
+}
 @mixin scale($ratioX, $ratioY) {
   -webkit-transform: scale($ratioX, $ratioY);
   -moz-transform: scale($ratioX, $ratioY);
-  -ms-transform: scale($ratioX, $ratioY); // IE9 only
+  -ms-transform: scale($ratioX, $ratioY);
   -o-transform: scale($ratioX, $ratioY);
   transform: scale($ratioX, $ratioY);
 }
 @mixin scaleX($ratio) {
   -webkit-transform: scaleX($ratio);
   -moz-transform: scaleX($ratio);
-  -ms-transform: scaleX($ratio); // IE9 only
+  -ms-transform: scaleX($ratio);
   -o-transform: scaleX($ratio);
   transform: scaleX($ratio);
 }
 @mixin scaleY($ratio) {
   -webkit-transform: scaleY($ratio);
   -moz-transform: scaleX($ratio);
-  -ms-transform: scaleY($ratio); // IE9 only
+  -ms-transform: scaleY($ratio);
   -o-transform: scaleY($ratio);
   transform: scaleY($ratio);
 }
@@ -111,7 +123,7 @@
 @mixin translate($x, $y) {
   -webkit-transform: translate($x, $y);
   -moz-transform: translate($x, $y);
-  -ms-transform: translate($x, $y); // IE9 only
+  -ms-transform: translate($x, $y);
   -o-transform: translate($x, $y);
   transform: translate($x, $y);
 }
@@ -125,28 +137,28 @@
 @mixin rotate($degrees) {
   -webkit-transform: rotate($degrees);
   -moz-transform: rotate($degrees);
-  -ms-transform: rotate($degrees); // IE9 only
+  -ms-transform: rotate($degrees);
   -o-transform: rotate($degrees);
   transform: rotate($degrees);
 }
 @mixin rotateX($degrees) {
   -webkit-transform: rotateX($degrees);
   -moz-transform: rotateX($degrees);
-  -ms-transform: rotateX($degrees); // IE9 only
+  -ms-transform: rotateX($degrees);
   -o-transform: rotateX($degrees);
   transform: rotateX($degrees);
 }
 @mixin rotateY($degrees) {
   -webkit-transform: rotateY($degrees);
   -moz-transform: rotateY($degrees);
-  -ms-transform: rotateY($degrees); // IE9 only
+  -ms-transform: rotateY($degrees);
   -o-transform: rotateY($degrees);
   transform: rotateY($degrees);
 }
 @mixin multiple-transform ($transformations) {
   -webkit-transform: $transformations;
   -moz-transform: $transformations;
-  -ms-transform: $transformations; // IE9 only
+  -ms-transform: $transformations;
   -o-transform: $transformations;
   transform: $transformations;
 }
@@ -163,11 +175,10 @@
 @mixin transform-origin($origin) {
   -webkit-transform-origin: $origin;
   -moz-transform-origin: $origin;
-  -ms-transform-origin: $origin; // IE9 only
+  -ms-transform-origin: $origin;
   -o-transform-origin: $origin;
   transform-origin: $origin;
 }
-//The transition property is a shorthand property for the four transition properties: transition-property, transition-duration, transition-timing-function, and transition-delay.
 @mixin transition ($property, $seconds, $easing) {
   -webkit-transition: $property $seconds $easing;
   -moz-transition: $property $seconds $easing;
@@ -186,10 +197,9 @@
   -o-transition: $property1 $seconds1 $easing1, $property2 $seconds2 $easing2, $property3 $seconds3 $easing3;
   transition: $property1 $seconds1 $easing1, $property2 $seconds2 $easing2, $property3 $seconds3 $easing3;
 }
-//Background color for user selected text
 @mixin text-selection-color ($color) {
   &::selection {
-    background: $color; 
+    background: $color;
   }
   &::-moz-selection {
     background: $color;
