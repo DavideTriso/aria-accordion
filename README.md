@@ -22,24 +22,24 @@ Developed and tested with jQuery 3.2.1
 
 ## Options
 
-Name | Default | Type | Description
------|---------|------|-------------
-accGroupClass | accordion-group | string | Class of accordion group elements.
-accClass | accordion-group__accordion | string | Class of single accordion elements.
-accHeadClass | accordion-group__accordion-head | string | Class of accordion head region.
-accHeadingClass | accordion-group__accordion-heading | string | Class of accordion heading elements.
-accBtnClass | accordion-group__accordion-btn | string | Class of accordion buttons.
-accCollapseClass | accordion-group__accordion-collapse | string | Class of accordion collapse regions.
-accContentClass | accordion-group__accordion-content | string | Class of accordion content elements.
-accExpandedClass | accordion-group__accordion_expanded | string | Class added to expanded accordions.
-accBtnExpandedClass | accordion-group__accordion-btn_expanded | string | Class added to the button of an expanded accordion.
-accCollapseExpandedClass | accordion-group__accordion-collapse_expanded | string | Class added to collapse region of an expanded accordion.
-accContentRole | document | token | Role of accordion content. Accepted values: document, application. For more information see [https://www.w3.org/TR/wai-aria-1.1/](https://www.w3.org/TR/wai-aria-1.1/).
-fadeSpeed | 300 | int (>= 0) | Duration of collapse/expand animations.
-expandOnPageLoad | false | bool | Show or hide first accordion of group when page is first loaded.
-expandOnlyOne | false | bool | Allow only one accordion to be expanded in a group.
-keyInteraction | true | bool | Allow user to move focus with arrow keys and other shortcuts. For more information see [https://www.w3.org/TR/wai-aria-practices-1.1/#accordion](https://www.w3.org/TR/wai-aria-practices-1.1/#accordion). Do not set this option to false, except if you have a good reason to do so.
-*deepLinking | false | bool | Enable deep linking and history states. **Important:** This feature is planned for future versions of the plugin
+Name | Default | Type | Description | Required or optional
+-----|---------|------|-------------|-----------------------
+accGroupClass | accordion-group | string | Class of accordion group elements. | optional
+accClass | accordion-group__accordion | string | Class of single accordion elements. | optional
+accHeadClass | accordion-group__accordion-head | string | Class of accordion head region. | optional
+accHeadingClass | accordion-group__accordion-heading | string | Class of accordion heading elements. | optional
+accBtnClass | accordion-group__accordion-btn | string | Class of accordion buttons. | optional
+accCollapseClass | accordion-group__accordion-collapse | string | Class of accordion collapse regions. | optional
+accContentClass | accordion-group__accordion-content | string | Class of accordion content elements. | optional
+accExpandedClass | accordion-group__accordion_expanded | string | Class added to expanded accordions. | optional
+accBtnExpandedClass | accordion-group__accordion-btn_expanded | string | Class added to the button of an expanded accordion. | optional
+accCollapseExpandedClass | accordion-group__accordion-collapse_expanded | string | Class added to collapse region of an expanded accordion. | optional
+accContentRole | document | token | Role of accordion content. Accepted values: document, application. For more information see [https://www.w3.org/TR/wai-aria-1.1/](https://www.w3.org/TR/wai-aria-1.1/). | optional
+fadeSpeed | 300 | int (>= 0) | Duration of collapse/expand animations. | optional
+expandOnPageLoad | false | bool | Show or hide first accordion of group when page is first loaded. | optional
+expandOnlyOne | false | bool | Allow only one accordion to be expanded in a group. | optional
+keyInteraction | true | bool | Allow user to move focus with arrow keys and other shortcuts. For more information see [https://www.w3.org/TR/wai-aria-practices-1.1/#accordion](https://www.w3.org/TR/wai-aria-practices-1.1/#accordion). Do not set this option to false, except if you have a good reason to do so. | optional
+*deepLinking | false | bool | Enable deep linking and history states. **Important:** This feature is planned for future versions of the plugin | optional
 
 ## Usage
 
