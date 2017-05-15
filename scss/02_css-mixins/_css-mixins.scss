@@ -6,11 +6,13 @@
   -webkit-align-items: $value;
   align-items: $value;
 }
+
 /*
 @mixins align-self ($value) {
   -webkit-align-self: $value;
   align-self: $value;
 }*/
+
 @mixin backface-visibility($visibility) {
   -webkit-backface-visibility: $visibility;
   -moz-backface-visibility: $visibility;
@@ -31,16 +33,24 @@
   -moz-box-shadow: $boxShadow;
   box-shadow: $boxShadow;
 }
-//bootstrap clearfix placeholder
-%clearfix {
-  &:before,
-  &:after {
-    display: table;
-    content: "";
-    line-height: 0;
+
+@mixin background-gradient ($gradient) {
+  //always define a fallback background-color when using this mixin
+  background: -webkit-linear-gradient($gradient);
+  background: -o-linear-gradient($gradient);
+  background: -moz-linear-gradient($gradient);
+  background: linear-gradient($gradient);
+}
+@mixin border ($borderStyle, $borderWidth, $borderColor, $borderRadius) {
+  @if $borderColor !=transparent {
+    border-color: $borderColor;
   }
-  &:after {
-    clear: both;
+  @extend %border-style-#{$borderStyle};
+  @if $borderRadius > 0 {
+    border-radius: $borderRadius;
+  }
+  @if $borderWidth > 0 {
+    border-width: $borderWidth;
   }
 }
 @mixin column-count ($columnCount) {
@@ -127,6 +137,14 @@
   -o-transform: translate($x, $y);
   transform: translate($x, $y);
 }
+
+@mixin translateZ($z) {  
+  -webkit-transform: translateZ($z); 
+  -moz-transform: translateZ($z);
+  -ms-transform: translateZ($z);
+  -o-transform: translateZ($z);
+  transform: translateZ($z);
+}
 @mixin translate3d($x, $y, $z) {
   -webkit-transform: translate3d($x, $y, $z);
   -moz-transform: translate3d($x, $y, $z);
@@ -162,6 +180,7 @@
   -o-transform: $transformations;
   transform: $transformations;
 }
+
 @mixin perspective($perspective) {
   -webkit-perspective: $perspective;
   -moz-perspective: $perspective;

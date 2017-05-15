@@ -1496,3 +1496,16 @@
 %z-index-10001 {
   z-index: 1001;
 }
+
+//bootstrap clearfix placeholder
+%clearfix {
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
