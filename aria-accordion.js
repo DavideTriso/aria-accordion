@@ -80,7 +80,7 @@
         expandOnPageLoad: true,
         expandOnlyOne: false,
         keyInteraction: true
-        //deepLinking: false
+          //deepLinking: false
       }, userSettings),
       elements = {
         group: accordionGroup,
@@ -251,8 +251,7 @@
       .attr(a.tbI, '0');
 
     if (animation) {
-      accordionCollapse
-        .slideDown(settings.fadeSpeed);
+      accordionCollapse.stop().slideDown(settings.fadeSpeed);
     } else {
       accordionCollapse.show();
     }
@@ -281,8 +280,7 @@
       .attr(a.tbI, '-1');
 
     if (animation) {
-      accordionCollapse
-        .slideUp(settings.fadeSpeed);
+      accordionCollapse.stop().slideUp(settings.fadeSpeed);
     } else {
       accordionCollapse.hide();
     }
