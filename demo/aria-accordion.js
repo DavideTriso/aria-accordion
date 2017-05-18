@@ -100,10 +100,15 @@
     //Set id to accordion group if not set and save id into variable accordionId
     setId(elements.group[0], 'accordion-', count);
     accordionGroupId = elements.group.attr('id');
-
+    
     //set class to accordion group if not set
     setClass(elements.group, settings.accGroupClass);
-
+    
+    //set aria-multiselectable to true, if 'expandOnlyOne' is set to false
+    if (settings.expandOnlyOne === false) {
+      elements.group[0].setAttribute(a.aMu, a.t);
+    }
+    
     //init accordions by setting ids and attributes
     l = elements.acc.length;
     for (i; i < l; i = i + 1) {
