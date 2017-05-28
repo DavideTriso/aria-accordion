@@ -65,23 +65,7 @@
   //INIT ACCORDION WIDGET
   //-----------------------------------------------
   methods.init = function (userSettings, accordionGroup) {
-    var settings = $.extend({
-        accClass: 'accordion-group__accordion',
-        accHeadClass: 'accordion-group__accordion-head',
-        accHeadingClass: 'accordion-group__accordion-heading',
-        accBtnClass: 'accordion-group__accordion-btn',
-        accCollapseClass: 'accordion-group__accordion-collapse',
-        accContentClass: 'accordion-group__accordion-content',
-        accContentRole: 'document',
-        fadeSpeed: 300,
-        accExpandedClass: 'accordion-group__accordion_expanded',
-        accBtnExpandedClass: 'accordion-group__accordion-btn_expanded',
-        accCollapseExpandedClass: 'accordion-group__accordion-collapse_expanded',
-        expandOnPageLoad: true,
-        expandOnlyOne: false,
-        keyInteraction: true
-          //deepLinking: false
-      }, userSettings),
+    var settings = $.extend({}, $.fn.ariaAccordion.defaultSettings, userSettings),
       elements = {
         group: accordionGroup,
         acc: accordionGroup.find('.' + settings.accClass),
@@ -100,15 +84,15 @@
     //Set id to accordion group if not set and save id into variable accordionId
     setId(elements.group[0], 'accordion-', count);
     accordionGroupId = elements.group.attr('id');
-    
+
     //set class to accordion group if not set
     setClass(elements.group, settings.accGroupClass);
-    
+
     //set aria-multiselectable to true, if 'expandOnlyOne' is set to false
     if (settings.expandOnlyOne === false) {
       elements.group[0].setAttribute(a.aMu, a.t);
     }
-    
+
     //init accordions by setting ids and attributes
     l = elements.acc.length;
     for (i; i < l; i = i + 1) {
@@ -341,20 +325,41 @@
       }
     }
   };
+
+  $.fn.ariaAccordion.defaultSettings = {
+    accClass: 'accordion-group__accordion',
+    accHeadClass: 'accordion-group__accordion-head',
+    accHeadingClass: 'accordion-group__accordion-heading',
+    accBtnClass: 'accordion-group__accordion-btn',
+    accCollapseClass: 'accordion-group__accordion-collapse',
+    accContentClass: 'accordion-group__accordion-content',
+    accContentRole: 'document',
+    fadeSpeed: 300,
+    accExpandedClass: 'accordion-group__accordion_expanded',
+    accBtnExpandedClass: 'accordion-group__accordion-btn_expanded',
+    accCollapseExpandedClass: 'accordion-group__accordion-collapse_expanded',
+    expandOnPageLoad: true,
+    expandOnlyOne: false,
+    keyInteraction: true
+      //deepLinking: false
+  };
+
 }(jQuery));
+
 
 
 $(document).ready(function () {
   'use strict';
-  $('#accordion-group-1').ariaAccordion({
+  $('#accordion-group-1, #accordion-group-2').ariaAccordion({
     fadeSpeed: 800,
     expandOnPageLoad: true,
     expandOnlyOne: true
   });
-
+$('#accordion-group-2').ariaAccordion('test');
+  /*
   $('#accordion-group-2').ariaAccordion({
-    fadeSpeed: 400,
     expandOnPageLoad: false,
     expandOnlyOne: false
   });
+  */
 });
