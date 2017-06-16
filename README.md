@@ -19,18 +19,20 @@ Developed and tested with jQuery 3.2.1
 ## Cross-browser tests
 
 * Tested on **Google Chrome 57** / macOS Sierra 10.
+* Tested on **Safari for iOS 10.3.x** / iPhone 5s.
+
 
 ## Options
 
 Name | Default | Type | Description | Required or optional
 -----|---------|------|-------------|-----------------------
 accGroupClass | accordion-group | string | Class of accordion group elements. | optional
-accClass | accordion-group__accordion | string | Class of single accordion elements. | optional
-accHeadClass | accordion-group__accordion-head | string | Class of accordion head region. | optional
-accHeadingClass | accordion-group__accordion-heading | string | Class of accordion heading elements. | optional
-accBtnClass | accordion-group__accordion-btn | string | Class of accordion buttons. | optional
-accCollapseClass | accordion-group__accordion-collapse | string | Class of accordion collapse regions. | optional
-accContentClass | accordion-group__accordion-content | string | Class of accordion content elements. | optional
+accClass | accordion-group__accordion | string | Class of single accordion elements. (This class is used from the plugin to select the elements in the markup). | optional
+accHeadClass | accordion-group__accordion-head | string | Class of accordion head region. (This class is used from the plugin to select the elements in the markup). | optional
+accHeadingClass | accordion-group__accordion-heading | string | Class of accordion heading elements. (This class is used from the plugin to select the elements in the markup). | optional
+accBtnClass | accordion-group__accordion-btn | string | Class of accordion buttons. (This class is used from the plugin to select the elements in the markup). | optional
+accCollapseClass | accordion-group__accordion-collapse | string | Class of accordion collapse regions. (This class is used from the plugin to select the elements in the markup). | optional
+accContentClass | accordion-group__accordion-content | string | Class of accordion content elements. (This class is used from the plugin to select the elements in the markup). | optional
 accExpandedClass | accordion-group__accordion_expanded | string | Class added to expanded accordions. | optional
 accBtnExpandedClass | accordion-group__accordion-btn_expanded | string | Class added to the button of an expanded accordion. | optional
 accCollapseExpandedClass | accordion-group__accordion-collapse_expanded | string | Class added to collapse region of an expanded accordion. | optional

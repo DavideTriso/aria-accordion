@@ -348,6 +348,7 @@
 
 
 
+
 $(document).ready(function () {
   'use strict';
   $('#accordion-group-1, #accordion-group-2').ariaAccordion({
@@ -355,11 +356,4 @@ $(document).ready(function () {
     expandOnPageLoad: true,
     expandOnlyOne: true
   });
-$('#accordion-group-2').ariaAccordion('test');
-  /*
-  $('#accordion-group-2').ariaAccordion({
-    expandOnPageLoad: false,
-    expandOnlyOne: false
-  });
-  */
 });
