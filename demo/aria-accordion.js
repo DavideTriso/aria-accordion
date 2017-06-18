@@ -142,7 +142,7 @@
 
     //bind event handlers
     //handle accordion expand/collapse on click
-    elements.accBtn.on('accordion:toggle click', function () {
+    elements.accBtn.on('click.ariaAccordion ariaAccordion:toggle', function () {
       var button = $(this),
         expanded = '';
       if (settings.expandOnlyOne && !button.hasClass(settings.accBtnExpandedClass)) {
@@ -156,7 +156,7 @@
 
     //keyboard navigation
     if (settings.keyInteraction) {
-      $(window).unbind('keydown').on('keydown', function (event) {
+      $(window).off('keydown.ariaAccordion').on('keydown.ariaAccordion', function (event) {
         var key = event.keyCode,
           activEl = $(':focus'),
           indexes = {},
@@ -255,6 +255,7 @@
       settings = accordionGroupsArray[indexes.indexAccordionGroup][2],
       accordionCollapse = $(elements.accCollapse[indexes.indexAccordion]);
 
+
     $(elements.acc[indexes.indexAccordion])
       .removeClass(settings.accExpandedClass);
 
@@ -268,11 +269,13 @@
       .attr(a.aHi, a.t)
       .attr(a.tbI, '-1');
 
+
     if (animation) {
       accordionCollapse.stop().slideUp(settings.fadeSpeed);
     } else {
       accordionCollapse.hide();
     }
+
   };
 
 
