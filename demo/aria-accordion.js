@@ -1,4 +1,4 @@
-(function ($) {
+(function ($, window) {
   'use strict';
   var accordionGroupsArray = [],
     methods = {},
@@ -22,9 +22,10 @@
   function setId(element, id, i) {
     var elementId = element.id;
     if (elementId === undefined || elementId === '' || elementId === null) {
-      element.id = id + (i + 1);
+      element.id = `${id}${i + 1}`;
     }
   }
+
   //set class if element does not have it yet
   function setClass(element, className) {
     if (!element.hasClass(className)) {
@@ -96,10 +97,10 @@
     //init accordions by setting ids and attributes
     l = elements.acc.length;
     for (i; i < l; i = i + 1) {
-      setId(elements.acc[i], accordionGroupId + '__accordion-', i);
-      setId(elements.accHeading[i], accordionGroupId + '__accordion-heading-', i);
-      setId(elements.accBtn[i], accordionGroupId + '__accordion-btn-', i);
-      setId(elements.accCollapse[i], accordionGroupId + '__accordion-collapse-', i);
+      setId(elements.acc[i], `${accordionGroupId}__accordion-`, i);
+      setId(elements.accHeading[i], `${accordionGroupId}__accordion-heading-`, i);
+      setId(elements.accBtn[i], `${accordionGroupId}__accordion-btn-`, i);
+      setId(elements.accCollapse[i], `${accordionGroupId}'__accordion-collapse-`, i);
       elements.accBtn[i].setAttribute(a.aCs, elements.accCollapse[i].id);
       elements.accCollapse[i].setAttribute(a.aLab, elements.accHeading[i].id);
       elements.accCollapse[i].setAttribute(a.tbI, '0');
@@ -142,7 +143,7 @@
 
     //bind event handlers
     //handle accordion expand/collapse on click
-    elements.accBtn.on('click.ariaAccordion ariaAccordion:toggle', function () {
+    elements.group.on('click.ariaAccordion ariaAccordion:toggle', '.' + settings.accBtnClass, function () {
       var button = $(this),
         expanded = '';
       if (settings.expandOnlyOne && !button.hasClass(settings.accBtnExpandedClass)) {
@@ -155,8 +156,9 @@
     });
 
     //keyboard navigation
-    if (settings.keyInteraction) {
-      $(window).off('keydown.ariaAccordion').on('keydown.ariaAccordion', function (event) {
+    //count === 0 : bind event just once on first accordion initialisation
+    if (settings.keyInteraction && count === 0) {
+      $(window).on('keydown.ariaAccordion', function (event) {
         var key = event.keyCode,
           activEl = $(':focus'),
           indexes = {},
@@ -347,7 +349,7 @@
       //deepLinking: false
   };
 
-}(jQuery));
+}(jQuery, window));
 
 
 
@@ -357,6 +359,6 @@ $(document).ready(function () {
   $('#accordion-group-1, #accordion-group-2').ariaAccordion({
     fadeSpeed: 800,
     expandOnPageLoad: true,
-    expandOnlyOne: true
+    expandOnlyOne: false
   });
 });
