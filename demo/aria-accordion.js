@@ -232,10 +232,12 @@
 
     accordionCollapse.addClass(settings.accCollapseExpandedClass).attr(a.aHi, a.f).attr(a.tbI, '0');
 
-    if (animation) {
-      accordionCollapse.stop().slideDown(settings.fadeSpeed);
-    } else {
-      accordionCollapse.show();
+    if (!settings.cssTransitions) {
+      if (animation) {
+        accordionCollapse.stop().slideDown(settings.fadeSpeed);
+      } else {
+        accordionCollapse.show();
+      }
     }
   };
 
@@ -252,10 +254,12 @@
 
     accordionCollapse.removeClass(settings.accCollapseExpandedClass).attr(a.aHi, a.t).attr(a.tbI, '-1');
 
-    if (animation) {
-      accordionCollapse.stop().slideUp(settings.fadeSpeed);
-    } else {
-      accordionCollapse.hide();
+    if (!settings.cssTransitions) {
+      if (animation) {
+        accordionCollapse.stop().slideUp(settings.fadeSpeed);
+      } else {
+        accordionCollapse.hide();
+      }
     }
   };
 
@@ -317,6 +321,7 @@
     accContentClass: 'accordion-group__accordion-content',
     accContentRole: 'document',
     fadeSpeed: 300,
+    cssTransitions: false,
     accExpandedClass: 'accordion-group__accordion_expanded',
     accBtnExpandedClass: 'accordion-group__accordion-btn_expanded',
     accCollapseExpandedClass: 'accordion-group__accordion-collapse_expanded',
@@ -332,6 +337,7 @@ $(document).ready(function () {
   $('#accordion-group-1, #accordion-group-2').ariaAccordion({
     fadeSpeed: 800,
     expandOnPageLoad: true,
-    expandOnlyOne: false
+    expandOnlyOne: false,
+    cssTransitions: false
   });
 });

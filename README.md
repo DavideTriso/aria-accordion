@@ -38,10 +38,10 @@ accBtnExpandedClass | accordion-group__accordion-btn_expanded | string | Class a
 accCollapseExpandedClass | accordion-group__accordion-collapse_expanded | string | Class added to collapse region of an expanded accordion. | optional
 accContentRole | document | token | Role of accordion content. Accepted values: document, application. For more information see [https://www.w3.org/TR/wai-aria-1.1/](https://www.w3.org/TR/wai-aria-1.1/). | optional
 fadeSpeed | 300 | int (>= 0) | Duration of collapse/expand animations. | optional
+cssTransition | false | bool | Use css transitions to expand/collapse accordion instead of jQuery slide animation. Read section 'Using CSS transitions' for more infos | optional
 expandOnPageLoad | false | bool | Show or hide first accordion of group when page is first loaded. | optional
 expandOnlyOne | false | bool | Allow only one accordion to be expanded in a group. | optional
 keyInteraction | true | bool | Allow user to move focus with arrow keys and other shortcuts. For more information see [https://www.w3.org/TR/wai-aria-practices-1.1/#accordion](https://www.w3.org/TR/wai-aria-practices-1.1/#accordion). Do not set this option to false, except if you have a good reason to do so. | optional
-*deepLinking | false | bool | Enable deep linking and history states. **Important:** This feature is planned for future versions of the plugin | optional
 
 ## Usage
 
@@ -140,15 +140,19 @@ $('#accordion-id').ariaAccordion('hide');
 ````
 
 
-### Trigger
+### Toggle
 
-**Trigger** expands or collapses an accordion based on the state of the accordion.
+**Toggle** expands or collapses an accordion based on the state of the accordion.
 
 ````javascript
-$('#accordion-id').ariaAccordion('trigger');
+$('#accordion-id').ariaAccordion('toggle');
 ````
 
 **NOTE:** All the methods can be called both on a single accordion element, or on a set of elements.
+
+## Using CSS transitions
+
+By default the plugin is configured to use JS to expand/collapse accordion panels. Setting the option **cssTransitions** to 'true' will disable the JS animations and it is possible to implement the transitions directly in the css. In fact, the plugin toggles the classes passed along with the options **accExpandedClass**, **accBtnExpandedClass** and **accCollapseExpandedClass** when an accordion is toggled.
 
 
 ## LICENSE
