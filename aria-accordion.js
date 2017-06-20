@@ -22,7 +22,7 @@
   function setId(element, id, i) {
     var elementId = element.id;
     if (elementId === undefined || elementId === '' || elementId === null) {
-      element.id = `${id}${i + 1}`;
+      element.id = id + (i + 1);
     }
   }
 
@@ -51,7 +51,6 @@
     }
   }
 
-
   function checkForSpecialKeys(event) {
     if (!event.shiftKey && !event.ctrlKey && !event.altKey && !event.metaKey) {
       //none is pressed
@@ -60,7 +59,6 @@
     return false;
   }
   //-----------------------------------------------
-
 
   //PLUGIN METHODS
   //INIT ACCORDION WIDGET
@@ -97,10 +95,10 @@
     //init accordions by setting ids and attributes
     l = elements.acc.length;
     for (i; i < l; i = i + 1) {
-      setId(elements.acc[i], `${accordionGroupId}__accordion-`, i);
-      setId(elements.accHeading[i], `${accordionGroupId}__accordion-heading-`, i);
-      setId(elements.accBtn[i], `${accordionGroupId}__accordion-btn-`, i);
-      setId(elements.accCollapse[i], `${accordionGroupId}'__accordion-collapse-`, i);
+      setId(elements.acc[i], accordionGroupId + '__accordion-', i);
+      setId(elements.accHeading[i], accordionGroupId + '__accordion-heading-', i);
+      setId(elements.accBtn[i], accordionGroupId + '__accordion-btn-', i);
+      setId(elements.accCollapse[i], accordionGroupId + '\'__accordion-collapse-', i);
       elements.accBtn[i].setAttribute(a.aCs, elements.accCollapse[i].id);
       elements.accCollapse[i].setAttribute(a.aLab, elements.accHeading[i].id);
       elements.accCollapse[i].setAttribute(a.tbI, '0');
@@ -109,7 +107,6 @@
       //push each id of accordion and btns into arrays
       accordionsIds.push(elements.acc[i].id);
     }
-
 
     //save all accordion data into array
     accordionsArray.push(accordionGroupId, elements, settings, accordionsIds);
@@ -124,7 +121,6 @@
                                   ---> [2] Object with settings
                                   ---> [3] Array with accordion's ids
     */
-
 
     //expand or collapse accordions on load based on settings
     if (settings.expandOnPageLoad) {
@@ -168,47 +164,50 @@
           indexes = getAccordionsIndexes(activEl.closest('.' + settings.accClass));
           elements = accordionGroupsArray[indexes.indexAccordionGroup][1];
           switch (key) {
-            case 38: //up arrow
+            case 38:
+              //up arrow
               if (indexes.indexAccordion === 0) {
-                $(elements.accBtn[(indexes.accordionsLenght - 1)]).focus();
+                $(elements.accBtn[indexes.accordionsLenght - 1]).focus();
               } else {
-                $(elements.accBtn[(indexes.indexAccordion - 1)]).focus();
+                $(elements.accBtn[indexes.indexAccordion - 1]).focus();
               }
               break;
-            case 40: //down arrow
-              if (indexes.indexAccordion === (indexes.accordionsLenght - 1)) {
+            case 40:
+              //down arrow
+              if (indexes.indexAccordion === indexes.accordionsLenght - 1) {
                 $(elements.accBtn[0]).focus();
               } else {
-                $(elements.accBtn[(indexes.indexAccordion + 1)]).focus();
+                $(elements.accBtn[indexes.indexAccordion + 1]).focus();
               }
               break;
-            case 36: //home
+            case 36:
+              //home
               $(elements.accBtn[0]).focus();
               break;
-            case 35: //end
-              $(elements.accBtn[(indexes.accordionsLenght - 1)]).focus();
+            case 35:
+              //end
+              $(elements.accBtn[indexes.accordionsLenght - 1]).focus();
               break;
           }
         }
 
         //page up and page down when focus is on panel or inside panel or on header
-        if (event.ctrlKey && !event.shiftKey && !event.metaKey && !event.altKey &&
-          (activEl.hasClass(settings.accCollapseClass) || activEl.closest('.' + settings.accCollapseClass).length > 0 || activEl.hasClass(settings.accBtnClass))) {
+        if (event.ctrlKey && !event.shiftKey && !event.metaKey && !event.altKey && (activEl.hasClass(settings.accCollapseClass) || activEl.closest('.' + settings.accCollapseClass).length > 0 || activEl.hasClass(settings.accBtnClass))) {
           indexes = getAccordionsIndexes(activEl.closest('.' + settings.accClass));
           elements = accordionGroupsArray[indexes.indexAccordionGroup][1];
           switch (key) {
             case 81:
               if (indexes.indexAccordion === 0) {
-                $(elements.accBtn[(indexes.accordionsLenght - 1)]).focus();
+                $(elements.accBtn[indexes.accordionsLenght - 1]).focus();
               } else {
-                $(elements.accBtn[(indexes.indexAccordion - 1)]).focus();
+                $(elements.accBtn[indexes.indexAccordion - 1]).focus();
               }
               break;
             case 87:
-              if (indexes.indexAccordion === (indexes.accordionsLenght - 1)) {
+              if (indexes.indexAccordion === indexes.accordionsLenght - 1) {
                 $(elements.accBtn[0]).focus();
               } else {
-                $(elements.accBtn[(indexes.indexAccordion + 1)]).focus();
+                $(elements.accBtn[indexes.indexAccordion + 1]).focus();
               }
               break;
           }
@@ -220,7 +219,6 @@
     count = count + 1;
   };
 
-
   //EXPAND ACCORDION
   //-----------------------------------------------
   methods.expand = function (indexes, animation) {
@@ -228,18 +226,11 @@
       settings = accordionGroupsArray[indexes.indexAccordionGroup][2],
       accordionCollapse = $(elements.accCollapse[indexes.indexAccordion]);
 
-    $(elements.acc[indexes.indexAccordion])
-      .addClass(settings.accExpandedClass);
+    $(elements.acc[indexes.indexAccordion]).addClass(settings.accExpandedClass);
 
-    $(elements.accBtn[indexes.indexAccordion])
-      .addClass(settings.accBtnExpandedClass)
-      .attr(a.aEx, a.t)
-      .attr(a.aSe, a.t);
+    $(elements.accBtn[indexes.indexAccordion]).addClass(settings.accBtnExpandedClass).attr(a.aEx, a.t).attr(a.aSe, a.t);
 
-    accordionCollapse
-      .addClass(settings.accCollapseExpandedClass)
-      .attr(a.aHi, a.f)
-      .attr(a.tbI, '0');
+    accordionCollapse.addClass(settings.accCollapseExpandedClass).attr(a.aHi, a.f).attr(a.tbI, '0');
 
     if (animation) {
       accordionCollapse.stop().slideDown(settings.fadeSpeed);
@@ -248,8 +239,6 @@
     }
   };
 
-
-
   //COLLAPSE ACCORDION
   //-----------------------------------------------
   methods.collapse = function (indexes, animation) {
@@ -257,35 +246,23 @@
       settings = accordionGroupsArray[indexes.indexAccordionGroup][2],
       accordionCollapse = $(elements.accCollapse[indexes.indexAccordion]);
 
+    $(elements.acc[indexes.indexAccordion]).removeClass(settings.accExpandedClass);
 
-    $(elements.acc[indexes.indexAccordion])
-      .removeClass(settings.accExpandedClass);
+    $(elements.accBtn[indexes.indexAccordion]).removeClass(settings.accBtnExpandedClass).attr(a.aEx, a.f).attr(a.aSe, a.f);
 
-    $(elements.accBtn[indexes.indexAccordion])
-      .removeClass(settings.accBtnExpandedClass)
-      .attr(a.aEx, a.f)
-      .attr(a.aSe, a.f);
-
-    accordionCollapse
-      .removeClass(settings.accCollapseExpandedClass)
-      .attr(a.aHi, a.t)
-      .attr(a.tbI, '-1');
-
+    accordionCollapse.removeClass(settings.accCollapseExpandedClass).attr(a.aHi, a.t).attr(a.tbI, '-1');
 
     if (animation) {
       accordionCollapse.stop().slideUp(settings.fadeSpeed);
     } else {
       accordionCollapse.hide();
     }
-
   };
-
 
   //TOGGLE ACCORDION
   //-----------------------------------------------
   methods.toggle = function (indexes) {
-    if ($(accordionGroupsArray[indexes.indexAccordionGroup][1].acc[indexes.indexAccordion])
-      .hasClass(accordionGroupsArray[indexes.indexAccordionGroup][2].accExpandedClass)) {
+    if ($(accordionGroupsArray[indexes.indexAccordionGroup][1].acc[indexes.indexAccordion]).hasClass(accordionGroupsArray[indexes.indexAccordionGroup][2].accExpandedClass)) {
       methods.collapse(indexes, true);
     } else {
       methods.expand(indexes, true);
@@ -348,5 +325,4 @@
     keyInteraction: true
       //deepLinking: false
   };
-
-}(jQuery, window));
+})(jQuery, window);
