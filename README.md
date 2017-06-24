@@ -36,12 +36,15 @@ accContentClass | accordion-group__accordion-content | string | Class of accordi
 accExpandedClass | accordion-group__accordion_expanded | string | Class added to expanded accordions. | optional
 accBtnExpandedClass | accordion-group__accordion-btn_expanded | string | Class added to the button of an expanded accordion. | optional
 accCollapseExpandedClass | accordion-group__accordion-collapse_expanded | string | Class added to collapse region of an expanded accordion. | optional
-accContentRole | document | token | Role of accordion content. Accepted values: document, application. For more information see [https://www.w3.org/TR/wai-aria-1.1/](https://www.w3.org/TR/wai-aria-1.1/). | optional
-fadeSpeed | 300 | int (>= 0) | Duration of collapse/expand animations. | optional
+accGroupIdPrefix | accordion-group-- | string | Prefix used to generate accordion group's ID, if no ID is present in markup. | optional 
+accContentRole | document | token, array | Role of accordion content. Accepted values: document, application. For more information see [https://www.w3.org/TR/wai-aria-1.1/](https://www.w3.org/TR/wai-aria-1.1/). To set different roles to each accordion, pass an accordion. | optional
+slideSpeed | 300 | int (>= 0) | Duration of collapse/expand animations. | optional
+transitionTimingFunction | swing | string | The timing function to use for the slide animation of the plugin. Applies only for jQuery transitions, if **cssTransition** is set to true, this option will not have any effect on the transition. Accepted values are `swing` and `linear`. For more timing functions a jQuery plugin is needed. | optional
 cssTransition | false | bool | Use css transitions to expand/collapse accordion instead of jQuery slide animation. Read section 'Using CSS transitions' for more infos | optional
-expandOnPageLoad | false | bool | Show or hide first accordion of group when page is first loaded. | optional
+expandOnPageLoad | false | bool | Show or hide first accordion of group when page is loaded. | optional
 expandOnlyOne | false | bool | Allow only one accordion to be expanded in a group. | optional
-keyInteraction | true | bool | Allow user to move focus with arrow keys and other shortcuts. For more information see [https://www.w3.org/TR/wai-aria-practices-1.1/#accordion](https://www.w3.org/TR/wai-aria-practices-1.1/#accordion). Do not set this option to false, except if you have a good reason to do so. | optional
+oneAlwaysExpanded | false | bool | Ensure one accordion in the group is always epanded. **expandOnlyOne** must be set to **true** for this option to apply. The value of **expandOnPageLoad** is ignored, if this option is set to true | optional 
+keyboardNavigation | true | bool | Allow user to move focus with arrow keys and other shortcuts. For more information see [https://www.w3.org/TR/wai-aria-practices-1.1/#accordion](https://www.w3.org/TR/wai-aria-practices-1.1/#accordion). | optional
 
 ## Usage
 
@@ -154,6 +157,11 @@ $('#accordion-id').ariaAccordion('toggle');
 
 By default the plugin is configured to use JS to expand/collapse accordion panels. Setting the option **cssTransitions** to 'true' will disable the JS animations and it is possible to implement the transitions directly in the css. In fact, the plugin toggles the classes passed along with the options **accExpandedClass**, **accBtnExpandedClass** and **accCollapseExpandedClass** when an accordion is toggled.
 
+## Planned features
+
+* Better SCSS: Mixins to quickly build awesome accordions will be provided.
+* Better integration with **t** css framework.
+* Hash navigation and deep linking.
 
 ## LICENSE
 
