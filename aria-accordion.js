@@ -227,6 +227,7 @@
         focussedElementIndex = this.elements.accBtn.index(focussedElement);
 
         // Implement the logic for keyboard navigation
+        /*
         if (checkForModifierKeys(event) === 'none') {
           switch (pressedKey) {
             case 38:
@@ -247,10 +248,10 @@
               break;
             case 35:
               //end: focus last heading
-              this.elements.accBtn.eq(this.elementsLenght).focus();
+              this.elements.accBtn.eq(this.elementsLenght - 1).focus();
               break;
           }
-        } else if (checkForModifierKeys === 'ctrl') {
+        } else*/ if (checkForModifierKeys === 'ctrl') {
           switch (pressedKey) {
             case 81:
               //page up: move focus to prev heading
@@ -493,3 +494,11 @@
   };
 
 }(jQuery, window, document));
+
+
+$(document).ready(function () {
+  'use strict';
+  $('.accordion-group').ariaAccordion({
+    accContentRole: ['document', 'application', 'document']
+  });
+});

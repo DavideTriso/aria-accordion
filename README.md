@@ -42,8 +42,7 @@ slideSpeed | 300 | int (>= 0) | Duration of collapse/expand animations. | option
 transitionTimingFunction | swing | string | The timing function to use for the slide animation of the plugin. Applies only for jQuery transitions, if **cssTransition** is set to true, this option will not have any effect on the transition. Accepted values are `swing` and `linear`. For more timing functions a jQuery plugin is needed. | optional
 cssTransition | false | bool | Use css transitions to expand/collapse accordion instead of jQuery slide animation. Read section 'Using CSS transitions' for more infos | optional
 expandOnPageLoad | false | bool | Show or hide first accordion of group when page is loaded. | optional
-expandOnlyOne | false | bool | Allow only one accordion to be expanded in a group. | optional
-oneAlwaysExpanded | false | bool | Ensure one accordion in the group is always epanded. **expandOnlyOne** must be set to **true** for this option to apply. The value of **expandOnPageLoad** is ignored, if this option is set to true | optional 
+expandOnlyOne | false | bool | Allow only one accordion to be expanded in a group at the same time. One accordion should always be expanded. | optional
 keyboardNavigation | true | bool | Allow user to move focus with arrow keys and other shortcuts. For more information see [https://www.w3.org/TR/wai-aria-practices-1.1/#accordion](https://www.w3.org/TR/wai-aria-practices-1.1/#accordion). | optional
 
 ## Usage
