@@ -63,7 +63,7 @@ Use following HTML markup to implement an acordion widget:
     <!-- ACCORDION BEGIN -->
     <section class="accordion-group__accordion">
       <header class="accordion-group__accordion-head">
-        <h3 class="accordion-group__accordion-heading"><button type="button" class="accordion-group__accordion-btn">Accordion 1 <span>Expand/Close</span></button></h3>
+        <h3 class="accordion-group__accordion-heading"><button type="button" class="accordion-group__accordion-btn">Accordion 1</button></h3>
       </header>
       <div class="accordion-group__accordion-collapse">
         <div class="accordion-group__accordion-content">
