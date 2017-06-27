@@ -6,7 +6,7 @@ jQuery plugin for **accessible** accordions: **WAI ARIA 1.1** compliant.
 
 * Easy to customize tanks to a small but usefull set of options.
 * SASS/SCSS files for simple and quick UI customisations.
-* Only 5KB (minified).
+* Only 6KB (minified).
 * Fully compatible with [**t** css-framework](https://github.com/DavideTriso/t-css-framework)
 * Runs in strict mode.
 
@@ -19,25 +19,23 @@ Developed and tested with jQuery 3.2.1
 ## Cross-browser tests
 
 * Tested on **Google Chrome 57** / macOS Sierra 10.
-* Tested on **Safari for iOS 10.3.x** / iPhone 5s.
-
 
 ## Options
 
 Name | Default | Type | Description | Required or optional
 -----|---------|------|-------------|-----------------------
-accGroupClass | accordion-group | string | Class of accordion group elements. | optional
-accClass | accordion-group__accordion | string | Class of single accordion elements. (This class is used from the plugin to select the elements in the markup). | optional
-accHeadClass | accordion-group__accordion-head | string | Class of accordion head region. (This class is used from the plugin to select the elements in the markup). | optional
-accHeadingClass | accordion-group__accordion-heading | string | Class of accordion heading elements. (This class is used from the plugin to select the elements in the markup). | optional
-accBtnClass | accordion-group__accordion-btn | string | Class of accordion buttons. (This class is used from the plugin to select the elements in the markup). | optional
-accCollapseClass | accordion-group__accordion-collapse | string | Class of accordion collapse regions. (This class is used from the plugin to select the elements in the markup). | optional
-accContentClass | accordion-group__accordion-content | string | Class of accordion content elements. (This class is used from the plugin to select the elements in the markup). | optional
-accExpandedClass | accordion-group__accordion_expanded | string | Class added to expanded accordions. | optional
-accBtnExpandedClass | accordion-group__accordion-btn_expanded | string | Class added to the button of an expanded accordion. | optional
-accCollapseExpandedClass | accordion-group__accordion-collapse_expanded | string | Class added to collapse region of an expanded accordion. | optional
-accGroupIdPrefix | accordion-group-- | string | Prefix used to generate accordion group's ID, if no ID is present in markup. | optional 
-accContentRole | document | token, array | Role of accordion content. Accepted values: document, application. For more information see [https://www.w3.org/TR/wai-aria-1.1/](https://www.w3.org/TR/wai-aria-1.1/). To set different roles to each accordion, pass an accordion. | optional
+accGroupIdPrefix | accordion-group-- | string | Prefix used to generate accordion groups IDs, when not present in markup. | optional
+class | accordion-group__accordion | string | Class of single accordion elements. (This class is used from the plugin to select the elements in the markup). | optional
+headClass | accordion-group__accordion-head | string | Class of accordion head region. (This class is used from the plugin to select the elements in the markup). | optional
+headingClass | accordion-group__accordion-heading | string | Class of accordion heading elements. (This class is used from the plugin to select the elements in the markup). | optional
+btnClass | accordion-group__accordion-btn | string | Class of accordion buttons. (This class is used from the plugin to select the elements in the markup). | optional
+collapseClass | accordion-group__accordion-collapse | string | Class of accordion collapse regions. (This class is used from the plugin to select the elements in the markup). | optional
+contentClass | accordion-group__accordion-content | string | Class of accordion content elements. (This class is used from the plugin to select the elements in the markup). | optional
+expandedClass | accordion-group__accordion_expanded | string | Class added to expanded accordions. | optional
+btnExpandedClass | accordion-group__accordion-btn_expanded | string | Class added to the button of an expanded accordion. | optional
+collapseExpandedClass | accordion-group__accordion-collapse_expanded | string | Class added to collapse region of an expanded accordion. | optional
+groupIdPrefix | accordion-group-- | string | Prefix used to generate accordion group's ID, if no ID is present in markup. | optional 
+contentRole | document | token, array | Role of accordion content. Accepted values: document, application. For more information see [https://www.w3.org/TR/wai-aria-1.1/](https://www.w3.org/TR/wai-aria-1.1/). To set different roles to each accordion, pass an accordion. | optional
 slideSpeed | 300 | int (>= 0) | Duration of collapse/expand animations. | optional
 transitionEasingFunction | swing | string | The easing function to use for animation of the accordions. Applies only for jQuery transitions, if **cssTransition** is set to true, this option will not have any effect on the transition. Accepted values are `swing` and `linear`. For more timing functions a jQuery easing plugin is needed. | optional
 cssTransition | false | bool | Use css transitions to expand/collapse accordion instead of jQuery slide animation. Read section 'Using CSS transitions' for more infos | optional

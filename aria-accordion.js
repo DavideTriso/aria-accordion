@@ -18,9 +18,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       aCs: 'aria-controls',
       aEx: 'aria-expanded',
       aHi: 'aria-hidden',
-      aSe: 'aria-selected',
       aLab: 'aria-labelledby',
-      aMu: 'aria-multiselectable',
       aDi: 'aria-disabled',
       r: 'role',
       tbI: 'tabindex',
@@ -69,12 +67,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     this.element = $(element); //The accordion group
     this.elementId = ''; //the element id
     this.elements = {
-      acc: this.element.find('.' + this.settings.accClass),
-      accHead: this.element.find('.' + this.settings.accHeadClass),
-      accHeading: this.element.find('.' + this.settings.accHeadingClass),
-      accBtn: this.element.find('.' + this.settings.accBtnClass),
-      accCollapse: this.element.find('.' + this.settings.accCollapseClass),
-      accContent: this.element.find('.' + this.settings.accContentClass)
+      acc: this.element.find('.' + this.settings.class),
+      head: this.element.find('.' + this.settings.headClass),
+      heading: this.element.find('.' + this.settings.headingClass),
+      btn: this.element.find('.' + this.settings.btnClass),
+      collapse: this.element.find('.' + this.settings.collapseClass),
+      content: this.element.find('.' + this.settings.contentClass)
     }; //Obejct containing all elements needed by the plugin
     this.elementsLenght = this.elements.acc.length; //How many accordions are in the group?
     this.elementsStatus = []; //The status of each array in the group (expanded or collapsed)
@@ -108,10 +106,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
        * Within the same loop we also reference the ids within the aria-labelledby and aria-controls attrributes
        */
       self.elements.acc.each(function (index) {
-        setId(self.elements.accHead.eq(index), self.elementId + '__accordion-head--', index);
-        setId(self.elements.accHeading.eq(index), self.elementId + '__accordion-heading--', index);
-        setId(self.elements.accCollapse.eq(index), self.elementId + '__accordion-collapse--', index);
-        setId(self.elements.accCollapse.eq(index), self.elementId + '__accordion-btn--', index);
+        setId(self.elements.heading.eq(index), self.elementId + '__accordion-heading--', index);
+        setId(self.elements.collapse.eq(index), self.elementId + '__accordion-collapse--', index);
+        setId(self.elements.collapse.eq(index), self.elementId + '__accordion-btn--', index);
 
         /*
          * Now it is possible to refence the ids of the elements
@@ -120,24 +117,24 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
          * We perform a loop through each accordion and set
          * each attribute within this loop by getting the elements by index with the function .eq
          */
-        self.elements.accBtn.eq(index).attr(a.aCs, self.elements.accCollapse.eq(index).attr('id'));
-        self.elements.accCollapse.eq(index).attr(a.aLab, self.elements.accHeading.eq(index).attr('id'));
+        self.elements.btn.eq(index).attr(a.aCs, self.elements.collapse.eq(index).attr('id'));
+        self.elements.collapse.eq(index).attr(a.aLab, self.elements.heading.eq(index).attr('id'));
       });
 
       /*
        * Set the role of the content of each accordion:
        * More informations about the roles model here: https://www.w3.org/TR/wai-aria-1.1/
        * Because each accordion can have a different role,
-       * the option accContentRole accepts both a string or an array of strings,
+       * the option contentRole accepts both a string or an array of strings,
        * wich is used to map the role to each accordion.
        * We need to check if an array or a string is passed,
        * and then set the roles accordingly.
        */
-      if (typeof this.settings.accContentRole === 'string') {
-        self.elements.accContent.attr(a.r, self.settings.accContentRole);
-      } else if (Array.isArray(self.settings.accContentRole)) {
-        self.elements.accContent.each(function (index) {
-          $(this).attr(a.r, self.settings.accContentRole[index]);
+      if (typeof this.settings.contentRole === 'string') {
+        self.elements.content.attr(a.r, self.settings.contentRole);
+      } else if (Array.isArray(self.settings.contentRole)) {
+        self.elements.content.each(function (index) {
+          $(this).attr(a.r, self.settings.contentRole[index]);
         });
       }
 
@@ -166,8 +163,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
        * Also we use the plugin name as a namespace for the event
        * to not interfer with other event handlers.
        */
-      self.element.on('click.' + pluginName, '.' + self.settings.accBtnClass, function () {
-        self.toggleAnimate(self.elements.accBtn.index($(this)));
+      self.element.on('click.' + pluginName, '.' + self.settings.btnClass, function () {
+        self.toggleAnimate(self.elements.btn.index($(this)));
       });
 
 
@@ -281,12 +278,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
        * or another element inside the accordion collapsible region has focus
        */
 
-      if (focussedElement.is('.' + this.settings.accBtnClass)) {
+      if (focussedElement.is('.' + this.settings.btnClass)) {
         /*
          * We revitre the position of the element in the set of elements
          * e.g. the index of the button
          */
-        focussedElementIndex = this.elements.accBtn.index(focussedElement);
+        focussedElementIndex = this.elements.btn.index(focussedElement);
 
         // Implement the logic for keyboard navigation
         if (checkForModifierKeys(event) === 'none') {
@@ -294,22 +291,22 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             case 38:
               //up arrow: focus previous heading
               if (focussedElementIndex > 0) {
-                this.elements.accBtn.eq(focussedElementIndex - 1).focus();
+                this.elements.btn.eq(focussedElementIndex - 1).focus();
               }
               break;
             case 40:
               //down arrow: focus next heading
               if (focussedElementIndex < this.elementsLenght) {
-                this.elements.accBtn.eq(focussedElementIndex + 1).focus();
+                this.elements.btn.eq(focussedElementIndex + 1).focus();
               }
               break;
             case 36:
               //home: focus first heading
-              this.elements.accBtn.eq(0).focus();
+              this.elements.btn.eq(0).focus();
               break;
             case 35:
               //end: focus last heading
-              this.elements.accBtn.eq(this.elementsLenght - 1).focus();
+              this.elements.btn.eq(this.elementsLenght - 1).focus();
               break;
           }
         } else if (checkForModifierKeys(event) === 'ctrl') {
@@ -317,33 +314,33 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             case 81:
               //page up: move focus to prev heading
               if (focussedElementIndex > 0) {
-                this.elements.accBtn.eq(focussedElementIndex - 1).focus();
+                this.elements.btn.eq(focussedElementIndex - 1).focus();
               }
               break;
             case 87:
               //page down: focus next heading
               if (focussedElementIndex < this.elementsLenght) {
-                this.elements.accBtn.eq(focussedElementIndex + 1).focus();
+                this.elements.btn.eq(focussedElementIndex + 1).focus();
               }
               break;
           }
         }
-      } else if (focussedElement.closest('.' + this.settings.accCollapseClass).length > 0 && checkForModifierKeys(event) === 'ctrl') {
+      } else if (focussedElement.closest('.' + this.settings.collapseClass).length > 0 && checkForModifierKeys(event) === 'ctrl') {
         /*
          * We revitre the position of the accordion in wich the foccused element is contained
          * e.g. the index of the accordion/accordion btn
          */
-        focussedElementIndex = this.elements.accCollapse.index(focussedElement.closest('.' + this.settings.accCollapseClass));
+        focussedElementIndex = this.elements.collapse.index(focussedElement.closest('.' + this.settings.collapseClass));
 
         switch (pressedKey) {
           case 81:
             //page up: move focus to heading of this accordion
-            this.elements.accBtn.eq(focussedElementIndex).focus();
+            this.elements.btn.eq(focussedElementIndex).focus();
             break;
           case 87:
             //page down: focus next heading
             if (focussedElementIndex < this.elementsLenght) {
-              this.elements.accBtn.eq(focussedElementIndex + 1).focus();
+              this.elements.btn.eq(focussedElementIndex + 1).focus();
             }
             break;
         }
@@ -363,20 +360,20 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       this.elements.acc.eq(accIndex)
         .addClass(this.settings.accExpandedClass);
 
-      this.elements.accBtn.eq(accIndex)
+      this.elements.btn.eq(accIndex)
         .attr(a.aEx, a.t)
-        .addClass(this.settings.accBtnExpandedClass);
+        .addClass(this.settings.btnExpandedClass);
 
-      this.elements.accCollapse.eq(accIndex)
+      this.elements.collapse.eq(accIndex)
         .attr(a.aHi, a.f)
-        .addClass(this.settings.accCollapseExpandedClass);
+        .addClass(this.settings.collapseExpandedClass);
 
       /*
        * The attribute aria-disabled should be set to true on the button
        * if the option expandOnlyOne is set to true.
        */
       if (this.settings.expandOnlyOne) {
-        this.elements.accBtn.eq(accIndex).attr(a.aDi, a.t);
+        this.elements.btn.eq(accIndex).attr(a.aDi, a.t);
       }
 
       //Update the status of the element
@@ -396,20 +393,20 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       this.elements.acc.eq(accIndex)
         .removeClass(this.settings.accExpandedClass);
 
-      this.elements.accBtn.eq(accIndex)
+      this.elements.btn.eq(accIndex)
         .attr(a.aEx, a.f)
-        .removeClass(this.settings.accBtnExpandedClass);
+        .removeClass(this.settings.btnExpandedClass);
 
-      this.elements.accCollapse.eq(accIndex)
+      this.elements.collapse.eq(accIndex)
         .attr(a.aHi, a.t)
-        .removeClass(this.settings.accCollapseExpandedClass);
+        .removeClass(this.settings.collapseExpandedClass);
 
       /*
        * The attribute aria-disabled should be set to false
        * if the option expandOnlyOne is set to true and the accorsion is collapsed
        */
       if (this.settings.expandOnlyOne) {
-        this.elements.accBtn.eq(accIndex).attr(a.aDi, a.f);
+        this.elements.btn.eq(accIndex).attr(a.aDi, a.f);
       }
 
       //Update the status of the element
@@ -423,7 +420,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
        * relies only on CSS styles.
        */
       if (!this.settings.cssTransitions) {
-        this.elements.accCollapse.eq(accIndex)
+        this.elements.collapse.eq(accIndex)
           .stop()
           .slideDown(this.settings.slideSpeed, this.settings.transitionEasingFunction);
       }
@@ -439,7 +436,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
        * relies only on CSS styles
        */
       if (!this.settings.cssTransitions) {
-        this.elements.accCollapse.eq(accIndex)
+        this.elements.collapse.eq(accIndex)
           .stop()
           .slideUp(this.settings.slideSpeed, this.settings.transitionEasingFunction);
       }
@@ -460,7 +457,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
        * otherwise the animation should rely only on css transitions.
        */
       if (!this.settings.cssTransitions) {
-        this.elements.accCollapse.eq(accIndex).show();
+        this.elements.collapse.eq(accIndex).show();
       }
       //Call expand to update the attributes
       this.expand(accIndex);
@@ -477,7 +474,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
        * otherwise the animation should rely only on css transitions.
        */
       if (!this.settings.cssTransitions) {
-        this.elements.accCollapse.eq(accIndex).hide();
+        this.elements.collapse.eq(accIndex).hide();
       }
       //Call collapse to update the attributes
       this.collapse(accIndex);
@@ -509,7 +506,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
            * - must be a child element of the accordion group,
            */
           if (methodArg.length === 1 &&
-            methodArg.hasClass(this.settings.accClass) &&
+            methodArg.hasClass(this.settings.class) &&
             methodArg.closest(this.element).length === 1) {
             methodArg = this.elements.acc.index(methodArg);
           }
@@ -575,22 +572,22 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   //Define default settings
   $.fn[pluginName].defaultSettings = {
     accGroupIdPrefix: 'accordion-group--',
-    accClass: 'accordion-group__accordion',
-    accHeadClass: 'accordion-group__accordion-head',
-    accHeadingClass: 'accordion-group__accordion-heading',
-    accBtnClass: 'accordion-group__accordion-btn',
-    accCollapseClass: 'accordion-group__accordion-collapse',
-    accContentClass: 'accordion-group__accordion-content',
-    accContentRole: 'document',
+    class: 'accordion-group__accordion',
+    headClass: 'accordion-group__accordion-head',
+    headingClass: 'accordion-group__accordion-heading',
+    btnClass: 'accordion-group__accordion-btn',
+    collapseClass: 'accordion-group__accordion-collapse',
+    contentClass: 'accordion-group__accordion-content',
+    contentRole: 'document',
     slideSpeed: 300,
-    transitionEasingFunction: 'swing',
+    easingFunction: 'swing',
     cssTransitions: false,
-    accExpandedClass: 'accordion-group__accordion_expanded',
-    accBtnExpandedClass: 'accordion-group__accordion-btn_expanded',
-    accCollapseExpandedClass: 'accordion-group__accordion-collapse_expanded',
+    expandedClass: 'accordion-group__accordion_expanded',
+    btnExpandedClass: 'accordion-group__accordion-btn_expanded',
+    collapseExpandedClass: 'accordion-group__accordion-collapse_expanded',
     expandOnPageLoad: true,
     expandOnlyOne: false,
-    keyboardNavigation: true,
+    keyboardNavigation: true
   };
 
 }(jQuery, window, document));
