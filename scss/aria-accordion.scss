@@ -1,23 +1,11 @@
 //=============================
 //IMPORT
 //=============================
-@import 'breakpoints';
-@import '01_placeholders/import';
-@import '02_css-mixins/import';
+@import '01_css-placeholders/import';
 //=============================
 //VARIABLES
 //=============================
-//General styles
-$ariaAccordion--accordionMarginTop: 0.5rem;
-//Accordion style
-$ariaAccordion--accordionBorder: 0.1rem solid #c41c1c;
-$ariaAccordion--accordionBorderRadius: 0.2rem;
-//Accordion heading
-$ariaAccordion--accordionBtnColor: #fff;
-$ariaAccordion--accordionBtnBackgroundColor: #d32222;
-$ariaAccordion--accordionBtnPadding: 0.5rem;
-//Accordion collapse
-$ariaAccordion--accordionCollapsePadding: 0.5rem;
+
 //=============================
 //CSS STYLES
 //=============================
@@ -31,32 +19,17 @@ $ariaAccordion--accordionCollapsePadding: 0.5rem;
 //ELEMENTS
 //-----------------------------
 .accordion-group__accordion {
-  border: $ariaAccordion--accordionBorder;
-  @if $ariaAccordion--accordionBorderRadius !='' {
-    border-radius: $ariaAccordion--accordionBorderRadius;
-  }
-  @if $ariaAccordion--accordionMarginTop !='' {
-    margin-top: $ariaAccordion--accordionMarginTop;
-  }
+ 
 }
 .accordion-group__accordion-head {
-  @extend %margin-0;
-  @extend %padding-0;
+
 }
 .accordion-group__accordion-heading {
-  @extend %margin-0;
 }
 .accordion-group__accordion-btn {
-  @extend %appearance-none;
-  background-color: $ariaAccordion--accordionBtnBackgroundColor;
-  @extend %border-none;
-  color: $ariaAccordion--accordionBtnColor;
-  padding: $ariaAccordion--accordionBtnPadding;
-  @extend %text-align-left;
-  @extend %width-100;
+ 
 }
 .accordion-group__accordion-collapse {
-  padding: $ariaAccordion--accordionCollapsePadding;
 }
 //-----------------------------
 //MODIFIERS

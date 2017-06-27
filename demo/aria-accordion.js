@@ -1,3 +1,14 @@
+/*
+MIT License
+
+Copyright (c) 2017 Davide Trisolini
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
 (function ($, window, document) {
   'use strict';
 
@@ -51,12 +62,12 @@
   }
 
 
-
   //-----------------------------------------
   // The actual plugin constructor
   function AriaAccordion(element, userSettings) {
     this.settings = $.extend({}, $.fn[pluginName].defaultSettings, userSettings);
     this.element = $(element); //The accordion group
+    this.elementId = ''; //the element id
     this.elements = {
       acc: this.element.find('.' + this.settings.accClass),
       accHead: this.element.find('.' + this.settings.accHeadClass),
@@ -67,8 +78,6 @@
     }; //Obejct containing all elements needed by the plugin
     this.elementsLenght = this.elements.acc.length; //How many accordions are in the group?
     this.elementsStatus = []; //The status of each array in the group (expanded or collapsed)
-
-
 
     //Initialise the widget
     this.init();
@@ -89,8 +98,9 @@
        * The whole id of the element will then be used as a prefix 
        * to also make sure the ids we are going to set to the elements are unique.
        */
-      var self = this,
-        elementId = setId(self.element, self.settings.accGroupIdPrefix, count); //check/set/return ID of element
+      var self = this;
+
+      self.elementId = setId(self.element, self.settings.accGroupIdPrefix, count); //check/set/return ID of element
 
       /*
        * Now we can set the IDs of all the other elements.
@@ -98,11 +108,10 @@
        * Within the same loop we also reference the ids within the aria-labelledby and aria-controls attrributes
        */
       self.elements.acc.each(function (index) {
-        //setId($(this), elementId + '__accordion--', index); Probably we do not need an ID on this element ...
-        setId(self.elements.accHead.eq(index), elementId + '__accordion-head--', index);
-        setId(self.elements.accHeading.eq(index), elementId + '__accordion-heading--', index);
-        setId(self.elements.accCollapse.eq(index), elementId + '__accordion-collapse--', index);
-        setId(self.elements.accCollapse.eq(index), elementId + '__accordion-btn--', index);
+        setId(self.elements.accHead.eq(index), self.elementId + '__accordion-head--', index);
+        setId(self.elements.accHeading.eq(index), self.elementId + '__accordion-heading--', index);
+        setId(self.elements.accCollapse.eq(index), self.elementId + '__accordion-collapse--', index);
+        setId(self.elements.accCollapse.eq(index), self.elementId + '__accordion-btn--', index);
 
         /*
          * Now it is possible to refence the ids of the elements
@@ -132,7 +141,6 @@
         });
       }
 
-
       /*
        * Now it's time to intialise each accordion by expanding or collapsing them,
        * based on the values of the setting expandOnPageLoad and expandOnlyOne
@@ -159,7 +167,7 @@
        * to not interfer with other event handlers.
        */
       self.element.on('click.' + pluginName, '.' + self.settings.accBtnClass, function () {
-        self.toggle(self.elements.accBtn.index($(this)));
+        self.toggleAnimate(self.elements.accBtn.index($(this)));
       });
 
 
@@ -178,7 +186,7 @@
       //Increment count by one
       count = count + 1;
     },
-    toggle: function (accIndex) {
+    toggleAnimate: function (accIndex) {
       /*
        * This method checks wheter an accordion is expanded or collapsed,
        * and calls the method to toggle the accordion based on the current state.
@@ -214,6 +222,42 @@
         }
       }
     },
+    toggleNoAnimate: function (accIndex) {
+      /*
+       * This method checks wheter an accordion is expanded or collapsed,
+       * and calls the method to toggle the accordion based on the current state.
+       * 
+       * The check of the status of the accorsions is made by looking up the value
+       * set for the accorsion in the elementsStatus array.
+       *
+       */
+
+      //Implement the toggle logic for default mode and for expandOnlyOne      
+      if (this.settings.expandOnlyOne) {
+        /*
+         * When expandOnlyOne is set to true, then the expanded accordion
+         * should not be directly collapsed, because one accordion should always be expanded.
+         * When slideDown is triggered on a collapsed accordion, then the currently expanded accordion
+         * should be collapsed
+         */
+        if (this.elementsStatus[accIndex] === true) {
+          return false; //Stop execution 
+        } else {
+          this.hide(this.elementsStatus.indexOf(true)); //collapse expande accordion
+          this.show(accIndex); //Expand accordion
+        }
+      } else {
+        /*
+         * Normal mode: whenever an accordion is triggerd, change the status
+         * by collapsing it if expanded and expanding it if collapsed
+         */
+        if (this.elementsStatus[accIndex] === true) {
+          this.hide(accIndex);
+        } else {
+          this.show(accIndex);
+        }
+      }
+    },
     updateElementStatus: function (accIndex, status) {
       /*
        * Update the array elementsStatus:
@@ -223,9 +267,6 @@
        */
 
       this.elementsStatus[accIndex] = status;
-    },
-    deepLinking: function () {
-      //
     },
     keyboardNavigation: function (event) {
       var focussedElement = this.element.find(':focus'), //the element with keyboard focus
@@ -284,6 +325,7 @@
               if (focussedElementIndex < this.elementsLenght) {
                 this.elements.accBtn.eq(focussedElementIndex + 1).focus();
               }
+              break;
           }
         }
       } else if (focussedElement.closest('.' + this.settings.accCollapseClass).length > 0 && checkForModifierKeys(event) === 'ctrl') {
@@ -303,6 +345,7 @@
             if (focussedElementIndex < this.elementsLenght) {
               this.elements.accBtn.eq(focussedElementIndex + 1).focus();
             }
+            break;
         }
       }
     },
@@ -382,7 +425,7 @@
       if (!this.settings.cssTransitions) {
         this.elements.accCollapse.eq(accIndex)
           .stop()
-          .slideDown(this.settings.slideSpeed, this.settings.transitionTimingFunction);
+          .slideDown(this.settings.slideSpeed, this.settings.transitionEasingFunction);
       }
 
       //Call this.expand in order to update the attributes of the accordion.
@@ -398,7 +441,7 @@
       if (!this.settings.cssTransitions) {
         this.elements.accCollapse.eq(accIndex)
           .stop()
-          .slideUp(this.settings.slideSpeed, this.settings.transitionTimingFunction);
+          .slideUp(this.settings.slideSpeed, this.settings.transitionEasingFunction);
       }
 
       //Call this.collapse in order to update the attributes of the accordion.
@@ -412,9 +455,13 @@
        * For this reason we provide this method and the method hide.
        */
 
-      //Show the accordion
-      this.elements.accCollapse.eq(accIndex).show();
-
+      /*
+       * Show the accordion, only if css transitions are disabled,
+       * otherwise the animation should rely only on css transitions.
+       */
+      if (!this.settings.cssTransitions) {
+        this.elements.accCollapse.eq(accIndex).show();
+      }
       //Call expand to update the attributes
       this.expand(accIndex);
     },
@@ -425,9 +472,13 @@
        * For this reason we provide this method and the method show.
        */
 
-      //Hide the accordion
-      this.elements.accCollapse.eq(accIndex).hide();
-
+      /*
+       * Hide the accordion, only if css transitions are disabled,
+       * otherwise the animation should rely only on css transitions.
+       */
+      if (!this.settings.cssTransitions) {
+        this.elements.accCollapse.eq(accIndex).hide();
+      }
       //Call collapse to update the attributes
       this.collapse(accIndex);
     },
@@ -472,17 +523,30 @@
        * first parameter passed along with the function.
        */
       switch (methodName) {
-        case 'toggle':
-          this.toggle(methodArg); //call toggle
+        case 'toggleAnimate':
+          this.toggleAnimate(methodArg); //call toggle
+          break;
+        case 'toggleNoAnimate':
+          this.toggleNoAnimate(methodArg); //call toggle
           break;
         case 'slideDown':
           if (this.elementsStatus[methodArg] === false) {
-            this.toggle(methodArg);
+            this.toggleAnimate(methodArg);
           }
           break;
         case 'slideUp':
           if (this.elementsStatus[methodArg] === true) {
-            this.toggle(methodArg);
+            this.toggleAnimate(methodArg);
+          }
+          break;
+        case 'show':
+          if (this.elementsStatus[methodArg] === true) {
+            this.toggleNoAnimate(methodArg);
+          }
+          break;
+        case 'hide':
+          if (this.elementsStatus[methodArg] === true) {
+            this.toggleNoAnimate(methodArg);
           }
           break;
       }
@@ -519,14 +583,14 @@
     accContentClass: 'accordion-group__accordion-content',
     accContentRole: 'document',
     slideSpeed: 300,
-    transitionTimingFunction: 'swing',
+    transitionEasingFunction: 'swing',
     cssTransitions: false,
     accExpandedClass: 'accordion-group__accordion_expanded',
     accBtnExpandedClass: 'accordion-group__accordion-btn_expanded',
     accCollapseExpandedClass: 'accordion-group__accordion-collapse_expanded',
     expandOnPageLoad: true,
     expandOnlyOne: false,
-    keyboardNavigation: true
+    keyboardNavigation: true,
   };
 
 }(jQuery, window, document));
@@ -534,12 +598,14 @@
 
 $(document).ready(function () {
   'use strict';
+
   $('.accordion-group').ariaAccordion({
     accContentRole: ['document', 'application', 'document'],
     expandOnPageLoad: true,
-    expandOnlyOne: false
+    expandOnlyOne: false,
+    slideSpeed: 900
   });
 
 
-  $('.accordion-group').last().ariaAccordion('slideDown', $('.accordion-group__accordion').last());
+  $('.accordion-group').last().ariaAccordion('toggleNoAnimate', 2);
 });
