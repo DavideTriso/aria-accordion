@@ -72,7 +72,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       acc: self.element.find('.' + self.settings.accClass),
       heading: self.element.find('.' + self.settings.headingClass),
       btn: self.element.find('.' + self.settings.btnClass),
-      collapse: self.element.find('.' + self.settings.collapseClass),
+      panel: self.element.find('.' + self.settings.panelClass),
       content: self.element.find('.' + self.settings.contentClass)
     }; //Obejct containing all elements needed by the plugin
     self.elementsLenght = self.elements.acc.length; //How many accordions are in the group?
@@ -110,8 +110,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
        */
       elements.acc.each(function (index) {
         setId(elements.heading.eq(index), elementId + '__accordion-heading--', index);
-        setId(elements.collapse.eq(index), elementId + '__accordion-collapse--', index);
-        setId(elements.collapse.eq(index), elementId + '__accordion-btn--', index);
+        setId(elements.panel.eq(index), elementId + '__accordion-panel--', index);
+        setId(elements.btn.eq(index), elementId + '__accordion-btn--', index);
 
         /*
          * Now it is possible to refence the ids of the elements
@@ -120,8 +120,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
          * We perform a loop through each accordion and set
          * each attribute within this loop by getting the elements by index with the function .eq
          */
-        elements.btn.eq(index).attr(a.aCs, elements.collapse.eq(index).attr('id'));
-        elements.collapse.eq(index).attr(a.aLab, elements.heading.eq(index).attr('id'));
+        elements.btn.eq(index).attr(a.aCs, elements.panel.eq(index).attr('id'));
+        elements.panel.eq(index).attr(a.aLab, elements.heading.eq(index).attr('id'));
       });
 
       /*
@@ -148,14 +148,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       if (settings.expandOnPageLoad || settings.expandOnlyOne) {
         elements.acc.each(function (index) {
           if (index > 0) {
-            self.hide(index);
+            self.slideUp(index, false);
           } else {
-            self.show(0);
+            self.slideDown(0, false);
           }
         });
       } else {
         elements.acc.each(function (index) {
-          self.hide(index);
+          self.slideUp(index, false);
         });
       }
 
@@ -167,7 +167,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
        * to not interfer with other event handlers.
        */
       element.on('click.' + pluginName + '.' + count, '.' + settings.btnClass, function () {
-        self.toggleAnimate(elements.btn.index($(this)));
+        self.toggle(elements.btn.index($(this)), true);
       });
 
 
@@ -185,7 +185,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       //Increment count by one
       count = count + 1;
     },
-    toggleAnimate: function (accIndex) {
+    toggle: function (accIndex, animate) {
       /*
        * This method checks wheter an accordion is expanded or collapsed,
        * and calls the method to toggle the accordion based on the current state.
@@ -210,8 +210,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         if (elementsStatus[accIndex] === true) {
           return false; //Stop execution 
         } else {
-          self.slideUp(elementsStatus.indexOf(true)); //collapse expande accordion
-          self.slideDown(accIndex); //Expand accordion
+          self.slideUp(elementsStatus.indexOf(true), animate); //collapse expande accordion
+          self.slideDown(accIndex, animate); //Expand accordion
         }
       } else {
         /*
@@ -219,49 +219,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
          * by collapsing it if expanded and expanding it if collapsed
          */
         if (elementsStatus[accIndex] === true) {
-          self.slideUp(accIndex);
+          self.slideUp(accIndex, animate);
         } else {
-          self.slideDown(accIndex);
-        }
-      }
-    },
-    toggleNoAnimate: function (accIndex) {
-      /*
-       * This method checks wheter an accordion is expanded or collapsed,
-       * and calls the method to toggle the accordion based on the current state.
-       * 
-       * The check of the status of the accorsions is made by looking up the value
-       * set for the accordion in the elementsStatus array.
-       *
-       */
-
-      var self = this,
-        settings = self.settings,
-        elementsStatus = self.elementsStatus;
-
-      //Implement the toggle logic for default mode and for expandOnlyOne      
-      if (settings.expandOnlyOne) {
-        /*
-         * When expandOnlyOne is set to true, then the expanded accordion
-         * should not be directly collapsed, because one accordion should always be expanded.
-         * When slideDown is triggered on a collapsed accordion, then the currently expanded accordion
-         * should be collapsed
-         */
-        if (elementsStatus[accIndex] === true) {
-          return false; //Stop execution 
-        } else {
-          self.hide(elementsStatus.indexOf(true)); //collapse expande accordion
-          self.show(accIndex); //Expand accordion
-        }
-      } else {
-        /*
-         * Normal mode: whenever an accordion is triggerd, change the status
-         * by collapsing it if expanded and expanding it if collapsed
-         */
-        if (elementsStatus[accIndex] === true) {
-          self.hide(accIndex);
-        } else {
-          self.show(accIndex);
+          self.slideDown(accIndex, animate);
         }
       }
     },
@@ -343,12 +303,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
               break;
           }
         }
-      } else if (focussedElement.closest('.' + settings.collapseClass).length > 0 && checkForModifierKeys(event) === 'ctrl') {
+      } else if (focussedElement.closest('.' + settings.panelClass).length > 0 && checkForModifierKeys(event) === 'ctrl') {
         /*
          * We revitre the position of the accordion in wich the foccused element is contained
          * e.g. the index of the accordion/accordion btn
          */
-        focussedElementIndex = elements.collapse.index(focussedElement.closest('.' + settings.collapseClass));
+        focussedElementIndex = elements.panel.index(focussedElement.closest('.' + settings.panelClass));
 
         switch (pressedKey) {
           case 81:
@@ -385,9 +345,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         .attr(a.aEx, a.t)
         .addClass(settings.btnExpandedClass);
 
-      elements.collapse.eq(accIndex)
+      elements.panel.eq(accIndex)
         .attr(a.aHi, a.f)
-        .addClass(settings.collapseExpandedClass);
+        .addClass(settings.panelExpandedClass);
 
       /*
        * The attribute aria-disabled should be set to true on the button
@@ -422,9 +382,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         .attr(a.aEx, a.f)
         .removeClass(settings.btnExpandedClass);
 
-      elements.collapse.eq(accIndex)
+      elements.panel.eq(accIndex)
         .attr(a.aHi, a.t)
-        .removeClass(settings.collapseExpandedClass);
+        .removeClass(settings.panelExpandedClass);
 
       /*
        * The attribute aria-disabled should be set to false
@@ -437,7 +397,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       //Update the status of the element
       self.updateElementStatus(accIndex, false);
     },
-    slideDown: function (accIndex) {
+    slideDown: function (accIndex, animate) {
       /*
        * Perform the slide-down animation of the plugin
        * The JS animation should be performed, only if cssTransition is set to false.
@@ -445,18 +405,19 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
        * relies only on CSS styles.
        */
       var self = this,
-        settings = self.settings;
+        settings = self.settings,
+        slideSpeed = animate ? settings.slideSpeed : 0;
 
       if (!settings.cssTransitions) {
-        self.elements.collapse.eq(accIndex)
+        self.elements.panel.eq(accIndex)
           .stop()
-          .slideDown(settings.slideSpeed, settings.easing);
+          .slideDown(slideSpeed, settings.easing);
       }
 
       //Call this.expand in order to update the attributes of the accordion.
       self.expand(accIndex);
     },
-    slideUp: function (accIndex) {
+    slideUp: function (accIndex, animate) {
       /*
        * Perform the slide-up animation of the plugin
        * The JS animation should be performed, only if cssTransition is set to false.
@@ -464,54 +425,17 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
        * relies only on CSS styles
        */
       var self = this,
-        settings = self.settings;
+        settings = self.settings,
+        slideSpeed = animate ? settings.slideSpeed : 0;
+
 
       if (!settings.cssTransitions) {
-        self.elements.collapse.eq(accIndex)
+        self.elements.panel.eq(accIndex)
           .stop()
-          .slideUp(settings.slideSpeed, settings.easing);
+          .slideUp(slideSpeed, settings.easing);
       }
 
       //Call this.collapse in order to update the attributes of the accordion.
-      self.collapse(accIndex);
-    },
-    show: function (accIndex) {
-
-      /*
-       * In some cases, for example when the widget get first initialised,
-       * we do not want the accordions to be animated.
-       * For this reason we provide this method and the method hide.
-       */
-
-      var self = this;
-
-      /*
-       * Show the accordion, only if css transitions are disabled,
-       * otherwise the animation should rely only on css transitions.
-       */
-      if (!self.settings.cssTransitions) {
-        self.elements.collapse.eq(accIndex).show();
-      }
-      //Call expand to update the attributes
-      self.expand(accIndex);
-    },
-    hide: function (accIndex) {
-      /*
-       * In some cases, for example when the widget get first initialised,
-       * we do not want the accordions to be animated.
-       * For this reason we provide this method and the method show.
-       */
-
-      var self = this;
-
-      /*
-       * Hide the accordion, only if css transitions are disabled,
-       * otherwise the animation should rely only on css transitions.
-       */
-      if (!self.settings.cssTransitions) {
-        self.elements.collapse.eq(accIndex).hide();
-      }
-      //Call collapse to update the attributes
       self.collapse(accIndex);
     },
     methodCaller: function (methodName, methodArg) {
@@ -559,31 +483,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
        * first parameter passed along with the function.
        */
       switch (methodName) {
-        case 'toggleAnimate':
-          self.toggleAnimate(methodArg); //call toggle
+        case 'toggle':
+          self.toggle(methodArg, true); //call toggle
           break;
         case 'toggleNoAnimate':
-          self.toggleNoAnimate(methodArg); //call toggle
-          break;
-        case 'slideDown':
-          if (elementsStatus[methodArg] === false) {
-            self.toggleAnimate(methodArg);
-          }
-          break;
-        case 'slideUp':
-          if (elementsStatus[methodArg] === true) {
-            self.toggleAnimate(methodArg);
-          }
-          break;
-        case 'show':
-          if (elementsStatus[methodArg] === true) {
-            self.toggleNoAnimate(methodArg);
-          }
-          break;
-        case 'hide':
-          if (elementsStatus[methodArg] === true) {
-            self.toggleNoAnimate(methodArg);
-          }
+          self.toggle(methodArg, false); //call toggle
           break;
       }
     }
@@ -615,7 +519,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     accClass: 'accordion-group__accordion',
     headingClass: 'accordion-group__accordion-heading',
     btnClass: 'accordion-group__accordion-btn',
-    collapseClass: 'accordion-group__accordion-collapse',
+    panelClass: 'accordion-group__accordion-panel',
     contentClass: 'accordion-group__accordion-content',
     contentRole: 'document',
     slideSpeed: 300,
@@ -623,7 +527,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     cssTransitions: false,
     expandedClass: 'accordion-group__accordion_expanded',
     btnExpandedClass: 'accordion-group__accordion-btn_expanded',
-    collapseExpandedClass: 'accordion-group__accordion-collapse_expanded',
+    panelExpandedClass: 'accordion-group__accordion-panel_expanded',
     expandOnPageLoad: true,
     expandOnlyOne: false,
     keyboardNavigation: true
@@ -637,10 +541,8 @@ $(document).ready(function () {
   $('.accordion-group').ariaAccordion({
     contentRole: ['document', 'application', 'document'],
     expandOnPageLoad: true,
-    expandOnlyOne: false,
-    slideSpeed: 900
+    expandOnlyOne: true,
+    slideSpeed: 600
   });
-
-
-  $('.accordion-group').last().ariaAccordion('toggleNoAnimate', 2);
+  
 });

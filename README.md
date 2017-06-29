@@ -6,7 +6,7 @@ jQuery plugin for **accessible** accordions: **WAI ARIA 1.1** compliant.
 
 * Easy to customize tanks to a small but usefull set of options.
 * SASS/SCSS files for simple and quick UI customisations.
-* Only 6KB (minified).
+* Only 5KB (minified).
 * Fully compatible with [**t** css-framework](https://github.com/DavideTriso/t-css-framework)
 * Runs in strict mode.
 
@@ -28,11 +28,11 @@ accGroupIdPrefix | accordion-group-- | string | Prefix used to generate accordio
 accClass | accordion-group__accordion | string | Class of single accordion elements. (This class is used from the plugin to select the elements in the markup). | optional
 headingClass | accordion-group__accordion-heading | string | Class of accordion heading elements. (This class is used from the plugin to select the elements in the markup). | optional
 btnClass | accordion-group__accordion-btn | string | Class of accordion buttons. (This class is used from the plugin to select the elements in the markup). | optional
-collapseClass | accordion-group__accordion-collapse | string | Class of accordion collapse regions. (This class is used from the plugin to select the elements in the markup). | optional
+panelClass | accordion-group__accordion-panel | string | Class of accordion panel. (This class is used from the plugin to select the elements in the markup). | optional
 contentClass | accordion-group__accordion-content | string | Class of accordion content elements. (This class is used from the plugin to select the elements in the markup). | optional
 expandedClass | accordion-group__accordion_expanded | string | Class added to expanded accordions. | optional
 btnExpandedClass | accordion-group__accordion-btn_expanded | string | Class added to the button of an expanded accordion. | optional
-collapseExpandedClass | accordion-group__accordion-collapse_expanded | string | Class added to collapse region of an expanded accordion. | optional
+panelExpandedClass | accordion-group__accordion-panel_expanded | string | Class added to panel of an expanded accordion. | optional
 groupIdPrefix | accordion-group-- | string | Prefix used to generate accordion group's ID, if no ID is present in markup. | optional 
 contentRole | document | token, array | Role of accordion content. Accepted values: document, application. For more information see [https://www.w3.org/TR/wai-aria-1.1/](https://www.w3.org/TR/wai-aria-1.1/). To set different roles to each accordion, pass an accordion. | optional
 slideSpeed | 300 | int (>= 0) | Duration of collapse/expand animations. | optional
@@ -62,7 +62,7 @@ Use following HTML markup to implement an acordion widget:
       <header class="accordion-group__accordion-head">
         <h3 class="accordion-group__accordion-heading"><button type="button" class="accordion-group__accordion-btn">Accordion 1</button></h3>
       </header>
-      <div class="accordion-group__accordion-collapse">
+      <div class="accordion-group__accordion-panel">
         <div class="accordion-group__accordion-content">
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -80,7 +80,7 @@ Use following HTML markup to implement an acordion widget:
       <header class="accordion-group__accordion-head">
         <h3 class="accordion-group__accordion-heading"><button type="button" class="accordion-group__accordion-btn">Accordion 1</button></h3>
       </header>
-      <div class="accordion-group__accordion-collapse">
+      <div class="accordion-group__accordion-panel">
         <div class="accordion-group__accordion-content">
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -116,55 +116,29 @@ Methods can be called on the initialised accordion group with following syntax:
 $('#my-accordion-group').ariaAccordion('methodName', parameter2);
 ````
 
-The plugin supports following methods: toggleAnimate, toggleNoAnimate, slideDown, slideUp, show, hide.
+The plugin supports following methods: toggle, toggleNoAnimate.
 The first parameter passed to the function call is the name of the method to call.
-The second parameter can be an index (starting from 0) of the accordion the method should be applied to,
-a jQuery selector or a jQuery element.
+The second parameter can be the index (starting from 0) of the accordion the method should be applied to,
+a jQuery selector, or a jQuery element.
 Methods can be called just on one element at a time. When passing a selector make sure this matches only one element.
-Wen passing a jQuery object, make sure the lenght of the object is 1.
+When passing a jQuery object, make sure the lenght of the object is 1.
 
 ````javascript
+
 //Following are all valid and lead to the same result
-$('#my-accordion-group').ariaAccordion('slideDown', 1);
-$('#my-accordion-group').ariaAccordion('slideDown', '#my-accordion');
-$('#my-accordion-group').ariaAccordion('slideDown', $('#my-accordion'));
+
+$('#my-accordion-group').ariaAccordion('toggle', 1);
+$('#my-accordion-group').ariaAccordion('toggle', '#my-accordion');
+$('#my-accordion-group').ariaAccordion('toggle', $('#my-accordion'));
+
 ````
 
-### slideDown and show
+### toggle and toggleNoAnimate
 
-The method **slideDown** expands an accordion by sliding-down the accordion collapsible region.
-
-````javascript
-$('#my-accordion-group').ariaAccordion('slideDown', 2);
-````
-
-The method **show** leads to th same results as **slideDown**, but instead does not perform any animation.
+**toggle** expands or collapses an accordion based on the current state of the accordion performing a slide-down or slide-up animation.
 
 ````javascript
-$('#my-accordion-group').ariaAccordion('show', 2);
-````
-
-### slideUp and hide
-
-The method **slideUp** collapses an accordion by sliding-up the accordion collapsible region.
-
-````javascript
-$('#my-accordion-group').ariaAccordion('slideUp', 1);
-````
-
-The method **hide** leads to the same results as **collapse**,  but instead does not perform any animation.
-
-````javascript
-$('#my-accordion-group').ariaAccordion('hide', 1);
-````
-
-
-### toggleAnimate and toggleNoAnimate
-
-**toggleAnimate** expands or collapses an accordion based on the current state of the accordion performing a slide-down or slide-up animation.
-
-````javascript
-$('#my-accordion-group').ariaAccordion('toggleAnimate', 1);
+$('#my-accordion-group').ariaAccordion('toggle', 1);
 ````
 
 **toggleNoAnimate** also expands or collapses an accordion based on the current state, but does not perform any animation.
@@ -176,13 +150,12 @@ $('#my-accordion-group').ariaAccordion('toggleNoAnimate', 1);
 
 ## Using CSS transitions
 
-By default the plugin is configured to use the jQuery methods `slideDown()`, `slideUp to`, `show()`and `hide()` to expand/collapse accordions. Setting the option **cssTransitions** to 'true' will disable the JS animations and makes possible to implement the transitions directly with css. In fact, the plugin toggles the classes passed along with the options **accExpandedClass**, **accBtnExpandedClass** and **accCollapseExpandedClass** when an accordion is toggled. 
+By default the plugin is configured to use the jQuery methods `slideDown()`, `slideUp to`, `show()`and `hide()` to expand/collapse accordions. Setting the option **cssTransitions** to 'true' will disable the JS animations and makes possible to implement the transitions directly with css. In fact, the plugin toggles the classes passed along with the options **expandedClass**, **btnExpandedClass** and **collapseExpandedClass** when an accordion is toggled. 
 
 ## Planned features
 
 * Better SCSS: Mixins to quickly build awesome accordions will be provided.
 * Better integration with **t** css framework.
-* Url hash navigation / deep linking.
 
 ## LICENSE
 
