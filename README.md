@@ -25,8 +25,7 @@ Developed and tested with jQuery 3.2.1
 Name | Default | Type | Description | Required or optional
 -----|---------|------|-------------|-----------------------
 accGroupIdPrefix | accordion-group-- | string | Prefix used to generate accordion groups IDs, when not present in markup. | optional
-class | accordion-group__accordion | string | Class of single accordion elements. (This class is used from the plugin to select the elements in the markup). | optional
-headClass | accordion-group__accordion-head | string | Class of accordion head region. (This class is used from the plugin to select the elements in the markup). | optional
+accClass | accordion-group__accordion | string | Class of single accordion elements. (This class is used from the plugin to select the elements in the markup). | optional
 headingClass | accordion-group__accordion-heading | string | Class of accordion heading elements. (This class is used from the plugin to select the elements in the markup). | optional
 btnClass | accordion-group__accordion-btn | string | Class of accordion buttons. (This class is used from the plugin to select the elements in the markup). | optional
 collapseClass | accordion-group__accordion-collapse | string | Class of accordion collapse regions. (This class is used from the plugin to select the elements in the markup). | optional
@@ -37,7 +36,7 @@ collapseExpandedClass | accordion-group__accordion-collapse_expanded | string | 
 groupIdPrefix | accordion-group-- | string | Prefix used to generate accordion group's ID, if no ID is present in markup. | optional 
 contentRole | document | token, array | Role of accordion content. Accepted values: document, application. For more information see [https://www.w3.org/TR/wai-aria-1.1/](https://www.w3.org/TR/wai-aria-1.1/). To set different roles to each accordion, pass an accordion. | optional
 slideSpeed | 300 | int (>= 0) | Duration of collapse/expand animations. | optional
-transitionEasingFunction | swing | string | The easing function to use for animation of the accordions. Applies only for jQuery transitions, if **cssTransition** is set to true, this option will not have any effect on the transition. Accepted values are `swing` and `linear`. For more timing functions a jQuery easing plugin is needed. | optional
+easing | swing | string | The easing function to use for animation of the accordions. Applies only for jQuery transitions, if **cssTransition** is set to true, this option will not have any effect on the transition. Accepted values are `swing` and `linear`. For more timing functions a jQuery easing plugin is needed. | optional
 cssTransition | false | bool | Use css transitions to expand/collapse accordion instead of jQuery slide animation. Read section 'Using CSS transitions' for more infos | optional
 expandOnPageLoad | false | bool | Show or hide first accordion of group when page is loaded. | optional
 expandOnlyOne | false | bool | Allow only one accordion to be expanded in a group at the same time. One accordion should always be expanded. | optional
