@@ -549,7 +549,7 @@ $(document).ready(function () {
     slideSpeed: 600
   });
   
-  /*
+  
   $(window).on('ariaAccordion.slideDown', function(event, element, index){
     console.log(element);
   });
@@ -557,5 +557,5 @@ $(document).ready(function () {
   $(window).on('ariaAccordion.slideUp', function(event, element, index){
     console.log(element);
   });
-  */
+  
 });
