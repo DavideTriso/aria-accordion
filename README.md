@@ -18,7 +18,9 @@ Developed and tested with jQuery 3.2.1
 
 ## Cross-browser tests
 
-* Tested on **Google Chrome 57** / macOS Sierra 10.
+* **Google Chrome 57** / macOS Sierra 10
+* iPhone 5s **Safari for iOS** 10.3.2
+
 
 ## Options
 
@@ -147,6 +149,23 @@ $('#my-accordion-group').ariaAccordion('toggle', 1);
 $('#my-accordion-group').ariaAccordion('toggleNoAnimate', 1);
 ````
 
+## Custom events
+
+The plugin triggers following events:
+
+* **ariaAccordion.slideDown** when an accordion is expanded
+* **ariaAccordion.slideUp** when an accordion is collapsed
+
+The custom events are triggered on window and return the accordion group and the index of the toggled accordion as arguments.
+
+```javascript
+
+//listen for ariaAccordion.slideDown
+$(window).on('ariaAccordion.slideDown', function(event, accordionGroup, index){
+  console.log('Accordion ' + index + ' in accordion group ' + accordionGroup + ' was expanded');
+});
+
+```
 
 ## Using CSS transitions
 

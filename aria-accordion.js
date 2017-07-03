@@ -9,7 +9,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-(function ($) {
+(function ($, window) {
   'use strict';
 
   var pluginName = 'ariaAccordion', // the name of the plugin
@@ -24,8 +24,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       tbI: 'tabindex',
       t: 'true',
       f: 'false'
-    }; //object containing wai aria and html attributes
-
+    }, //object containing wai aria and html attributes
+    win = $(window);
 
   //-----------------------------------------
   //Private functions
@@ -45,8 +45,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
   /*
    * Check if any of the four modifiers keys are pressed.
-   * If none is pressed, return true.
-   * Else return array with bool values for pressed keys
    */
   function checkForModifierKeys(event) {
     if (!event.shiftKey && !event.ctrlKey && !event.altKey && !event.metaKey) {
@@ -416,6 +414,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
       //Call this.expand in order to update the attributes of the accordion.
       self.expand(accIndex);
+
+      //trigger custom event on window for authors to listen for
+      win.trigger(pluginName + '.slideDown', [self.elements, accIndex]);
     },
     slideUp: function (accIndex, animate) {
       /*
@@ -437,6 +438,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
       //Call this.collapse in order to update the attributes of the accordion.
       self.collapse(accIndex);
+
+      //trigger custom event on window for authors to listen for
+      win.trigger(pluginName + '.slideUp', [self.elements, accIndex]);
     },
     methodCaller: function (methodName, methodArg) {
 
@@ -533,4 +537,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     keyboardNavigation: true
   };
 
-}(jQuery));
+}(jQuery, window));
