@@ -169,7 +169,7 @@ $(window).on('ariaAccordion.slideDown', function(event, accordionGroup, index){
 
 ## Using CSS transitions
 
-By default the plugin is configured to use the jQuery methods `slideDown()`, `slideUp to`, `show()`and `hide()` to expand/collapse accordions. Setting the option **cssTransitions** to 'true' will disable the JS animations and makes possible to implement the transitions directly with css. In fact, the plugin toggles the classes passed along with the options **expandedClass**, **btnExpandedClass** and **collapseExpandedClass** when an accordion is toggled. 
+By default the plugin is configured to use the jQuery methods `slideDown()`, `slideUp()` to expand/collapse accordions. Setting the option **cssTransitions** to 'true' will disable the JS animations and makes possible to implement the transitions directly with css. In fact, the plugin toggles the classes passed along with the options **expandedClass**, **btnExpandedClass** and **collapseExpandedClass** when an accordion is toggled. 
 
 ## Planned features
 
