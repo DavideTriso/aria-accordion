@@ -416,7 +416,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       self.expand(accIndex);
 
       //trigger custom event on window for authors to listen for
-      win.trigger(pluginName + '.slideDown', [self.elements, accIndex]);
+      win.trigger(pluginName + '.slideDown', [self.element, accIndex]);
     },
     slideUp: function (accIndex, animate) {
       /*
@@ -440,7 +440,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       self.collapse(accIndex);
 
       //trigger custom event on window for authors to listen for
-      win.trigger(pluginName + '.slideUp', [self.elements, accIndex]);
+      win.trigger(pluginName + '.slideUp', [self.element, accIndex]);
     },
     methodCaller: function (methodName, methodArg) {
 
