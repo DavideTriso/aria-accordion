@@ -145,7 +145,7 @@ $('#my-accordion-group').ariaAccordion('toggleNoAnimate', 1);
 
 The plugin triggers following events:
 
-* **ariaAccordion.initialised** when an accordion's group is initialised
+* **ariaAccordion.initialised** after an accordion's group is initialised
 * **ariaAccordion.slideDown** when an accordion is expanded
 * **ariaAccordion.slideUp** when an accordion is collapsed
 
