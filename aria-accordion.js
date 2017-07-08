@@ -180,6 +180,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         });
       }
 
+      //trigger init on window for developer to listen for
+      win.trigger(pluginName + '.initialised', [self.element]);
+
       //Increment count by one
       count = count + 1;
     },
