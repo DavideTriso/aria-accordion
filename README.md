@@ -119,7 +119,7 @@ When passing a jQuery object, make sure the lenght of the object is 1.
 
 ````javascript
 
-//Following are all valid and lead to the same result
+//The following are all valid method's call and lead to the same result
 
 $('#my-accordion-group').ariaAccordion('toggle', 1);
 $('#my-accordion-group').ariaAccordion('toggle', '#my-accordion');

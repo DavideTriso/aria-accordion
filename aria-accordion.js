@@ -171,7 +171,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
       /*
        * Bind keydown event for keyboard navigation.
-       * As before, we use delegated events and namespaces
+       * As we did before, we use delegated events and namespaces
        * for the implemantation of keys navigation
        */
       if (settings.keyboardNavigation) {
@@ -271,12 +271,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
               //up arrow: focus previous heading
               if (focussedElementIndex > 0) {
                 btn.eq(focussedElementIndex - 1).focus();
+                event.preventDefault(); //prevent body from scrolling
               }
               break;
             case 40:
               //down arrow: focus next heading
               if (focussedElementIndex < elementsLenght) {
                 btn.eq(focussedElementIndex + 1).focus();
+                event.preventDefault(); //prevent body from scrolling
               }
               break;
             case 36:
