@@ -186,7 +186,7 @@ By default the plugin is configured to use the jQuery methods `slideDown()`, `sl
 
 ## Planned features
 
-* Better SCSS: Mixins to quickly build awesome accordions will be provided with the plugin.
+* Support for disclosure pattern.
 
 ## LICENSE
 

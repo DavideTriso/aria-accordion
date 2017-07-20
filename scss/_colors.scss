@@ -1,0 +1,94 @@
+//==========================
+//PERCENTAGES
+//==========================
+$colorPercentVariationOne: 6%;
+$colorPercentVariationTwo: 12%;
+$colorPercentVariationThree: 18%;
+//==========================
+//DEFINE COLORS
+//==========================
+$color-1: #ed4a03;
+$color-2: #f45f01;
+$color-3: #ffad25;
+$color-4: #f7a508;
+$color-5: #38383b;
+$color-6: #fdfdfd;
+$color-7: rgba(50, 200, 150, 1);
+$color-8: rgba(50, 200, 150, 1);
+$color-9: rgba(50, 200, 150, 1);
+//==========================
+//COLORS VARIATIONS
+//==========================
+//color 1
+$color-1-light: lighten($color-1, $colorPercentVariationOne);
+$color-1-lighter: lighten($color-1, $colorPercentVariationTwo);
+$color-1-lighter-plus: lighten($color-1, $colorPercentVariationThree);
+$color-1-dark: darken($color-1, $colorPercentVariationOne);
+$color-1-darker: darken($color-1, $colorPercentVariationTwo);
+$color-1-darker-plus: darken($color-1, $colorPercentVariationThree);
+//color 2
+$color-2-light: lighten($color-2, $colorPercentVariationOne);
+$color-2-lighter: lighten($color-2, $colorPercentVariationTwo);
+$color-2-lighter-plus: lighten($color-2, $colorPercentVariationThree);
+$color-2-dark: darken($color-2, $colorPercentVariationOne);
+$color-2-darker: darken($color-2, $colorPercentVariationTwo);
+$color-2-darker-plus: darken($color-2, $colorPercentVariationThree);
+//color 3
+$color-3-light: lighten($color-3, $colorPercentVariationOne);
+$color-3-lighter: lighten($color-3, $colorPercentVariationTwo);
+$color-3-lighter-plus: lighten($color-3, $colorPercentVariationThree);
+$color-3-dark: darken($color-3, $colorPercentVariationOne);
+$color-3-darker: darken($color-3, $colorPercentVariationTwo);
+$color-3-darker-plus: darken($color-3, $colorPercentVariationThree);
+//color 4
+$color-4-light: lighten($color-4, $colorPercentVariationOne);
+$color-4-lighter: lighten($color-4, $colorPercentVariationTwo);
+$color-4-lighter-plus: lighten($color-4, $colorPercentVariationThree);
+$color-4-dark: darken($color-4, $colorPercentVariationOne);
+$color-4-darker: darken($color-4, $colorPercentVariationTwo);
+$color-4-darker-plus: darken($color-4, $colorPercentVariationThree);
+//color 5
+$color-5-light: lighten($color-5, $colorPercentVariationOne);
+$color-5-lighter: lighten($color-5, $colorPercentVariationTwo);
+$color-5-lighter-plus: lighten($color-5, $colorPercentVariationThree);
+$color-5-dark: darken($color-5, $colorPercentVariationOne);
+$color-5-darker: darken($color-5, $colorPercentVariationTwo);
+$color-5-darker-plus: darken($color-5, $colorPercentVariationThree);
+//color 6
+$color-6-light: lighten($color-6, $colorPercentVariationOne);
+$color-6-lighter: lighten($color-6, $colorPercentVariationTwo);
+$color-6-lighter-plus: lighten($color-6, $colorPercentVariationThree);
+$color-6-dark: darken($color-6, $colorPercentVariationOne);
+$color-6-darker: darken($color-6, $colorPercentVariationTwo);
+$color-6-darker-plus: darken($color-6, $colorPercentVariationThree);
+//color 7
+$color-7-light: lighten($color-7, $colorPercentVariationOne);
+$color-7-lighter: lighten($color-7, $colorPercentVariationTwo);
+$color-7-lighter-plus: lighten($color-7, $colorPercentVariationThree);
+$color-7-dark: darken($color-7, $colorPercentVariationOne);
+$color-7-darker: darken($color-7, $colorPercentVariationTwo);
+$color-7-darker-plus: darken($color-7, $colorPercentVariationThree);
+//color 8
+$color-8: rgba(50, 200, 150, 1);
+$color-8-light: lighten($color-8, $colorPercentVariationOne);
+$color-8-lighter: lighten($color-8, $colorPercentVariationTwo);
+$color-8-lighter-plus: lighten($color-8, $colorPercentVariationThree);
+$color-8-dark: darken($color-8, $colorPercentVariationOne);
+$color-8-darker: darken($color-8, $colorPercentVariationTwo);
+$color-8-darker-plus: darken($color-8, $colorPercentVariationThree);
+//color 9
+$color-9: rgba(50, 200, 150, 1);
+$color-9-light: lighten($color-9, $colorPercentVariationOne);
+$color-9-lighter: lighten($color-9, $colorPercentVariationTwo);
+$color-9-lighter-plus: lighten($color-9, $colorPercentVariationThree);
+$color-9-dark: darken($color-9, $colorPercentVariationOne);
+$color-9-darker: darken($color-9, $colorPercentVariationTwo);
+$color-9-darker-plus: darken($color-9, $colorPercentVariationThree);
+//color 10
+$color-10: rgba(50, 200, 150, 1);
+$color-10-light: lighten($color-10, $colorPercentVariationOne);
+$color-10-lighter: lighten($color-10, $colorPercentVariationTwo);
+$color-10-lighter-plus: lighten($color-10, $colorPercentVariationThree);
+$color-10-dark: darken($color-10, $colorPercentVariationOne);
+$color-10-darker: darken($color-10, $colorPercentVariationTwo);
+$color-10-darker-plus: darken($color-10, $colorPercentVariationThree);

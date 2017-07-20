@@ -1,14 +1,7 @@
-//=============================
-//IMPORT
-//=============================
+@import 'breakpoints';
+@import 'colors';
+@import 'variables';
 @import '01_css-placeholders/import';
-//=============================
-//VARIABLES
-//=============================
-
-//=============================
-//CSS STYLES
-//=============================
 //-----------------------------
 //BLOCK
 //-----------------------------
@@ -19,27 +12,29 @@
 //ELEMENTS
 //-----------------------------
 .accordion-group__accordion {
- 
+  //
 }
 .accordion-group__accordion-head {
-
+  background-color: $color-1;
+  border: 0.05rem solid $color-1-dark;
 }
 .accordion-group__accordion-heading {
+  @extend %margin-0;
 }
 .accordion-group__accordion-btn {
- 
+  @extend %border-0;
+  @extend %background-color-transparent;
+  color: $color-6;
+  @exten %display-block;
+  font-family: sans-serif;
+  font-size: 1.6rem;
+  padding: 0.3rem 1rem;
+  @extend %text-align-left;
+  @extend %width-100;
 }
-.accordion-group__accordion-collapse {
-}
-//-----------------------------
-//MODIFIERS
-//-----------------------------
-.accordion-group__accordion_expanded {
-  //
-}
-.accordion-group__accordion-btn_expanded {
-  //
-}
-.accordion-group__accordion-collapse_expanded {
-  //
+.accordion-group__accordion-panel {
+  background-color: $color-3-light;
+  border: 0.05rem solid $color-3-dark;
+  color: $color-5;
+  padding: 1rem 1rem 2rem 1rem;
 }

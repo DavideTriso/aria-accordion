@@ -1,16 +1,11 @@
 .accordion-group__accordion-btn {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none; }
+  background-color: transparent; }
 
 .accordion-group__accordion-btn {
-  border: none; }
+  border: 0; }
 
-.accordion-group__accordion-head, .accordion-group__accordion-heading {
+.accordion-group__accordion-heading {
   margin: 0; }
-
-.accordion-group__accordion-head {
-  padding: 0; }
 
 .accordion-group__accordion-btn {
   text-align: left; }
@@ -18,17 +13,21 @@
 .accordion-group__accordion-btn {
   width: 100%; }
 
-.accordion-group__accordion {
-  border: 0.1rem solid #c41c1c;
-  border-radius: 0.2rem;
-  margin-top: 0.5rem; }
+.accordion-group__accordion-head {
+  background-color: #ed4a03;
+  border: 0.05rem solid #cf4103; }
 
 .accordion-group__accordion-btn {
-  background-color: #d32222;
-  color: #fff;
-  padding: 0.5rem; }
+  color: #fdfdfd;
+  @exten %display-block;
+  font-family: sans-serif;
+  font-size: 1.6rem;
+  padding: 0.3rem 1rem; }
 
-.accordion-group__accordion-collapse {
-  padding: 0.5rem; }
+.accordion-group__accordion-panel {
+  background-color: #ffb944;
+  border: 0.05rem solid #ffa106;
+  color: #38383b;
+  padding: 1rem 1rem 2rem 1rem; }
 
 /*# sourceMappingURL=aria-accordion.css.map */
