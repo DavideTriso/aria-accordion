@@ -4,11 +4,10 @@
 
 jQuery plugin for **user friendly** and **accessible** accordions: **WAI ARIA 1.1** compliant.
 
-* LIghtweight: only 5KB (minified)
+* User friendly and accessible
+* Lightweight: only 5KB JS (minified)
 * Compatible with [**t** css-framework](https://github.com/DavideTriso/t-css-framework)
 * Runs in strict mode.
-* SASS/SCSS files for quick UI customisations.
-
 
 
 ## Dependencies
