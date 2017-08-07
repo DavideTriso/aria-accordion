@@ -1,34 +1,28 @@
-.accordion-group__accordion-btn {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none; }
-
-.accordion-group__accordion-btn {
-  border: none; }
-
-.accordion-group__accordion-head, .accordion-group__accordion-heading {
-  margin: 0; }
+.accordion-group__accordion {
+  margin-bottom: 1rem; }
 
 .accordion-group__accordion-head {
-  padding: 0; }
+  background-color: #c7c7c7;
+  border: 0.05rem solid black; }
+
+.accordion-group__accordion-heading {
+  margin: 0; }
 
 .accordion-group__accordion-btn {
-  text-align: left; }
-
-.accordion-group__accordion-btn {
+  border: 0;
+  background-color: transparent;
+  color: black;
+  display: block;
+  font-family: sans-serif;
+  font-size: 1rem;
+  padding: 0.3rem 1rem;
+  text-align: left;
   width: 100%; }
 
-.accordion-group__accordion {
-  border: 0.1rem solid #c41c1c;
-  border-radius: 0.2rem;
-  margin-top: 0.5rem; }
-
-.accordion-group__accordion-btn {
-  background-color: #d32222;
-  color: #fff;
-  padding: 0.5rem; }
-
-.accordion-group__accordion-collapse {
-  padding: 0.5rem; }
+.accordion-group__accordion-panel {
+  border: 0.05rem solid black;
+  border: 0.05rem solid #c7c7c7;
+  color: black;
+  padding: 1rem 1rem 2rem 1rem; }
 
 /*# sourceMappingURL=aria-accordion.css.map */
