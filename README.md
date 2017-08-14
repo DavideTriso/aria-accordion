@@ -157,7 +157,7 @@ This event is triggered on window and returns the accordion's group object as ar
 //listen for ariaAccordion.initialised
 $(window).on('ariaAccordion.initialised', function(event, accordionGroup){
   //When an accordion's group is initialised, perform an action
-  accordionGroup.addClass('aria-accordion_initialised');
+  accordionGroup.element.addClass('aria-accordion_initialised');
 });
 
 //Initialise the accordion's groups
@@ -173,7 +173,7 @@ This events are triggered on window and return the accordion's group object and 
 
 //listen for ariaAccordion.slideDown
 $(window).on('ariaAccordion.slideDown', function(event, accordionGroup, index){
-  console.log('Accordion ' + index + ' in accordion group ' + accordionGroup + ' was expanded');
+  console.log('Accordion ' + index + ' in accordion group ' + accordionGroup.element + ' was expanded');
 });
 
 ```
