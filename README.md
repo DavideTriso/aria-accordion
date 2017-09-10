@@ -7,6 +7,7 @@ jQuery plugin for **user friendly** and **accessible** accordions: **WAI ARIA 1.
 * User friendly and accessible
 * Lightweight: only 5KB JS (minified)
 * Runs in strict mode.
+* Compatible with amd and require.js
 
 
 ## Dependencies
