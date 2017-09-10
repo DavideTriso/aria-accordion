@@ -2,9 +2,9 @@
 
 ## About
 
-jQuery plugin for **user friendly** and **accessible** accordions: **WAI ARIA 1.1** compliant.
+jQuery plugin for **user-friendly** and **accessible** accordions: **WAI ARIA 1.1** compliant.
 
-* User friendly and accessible
+* User-friendly and accessible
 * Lightweight: only 5KB JS (minified)
 * Runs in strict mode.
 * Compatible with amd and require.js
@@ -47,7 +47,7 @@ keyboardNavigation | true | bool | Allow user to move focus with arrow keys and 
 
 1. Include the JS script **aria-accordion.js** - or the minified production script **aria-accordion.min.js** - in the head or the body of your HTML file.
 2. Include the CSS file  **aria-accordion.css** in the head of your HTML file or use the SCSS files in your project. Adapt the CSS rules to match your website's design. 
-3. Initialise the widget within an inline script tag, or in an external JS file.
+3. Initialize the widget within an inline script tag, or in an external JS file.
 
 
 ### HTML
@@ -90,11 +90,11 @@ Use following HTML markup to implement an accordion widget:
   </div>
 ```
 
-*IMPORTANT: do not replace the `<button>` and do not use any other html element than heading to wrap the button. More informations are available at [https://www.w3.org/TR/wai-aria-practices-1.1/#accordion](https://www.w3.org/TR/wai-aria-practices-1.1/#accordion).  
+*IMPORTANT: do not replace the `<button>` and do not use any other html element than heading to wrap the button. More information are available at [https://www.w3.org/TR/wai-aria-practices-1.1/#accordion](https://www.w3.org/TR/wai-aria-practices-1.1/#accordion).  
 
 ### JS: Initialise
 
-Use following code to initalise the widget:
+Use following code to initalize the widget:
 
 ```javascript
 $('.accordion-group').ariaAccordion({
@@ -105,16 +105,16 @@ $('.accordion-group').ariaAccordion({
 
 ## Methods:
 
-Methods can be called on an initialised accordion widget with following syntax:
+Methods can be called on an initialized accordion widget with following syntax:
 
 ````javascript
 $('#my-accordion-group').ariaAccordion('methodName', parameter);
 ````
 
 The plugin supports following methods: toggle, toggleNoAnimate.
-The second parameter of the function can be the index (starting from 0) of the accordion, a jQuery selector, or a jQuery element.
+The second parameter of the function can be the index (starting from 0) of the accordion, a jQuery selector, or a jQuery element. 
 Methods can be called just on one element at a time: when passing a selector make sure this matches only one element.
-When passing a jQuery object, make sure the lenght of the object is 1.
+When passing a jQuery object the length of the object should be 1.
 
 ````javascript
 
