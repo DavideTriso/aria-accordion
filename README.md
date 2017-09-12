@@ -2,6 +2,8 @@
 
 ## About
 
+[Open demo page](https://davidetriso.github.io/aria-accordion/)
+
 jQuery plugin for **user-friendly** and **accessible** accordions: **WAI ARIA 1.1** compliant.
 
 * User-friendly and accessible
