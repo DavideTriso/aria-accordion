@@ -559,19 +559,15 @@ $(document).ready(function () {
     console.log('initialised');
   });
 
-  $('.accordion-group').ariaAccordion({
+  $('.accordion-group').first().ariaAccordion({
+    contentRole: ['document', 'application', 'document'],
+    expandOnPageLoad: true,
+    slideSpeed: 400
+  });
+  $('.accordion-group').last().ariaAccordion({
     contentRole: ['document', 'application', 'document'],
     expandOnPageLoad: true,
     expandOnlyOne: true,
-    slideSpeed: 600
-  });
-
-
-  $(window).on('ariaAccordion.slideDown', function (event, element, index) {
-    console.log(element);
-  });
-
-  $(window).on('ariaAccordion.slideUp', function (event, element, index) {
-    console.log(element);
+    slideSpeed: 800
   });
 });

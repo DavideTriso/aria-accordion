@@ -6,12 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aria Accordion demo</title>
   <link rel="stylesheet" href="aria-accordion.css">
+  <style>
+    body {
+      max-width: 1000px;
+      margin: auto;
+      font-family: sans-serif;
+    }
+    .btn {
+      display: block;
+      max-width: 300px;
+      text-align: center;
+      text-decoration: none;
+      background-color: #6216c9;
+      color: #fff;
+      padding: 15px;
+      border-radius: 5px;
+      border: 1px solid #510cad;
+      margin: 40px auto;
+    }
+    .btn:hover,
+    .btn:focus {
+      background-color: #510cad;
+    }
+    .btn:avtive {
+      background-color: #6216c9;
+    }
+  </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="aria-accordion.js"></script>
 </head>
 
 <body>
-  <h1>Accordion goup 1</h1>
+  <h1>Aria Accordion</h1>
+  <h2>Demo 1</h2>
   <div class="accordion-group">
     <section class="accordion-group__accordion">
       <header class="accordion-group__accordion-head">
@@ -48,7 +75,7 @@
       </div>
     </section>
   </div>
-  <h1>Accordion goup 2</h1>
+  <h2>Demo2</h2>
   <div class="accordion-group" id="accordion-group-2">
     <article class="accordion-group__accordion">
       <header class="accordion-group__accordion-head">
@@ -81,6 +108,8 @@
       </div>
     </article>
   </div>
+  
+  <a href="https://github.com/DavideTriso/aria-accordion" class="btn">Check documentation</a>
 </body>
 
 </html>
