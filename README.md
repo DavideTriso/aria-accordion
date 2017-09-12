@@ -192,3 +192,77 @@ By default the plugin is configured to use the jQuery methods `slideDown()`, `sl
 **Aria accordion** is licensed under the terms of the **MIT license**.
 
 See [LICENSE.md](LICENSE.md) for detailed informations.
+
+
+## DEMO TEST
+
+<script src="demo/aria-accordion.min.js"></script>
+<div class="accordion-group">
+    <section class="accordion-group__accordion">
+      <header class="accordion-group__accordion-head">
+        <h3 class="accordion-group__accordion-heading"><button type="button" class="accordion-group__accordion-btn">Accordion 1 </button></h3>
+      </header>
+      <div class="accordion-group__accordion-panel">
+        <div class="accordion-group__accordion-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <button type="button">Test focus</button>
+        </div>
+      </div>
+    </section>
+    <section class="accordion-group__accordion">
+      <header class="accordion-group__accordion-head">
+        <h3 class="accordion-group__accordion-heading"><button type="button" class="accordion-group__accordion-btn">Accordion 2 </button></h3>
+      </header>
+      <div class="accordion-group__accordion-panel">
+        <div class="accordion-group__accordion-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <button type="button">Test focus</button>
+        </div>
+      </div>
+    </section>
+    <section class="accordion-group__accordion">
+      <header class="accordion-group__accordion-head">
+        <h3 class="accordion-group__accordion-heading"><button type="button" class="accordion-group__accordion-btn">Accordion 3 </button></h3>
+      </header>
+      <div class="accordion-group__accordion-panel">
+        <div class="accordion-group__accordion-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <button type="button">Test focus</button>
+
+        </div>
+      </div>
+    </section>
+  </div>
+  <h1>Accordion goup 2</h1>
+  <div class="accordion-group" id="accordion-group-2">
+    <article class="accordion-group__accordion">
+      <header class="accordion-group__accordion-head">
+        <h3 class="accordion-group__accordion-heading"><button type="button" class="accordion-group__accordion-btn">Accordion 1 </button></h3>
+      </header>
+      <div class="accordion-group__accordion-panel">
+        <div class="accordion-group__accordion-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+    </article>
+    <article class="accordion-group__accordion">
+      <header class="accordion-group__accordion-head">
+        <h3 class="accordion-group__accordion-heading"><button type="button" class="accordion-group__accordion-btn">Accordion 2 </button></h3>
+      </header>
+      <div class="accordion-group__accordion-panel">
+        <div class="accordion-group__accordion-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+    </article>
+    <article class="accordion-group__accordion">
+      <header class="accordion-group__accordion-head">
+        <h3 class="accordion-group__accordion-heading"><button type="button" class="accordion-group__accordion-btn">Accordion 3 </button></h3>
+      </header>
+      <div class="accordion-group__accordion-panel">
+        <div class="accordion-group__accordion-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+    </article>
+  </div>
