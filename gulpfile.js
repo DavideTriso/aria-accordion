@@ -72,6 +72,20 @@ gulp.task('js', ['jsDist', 'jsDocs']);
 
 
 
+//HTML -> HTML
+//Put a copy of HTML file to 'dist' folder
+gulp.task('htmlDist', function () {
+  gulp.src('src/html/*.html')
+    .pipe(gulp.dest('dist'))
+    .pipe(notify({
+      message: 'htmlDist task complete'
+    }));
+});
+
+
+gulp.task('html', ['htmlDist']);
+
+
 
 //WATCH TASKS
 
@@ -84,8 +98,13 @@ gulp.task('watchJS', function () {
   gulp.watch('src/js/*.js', ['js']);
 });
 
+gulp.task('watchHTML', function () {
+  gulp.watch('src/html/*.html', ['html']);
+});
+
 
 gulp.task('watchAll', function () {
   gulp.watch('src/js/*.js', ['js']);
   gulp.watch('src/scss/*.scss', ['scss']);
+  gulp.watch('src/html/*.html', ['js']);
 });
