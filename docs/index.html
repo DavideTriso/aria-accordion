@@ -34,6 +34,28 @@
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="aria-accordion.js"></script>
+  <script>
+  $(document).ready(function () {
+    'use strict';
+
+    $(window).on('ariaAccordion.initialised', function (event, element) {
+      console.log('initialised');
+    });
+
+    $('.accordion-group').first().ariaAccordion({
+      contentRole: ['document', 'application', 'document'],
+      expandOnPageLoad: true,
+      slideSpeed: 400
+    });
+
+    $('.accordion-group').last().ariaAccordion({
+      contentRole: ['document', 'application', 'document'],
+      expandOnPageLoad: true,
+      expandOnlyOne: true,
+      slideSpeed: 800
+    });
+  });
+</script>
 </head>
 
 <body>
@@ -108,7 +130,7 @@
       </div>
     </article>
   </div>
-  
+
   <a href="https://github.com/DavideTriso/aria-accordion" class="btn">Check documentation</a>
 </body>
 

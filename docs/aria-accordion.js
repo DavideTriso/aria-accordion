@@ -9,8 +9,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-
-
+ 
 (function (factory) {
   if (typeof define === 'function' && define.amd) {
     define(['jquery'], factory);
@@ -98,7 +97,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
        * First we chek if the element (the accordion group) alredy has an ID. If not, we generate and set one.
        * In order to generate unique IDs for the element, we use the variable 'count' as a suffix.
        * After each initialisation, the variable get incremented by 1.
-       * The whole id of the element will then be used as a prefix 
+       * The whole id of the element will then be used as a prefix
        * to also make sure the ids we are going to set to the elements are unique.
        */
       var self = this,
@@ -196,7 +195,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       /*
        * This method checks wheter an accordion is expanded or collapsed,
        * and calls the method to toggle the accordion based on the current state.
-       * 
+       *
        * The check of the status of the accorsions is made by looking up the value
        * set for the accordion in the elementsStatus array.
        *
@@ -206,7 +205,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         elementsStatus = self.elementsStatus;
 
 
-      //Implement the toggle logic for default mode and for expandOnlyOne      
+      //Implement the toggle logic for default mode and for expandOnlyOne
       if (settings.expandOnlyOne) {
         /*
          * When expandOnlyOne is set to true, then the expanded accordion
@@ -215,7 +214,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
          * should be collapsed
          */
         if (elementsStatus[accIndex] === true) {
-          return false; //Stop execution 
+          return false; //Stop execution
         } else {
           self.slideUp(elementsStatus.indexOf(true), animate); //collapse expande accordion
           self.slideDown(accIndex, animate); //Expand accordion
@@ -273,43 +272,43 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         // Implement the logic for keyboard navigation
         if (checkForModifierKeys(event) === 'none') {
           switch (pressedKey) {
-            case 38:
-              //up arrow: focus previous heading
-              if (focussedElementIndex > 0) {
-                btn.eq(focussedElementIndex - 1).focus();
-                event.preventDefault(); //prevent body from scrolling
-              }
-              break;
-            case 40:
-              //down arrow: focus next heading
-              if (focussedElementIndex < elementsLenght) {
-                btn.eq(focussedElementIndex + 1).focus();
-                event.preventDefault(); //prevent body from scrolling
-              }
-              break;
-            case 36:
-              //home: focus first heading
-              elements.btn.eq(0).focus();
-              break;
-            case 35:
-              //end: focus last heading
-              btn.eq(elementsLenght - 1).focus();
-              break;
+          case 38:
+            //up arrow: focus previous heading
+            if (focussedElementIndex > 0) {
+              btn.eq(focussedElementIndex - 1).focus();
+              event.preventDefault(); //prevent body from scrolling
+            }
+            break;
+          case 40:
+            //down arrow: focus next heading
+            if (focussedElementIndex < elementsLenght) {
+              btn.eq(focussedElementIndex + 1).focus();
+              event.preventDefault(); //prevent body from scrolling
+            }
+            break;
+          case 36:
+            //home: focus first heading
+            elements.btn.eq(0).focus();
+            break;
+          case 35:
+            //end: focus last heading
+            btn.eq(elementsLenght - 1).focus();
+            break;
           }
         } else if (checkForModifierKeys(event) === 'ctrl') {
           switch (pressedKey) {
-            case 81:
-              //page up: move focus to prev heading
-              if (focussedElementIndex > 0) {
-                btn.eq(focussedElementIndex - 1).focus();
-              }
-              break;
-            case 87:
-              //page down: focus next heading
-              if (focussedElementIndex < elementsLenght) {
-                btn.eq(focussedElementIndex + 1).focus();
-              }
-              break;
+          case 81:
+            //page up: move focus to prev heading
+            if (focussedElementIndex > 0) {
+              btn.eq(focussedElementIndex - 1).focus();
+            }
+            break;
+          case 87:
+            //page down: focus next heading
+            if (focussedElementIndex < elementsLenght) {
+              btn.eq(focussedElementIndex + 1).focus();
+            }
+            break;
           }
         }
       } else if (focussedElement.closest('.' + settings.panelClass).length > 0 && checkForModifierKeys(event) === 'ctrl') {
@@ -320,16 +319,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         focussedElementIndex = elements.panel.index(focussedElement.closest('.' + settings.panelClass));
 
         switch (pressedKey) {
-          case 81:
-            //page up: move focus to heading of this accordion
-            btn.eq(focussedElementIndex).focus();
-            break;
-          case 87:
-            //page down: focus next heading
-            if (focussedElementIndex < elementsLenght) {
-              btn.eq(focussedElementIndex + 1).focus();
-            }
-            break;
+        case 81:
+          //page up: move focus to heading of this accordion
+          btn.eq(focussedElementIndex).focus();
+          break;
+        case 87:
+          //page down: focus next heading
+          if (focussedElementIndex < elementsLenght) {
+            btn.eq(focussedElementIndex + 1).focus();
+          }
+          break;
         }
       }
     },
@@ -498,12 +497,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
        * first parameter passed along with the function.
        */
       switch (methodName) {
-        case 'toggle':
-          self.toggle(methodArg, true); //call toggle
-          break;
-        case 'toggleNoAnimate':
-          self.toggle(methodArg, false); //call toggle
-          break;
+      case 'toggle':
+        self.toggle(methodArg, true); //call toggle
+        break;
+      case 'toggleNoAnimate':
+        self.toggle(methodArg, false); //call toggle
+        break;
       }
     }
   });
@@ -549,25 +548,3 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   };
 
 }(jQuery, window)));
-
-
-
-$(document).ready(function () {
-  'use strict';
-
-  $(window).on('ariaAccordion.initialised', function (event, element) {
-    console.log('initialised');
-  });
-
-  $('.accordion-group').first().ariaAccordion({
-    contentRole: ['document', 'application', 'document'],
-    expandOnPageLoad: true,
-    slideSpeed: 400
-  });
-  $('.accordion-group').last().ariaAccordion({
-    contentRole: ['document', 'application', 'document'],
-    expandOnPageLoad: true,
-    expandOnlyOne: true,
-    slideSpeed: 800
-  });
-});

@@ -26,29 +26,29 @@ Developed and tested with jQuery 3.2.1
 
 ## Options
 
-Name | Default | Type | Description 
+Name | Default | Type | Description
 -----|---------|------|-------------
 accGroupIdPrefix | accordion-group-- | string | Prefix used to generate the IDs of the accordion's widgets
-accClass | accordion-group__accordion | string | Class of single accordion elements. (This class is used from the plugin to select the elements in the markup). 
-headingClass | accordion-group__accordion-heading | string | Class of accordion's heading elements. (This class is used from the plugin to select the elements in the markup). 
+accClass | accordion-group__accordion | string | Class of single accordion elements. (This class is used from the plugin to select the elements in the markup).
+headingClass | accordion-group__accordion-heading | string | Class of accordion's heading elements. (This class is used from the plugin to select the elements in the markup).
 btnClass | accordion-group__accordion-btn | string | Class of accordion's buttons. (This class is used from the plugin to select the elements in the markup).
-panelClass | accordion-group__accordion-panel | string | Class of accordion's panels. (This class is used from the plugin to select the elements in the markup). 
-contentClass | accordion-group__accordion-content | string | Class of accordion's content elements. (This class is used from the plugin to select the elements in the markup). 
-expandedClass | accordion-group__accordion_expanded | string | Class added to an expanded accordions. 
-btnExpandedClass | accordion-group__accordion-btn_expanded | string | Class added to the button of an expanded accordion. 
-panelExpandedClass | accordion-group__accordion-panel_expanded | string | Class added to a panel of an expanded accordion. 
-contentRole | document | token, array of tokens | Role of accordion's content. Accepted values: document, application. For more information see [https://www.w3.org/TR/wai-aria-1.1/](https://www.w3.org/TR/wai-aria-1.1/). To set different roles on each accordion, pass an array of tokens. 
-slideSpeed | 300 | int (>= 0) | Duration of collapse/expand animations. 
-easing | swing | string | The easing function used for the slide-up and slide-down animation of the accordions. Applies only if **cssTransition** is set to false, otherwise this option will not have any effect on the transition. Accepted values are `swing` and `linear`. For more timing functions a jQuery easing plugin is needed. 
+panelClass | accordion-group__accordion-panel | string | Class of accordion's panels. (This class is used from the plugin to select the elements in the markup).
+contentClass | accordion-group__accordion-content | string | Class of accordion's content elements. (This class is used from the plugin to select the elements in the markup).
+expandedClass | accordion-group__accordion_expanded | string | Class added to an expanded accordions.
+btnExpandedClass | accordion-group__accordion-btn_expanded | string | Class added to the button of an expanded accordion.
+panelExpandedClass | accordion-group__accordion-panel_expanded | string | Class added to a panel of an expanded accordion.
+contentRole | document | token, array of tokens | Role of accordion's content. Accepted values: document, application. For more information see [https://www.w3.org/TR/wai-aria-1.1/](https://www.w3.org/TR/wai-aria-1.1/). To set different roles on each accordion, pass an array of tokens.
+slideSpeed | 300 | int (>= 0) | Duration of collapse/expand animations.
+easing | swing | string | The easing function used for the slide-up and slide-down animation of the accordions. Applies only if **cssTransition** is set to false, otherwise this option will not have any effect on the transition. Accepted values are `swing` and `linear`. For more timing functions a jQuery easing plugin is needed.
 cssTransitions | false | bool | Use css transitions to expand/collapse accordions instead of jQuery slide animations. Read section 'Using CSS transitions' for more informations.
-expandOnPageLoad | false | bool | Show or hide first accordion in an accordion's group when widget is initialised. 
+expandOnPageLoad | false | bool | Show or hide first accordion in an accordion's group when widget is initialised.
 expandOnlyOne | false | bool | Only one accordion in the accordion's group can be expanded and one accordion must always be expanded.
-keyboardNavigation | true | bool | Allow user to move focus with arrow keys and other shortcuts. For more information see [https://www.w3.org/TR/wai-aria-practices-1.1/#accordion](https://www.w3.org/TR/wai-aria-practices-1.1/#accordion). 
+keyboardNavigation | true | bool | Allow user to move focus with arrow keys and other shortcuts. For more information see [https://www.w3.org/TR/wai-aria-practices-1.1/#accordion](https://www.w3.org/TR/wai-aria-practices-1.1/#accordion).
 
 ## Usage
 
 1. Include the JS script **aria-accordion.js** - or the minified production script **aria-accordion.min.js** - in the head or the body of your HTML file.
-2. Include the CSS file  **aria-accordion.css** in the head of your HTML file or use the SCSS files in your project. Adapt the CSS rules to match your website's design. 
+2. Include the CSS file  **aria-accordion.css** in the head of your HTML file or use the SCSS files in your project. Adapt the CSS rules to match your website's design.
 3. Initialize the widget within an inline script tag, or in an external JS file.
 
 
@@ -73,8 +73,8 @@ Use following HTML markup to implement an accordion widget:
       </div>
     </section>
     <!-- ACCORDION END -->
-    
-    
+
+
     <!-- ACCORDION BEGIN -->
     <section class="accordion-group__accordion">
       <header class="accordion-group__accordion-head">
@@ -88,7 +88,7 @@ Use following HTML markup to implement an accordion widget:
       </div>
     </section>
     <!-- ACCORDION END -->
-    
+
   </div>
 ```
 
@@ -107,14 +107,14 @@ $('.accordion-group').ariaAccordion({
 
 ## Methods:
 
-Methods can be called on an initialized accordion widget with following syntax:
+Methods can be called on an initialised accordion widget with following syntax:
 
 ````javascript
 $('#my-accordion-group').ariaAccordion('methodName', parameter);
 ````
 
 The plugin supports following methods: toggle, toggleNoAnimate.
-The second parameter of the function can be the index (starting from 0) of the accordion, a jQuery selector, or a jQuery element. 
+The second parameter of the function can be the index (starting from 0) of the accordion, a jQuery selector, or a jQuery element.
 Methods can be called just on one element at a time: when passing a selector make sure this matches only one element.
 When passing a jQuery object the length of the object should be 1.
 
@@ -183,7 +183,7 @@ $(window).on('ariaAccordion.slideDown', function(event, accordionGroup, index){
 
 ## Using CSS transitions
 
-By default the plugin is configured to use the jQuery methods `slideDown()`, `slideUp()` to expand/collapse accordions. Setting the option **cssTransitions** to 'true' will disable the JS animations. This will make possible to implement the transitions with css. In fact, the plugin toggles the classes passed along with the options **expandedClass**, **btnExpandedClass** and **panelExpandedClass** when an accordion is toggled. 
+By default the plugin is configured to use the jQuery methods `slideDown()`, `slideUp()` to expand/collapse accordions. Setting the option **cssTransitions** to 'true' will disable the JS animations. This will make possible to implement the transitions with css. In fact, the plugin toggles the classes passed along with the options **expandedClass**, **btnExpandedClass** and **panelExpandedClass** when an accordion is toggled.
 
 ## Planned features
 
