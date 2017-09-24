@@ -73,7 +73,7 @@ gulp.task('js', ['jsDist', 'jsDocs']);
 
 
 
-//WATCH
+//WATCH TASKS
 
 gulp.task('watchScss', function () {
   gulp.watch('src/scss/*.scss', ['scss']);
@@ -82,4 +82,10 @@ gulp.task('watchScss', function () {
 
 gulp.task('watchJS', function () {
   gulp.watch('src/js/*.js', ['js']);
+});
+
+
+gulp.task('watchAll', function () {
+  gulp.watch('src/js/*.js', ['js']);
+  gulp.watch('src/scss/*.scss', ['scss']);
 });

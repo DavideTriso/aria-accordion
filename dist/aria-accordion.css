@@ -1,7 +1,3 @@
-.accordion-group {
-  font-size: 10px;
-}
-
 .accordion-group__accordion {
   margin-bottom: 1rem;
 }
@@ -31,5 +27,5 @@
   border: 0.05rem solid black;
   border: 0.05rem solid #c7c7c7;
   color: black;
-  padding: 1rem 1rem 2rem 1rem;
+  padding: 1rem 1rem 2rem;
 }
