@@ -53,7 +53,7 @@ keyboardNavigation | true | bool | Allow user to move focus with arrow keys and 
 
 
 ### HTML
-
+ 
 Use following HTML markup to implement an accordion widget:
 
 ```html
