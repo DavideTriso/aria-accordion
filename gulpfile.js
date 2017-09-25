@@ -51,6 +51,9 @@ gulp.task('scss', ['scssDist', 'scssDocs']);
 gulp.task('jsDist', function () {
   gulp.src('src/js/*.js')
     .pipe(gulp.dest('dist'))
+    .pipe(rename({
+      suffix: '.min'
+    }))
     .pipe(uglify())
     .pipe(gulp.dest('dist'))
     .pipe(notify({
