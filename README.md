@@ -2,11 +2,7 @@
 
 ## About
 
-jQuery plugin for **user-friendly** and **accessible** accordions: **WAI ARIA 1.1** compliant.
-
-[Go to demo page](https://davidetriso.github.io/aria-accordion/).
-
-[Check on npm](https://www.npmjs.com/package/t-aria-accordion).
+jQuery plugin for **user-friendly** and **accessible** accordions: **WAI ARIA 1.1** compliant. [Go to demo page](https://davidetriso.github.io/aria-accordion/) or [check on npm](https://www.npmjs.com/package/t-aria-accordion).
 
 
 * User-friendly and accessible
