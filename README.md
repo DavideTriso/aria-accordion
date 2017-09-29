@@ -2,7 +2,12 @@
 
 ## About
 
-jQuery plugin for **user-friendly** and **accessible** accordions: **WAI ARIA 1.1** compliant. [Go to demo page](https://davidetriso.github.io/aria-accordion/).
+jQuery plugin for **user-friendly** and **accessible** accordions: **WAI ARIA 1.1** compliant.
+
+[Go to demo page](https://davidetriso.github.io/aria-accordion/).
+
+[Check on npm](https://www.npmjs.com/package/t-aria-accordion).
+
 
 * User-friendly and accessible
 * Lightweight: only 5KB JS (minified)
@@ -43,13 +48,15 @@ expandOnPageLoad | false | bool | Show or hide first accordion in an accordion's
 expandOnlyOne | false | bool | Only one accordion in the accordion's group can be expanded and one accordion must always be expanded.
 keyboardNavigation | true | bool | Allow user to move focus with arrow keys and other shortcuts. For more information see [https://www.w3.org/TR/wai-aria-practices-1.1/#accordion](https://www.w3.org/TR/wai-aria-practices-1.1/#accordion).
 
-## Install
+## Installation
 
-Download the package from **GitHub** and get the compiled files from the `dist` folder
-Or install with **npm**:
+Download the package from **GitHub** and get the compiled files from the `dist` folder.
+
+The plugin is also available on **npm**:
 ```
 npm install t-aria-accordion
 ```
+
 ## Usage
 
 1. Include the JS script **aria-accordion.js** - or the minified production script **aria-accordion.min.js** - in the head or the body of your HTML file.
