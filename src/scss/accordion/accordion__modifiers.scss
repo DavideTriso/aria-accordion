@@ -1,0 +1,15 @@
+//-----------------------------
+//MODIFIERS
+//-----------------------------
+
+.accordion-group__accordion_expanded {
+  //
+}
+
+.accordion-group__accordion-btn_expanded {
+  @include border(skip, 0.3rem 0.3rem 0 0, skip);
+}
+
+.accordion-group__accordion-panel_expanded {
+  //
+}

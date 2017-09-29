@@ -1,10 +1,9 @@
-.accordion-group__accordion {
-  margin-bottom: 1rem;
+.accordion-group__accordion-btn, .accordion-group__accordion-panel {
+  border-style: solid;
 }
 
-.accordion-group__accordion-head {
-  background-color: #c7c7c7;
-  border: 0.05rem solid black;
+.accordion-group__accordion-btn {
+  display: block;
 }
 
 .accordion-group__accordion-heading {
@@ -12,20 +11,57 @@
 }
 
 .accordion-group__accordion-btn {
-  border: 0;
-  background-color: transparent;
-  color: black;
-  display: block;
-  font-family: sans-serif;
-  font-size: 1rem;
-  padding: 0.3rem 1rem;
   text-align: left;
+}
+
+.accordion-group__accordion-btn {
   width: 100%;
 }
 
+.accordion-group__accordion-btn {
+  font-size: 1rem;
+}
+
+.accordion-group__accordion {
+  margin-bottom: 0.25rem;
+}
+
 .accordion-group__accordion-panel {
-  border: 0.05rem solid black;
-  border: 0.05rem solid #c7c7c7;
-  color: black;
-  padding: 1rem 1rem 2rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+.accordion-group__accordion-btn {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.accordion-group {
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+}
+
+.accordion-group__accordion-panel {
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+}
+
+/*
+@include generateResponsiveGutter($guttersBreakpointsMap, $smallGuttersList, $containerClassName, $rowClassName, $columnClassName, $smallGutterModifierName);
+@include generateResponsiveGutter($guttersBreakpointsMap, $largeGuttersList, $containerClassName, $rowClassName, $columnClassName, $largeGutterModifierName);*/
+.accordion-group__accordion-btn {
+  background-color: #ccc;
+  border-color: #878787;
+  border-radius: 0.3rem;
+  border-width: 0.05rem;
+}
+
+.accordion-group__accordion-panel {
+  border-color: #878787;
+  border-radius: 0 0 0.3rem 0.3rem;
+  border-width: 0 0.05rem 0.05rem 0.05rem;
+}
+
+.accordion-group__accordion-btn_expanded {
+  border-radius: 0.3rem 0.3rem 0 0;
 }

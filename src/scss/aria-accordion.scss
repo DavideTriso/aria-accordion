@@ -1,42 +1,9 @@
-//-----------------------------
-//BLOCK
-//-----------------------------
-
-.accordion-group {
-  //
-}
-//-----------------------------
-//ELEMENTS
-//-----------------------------
-
-.accordion-group__accordion {
-  margin-bottom: 1rem;
-}
-
-.accordion-group__accordion-head {
-  background-color: #c7c7c7;
-  border: 0.05rem solid black;
-}
-
-.accordion-group__accordion-heading {
-  margin: 0;
-}
-
-.accordion-group__accordion-btn {
-  border: 0;
-  background-color: transparent;
-  color: black;
-  display: block;
-  font-family: sans-serif;
-  font-size: 1rem;
-  padding: 0.3rem 1rem;
-  text-align: left;
-  width: 100%;
-}
-
-.accordion-group__accordion-panel {
-  border: 0.05rem solid black;
-  border: 0.05rem solid #c7c7c7;
-  color: black;
-  padding: 1rem 1rem 2rem;
-}
+@import '../../node_modules/t-css-framework/settings/import';
+@import '../../node_modules/t-css-framework/functions/import';
+@import '../../node_modules/t-css-framework/css-placeholders/import';
+@import '../../node_modules/t-css-framework/responsive-helpers/import';
+@import '../../node_modules/t-css-framework/ui-helpers/import';
+@import '../../node_modules/t-css-framework/grid/import';
+@import "accordion/accordion";
+@import "accordion/accordion__elements";
+@import "accordion/accordion__modifiers";

@@ -347,7 +347,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
       //Update attributes and classes
       elements.acc.eq(accIndex)
-        .addClass(settings.accExpandedClass);
+        .addClass(settings.expandedClass);
+
+      console.log(elements.acc.eq(accIndex));
 
       elements.btn.eq(accIndex)
         .attr(a.aEx, a.t)
@@ -384,7 +386,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
       //Update attributes and classes
       elements.acc.eq(accIndex)
-        .removeClass(settings.accExpandedClass);
+        .removeClass(settings.expandedClass);
 
       elements.btn.eq(accIndex)
         .attr(a.aEx, a.f)

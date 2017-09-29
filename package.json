@@ -1,6 +1,7 @@
 {
   "name": "aria-accordion",
   "license": "MIT",
+  "version": "1.1.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/davidetriso/aria-accordion.git"
@@ -16,5 +17,7 @@
     "gulp-uglify": "^3.0.0",
     "require-dir": "^0.3.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "t-css-framework": "^0.1.0"
+  }
 }
