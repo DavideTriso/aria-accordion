@@ -349,8 +349,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       elements.acc.eq(accIndex)
         .addClass(settings.expandedClass);
 
-      console.log(elements.acc.eq(accIndex));
-
       elements.btn.eq(accIndex)
         .attr(a.aEx, a.t)
         .addClass(settings.btnExpandedClass);

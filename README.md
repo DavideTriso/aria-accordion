@@ -98,9 +98,10 @@ Use following HTML markup to implement an accordion widget:
     <!-- ACCORDION END -->
 
   </div>
+
 ```
 
-*IMPORTANT: do not replace the `<button>` and do not use any other html element than heading to wrap the button. More information are available at [https://www.w3.org/TR/wai-aria-practices-1.1/#accordion](https://www.w3.org/TR/wai-aria-practices-1.1/#accordion).  
+IMPORTANT: do not replace the `<button>` and do not use any other html element than heading to wrap the button. More information are available at [https://www.w3.org/TR/wai-aria-practices-1.1/#accordion](https://www.w3.org/TR/wai-aria-practices-1.1/#accordion).  
 
 ### JS: Initialise
 
