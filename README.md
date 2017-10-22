@@ -1,14 +1,13 @@
 # ARIA ACCORDION
 
 ## About
+HTML, CSS and JS **accordion** UI-component for scalable projects. **User-friendly** and **accessible**: **WAI ARIA 1.1** compliant. [Go to demo page](https://davidetriso.github.io/aria-accordion/) or [check on npm](https://www.npmjs.com/package/t-aria-accordion).
 
-jQuery plugin for **user-friendly** and **accessible** accordions: **WAI ARIA 1.1** compliant. [Go to demo page](https://davidetriso.github.io/aria-accordion/) or [check on npm](https://www.npmjs.com/package/t-aria-accordion).
-
-
+* Developed following BEM methodology
 * User-friendly and accessible
-* Lightweight: only 5KB JS (minified)
-* Runs in strict mode.
-* Compatible with amd and require.js
+* Only 5KB JS (minified)
+* JS plugin runs in strict mode
+* Compatible with UMD
 
 
 ## Dependencies
