@@ -39,7 +39,7 @@ contentRole | document | token, array of tokens | Role of accordion's content. A
 slideSpeed | 300 | int (>= 0) | Duration of collapse/expand animations.
 easing | swing | string | The easing function used for the slide-up and slide-down animation of the accordions. Applies only if **cssTransition** is set to false, otherwise this option will not have any effect on the transition. Accepted values are `swing` and `linear`. For more timing functions a jQuery easing plugin is needed.
 cssTransitions | false | bool | Use css transitions to expand/collapse accordions instead of jQuery slide animations. Read section 'Using CSS transitions' for more informations.
-expandOnPageLoad | false | bool | Show or hide first accordion in an accordion's group when widget is initialised.
+expandOnPageLoad | true | bool | Show or hide first accordion in an accordion's group when widget is initialised.
 expandOnlyOne | false | bool | Only one accordion in the accordion's group can be expanded and one accordion must always be expanded.
 keyboardNavigation | true | bool | Allow user to move focus with arrow keys and other shortcuts. For more information see [https://www.w3.org/TR/wai-aria-practices-1.1/#accordion](https://www.w3.org/TR/wai-aria-practices-1.1/#accordion).
 
