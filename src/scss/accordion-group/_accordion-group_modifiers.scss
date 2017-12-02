@@ -7,7 +7,9 @@
 }
 
 .accordion-group__accordion-btn_expanded {
-  @include border(skip, 0.3rem 0.3rem 0 0, skip);
+  background-color: $accordion-group__accordion-btn_expanded--background-color;
+
+  @include border($accordion-group__accordion-btn_expanded--border);
 }
 
 .accordion-group__accordion-panel_expanded {

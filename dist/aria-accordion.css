@@ -1,21 +1,249 @@
-.accordion-group__accordion-btn, .accordion-group__accordion-panel {
-  border-style: solid;
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-.accordion-group__accordion-btn {
-  display: block;
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-.accordion-group__accordion-heading {
+html,
+body {
+  color: black;
+  margin: 0;
+  max-width: 100%;
+  min-width: 100%;
+  font-family: sans-serif;
+  font-size: 16px;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+address {
+  font-style: normal;
+}
+
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+cite {
+  font-style: normal;
+}
+
+code {
+  font-family: inherit;
+}
+
+del {
+  text-decoration: none;
+}
+
+dfn {
+  font-style: normal;
+}
+
+em {
+  font-style: normal;
+}
+
+i {
+  font-style: normal;
+}
+
+ins {
+  text-decoration: none;
+}
+
+kbd {
+  font-family: inherit;
+}
+
+mark {
+  background-color: transparent;
+  color: inherit;
+}
+
+pre {
+  font-family: inherit;
   margin: 0;
 }
 
-.accordion-group__accordion-btn {
+q:before, q:after {
+  content: none;
+}
+
+s {
+  text-decoration: none;
+}
+
+samp {
+  font-family: inherit;
+}
+
+strong {
+  font-weight: 400;
+}
+
+u {
+  text-decoration: none;
+}
+
+var {
+  font-style: normal;
+}
+
+a, a:focus, a:hover, a:active {
+  color: black;
+  outline: none;
+  text-decoration: none;
+}
+
+dl,
+menu,
+ol,
+ul {
+  list-style: none;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+
+dl,
+dt,
+li,
+menuitem {
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-color: transparent;
+}
+
+caption {
+  font-weight: normal;
   text-align: left;
 }
 
-.accordion-group__accordion-btn {
+tr {
+  border-color: transparent;
+}
+
+th {
+  font-weight: normal;
+  text-align: left;
+}
+
+button,
+input,
+select,
+textarea {
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+input[type=search] {
+  -webkit-appearance: textfield;
+}
+
+::-webkit-search-decoration {
+  display: none;
+}
+
+fieldset {
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  min-width: 0;
+  padding-top: 0.01em 0 0 0;
+}
+
+body:not(:-moz-handler-blocked) fieldset {
+  display: table-cell;
+}
+
+label,
+legend {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  display: table;
+  float: left;
   width: 100%;
+}
+legend + * {
+  clear: both;
+}
+
+output {
+  font-size: 1rem;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-box-sizing: border-box;
+}
+
+img,
+map,
+figure,
+picture {
+  display: block;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+canvas {
+  height: auto;
+  width: 100%;
+}
+
+figcaption {
+  font-style: normal;
+  font-size: 1rem;
 }
 
 /*
@@ -42,50 +270,40 @@
 	}
 }
 */
-.accordion-group__accordion-btn {
-  font-size: 1rem;
+.accordion-group {
+  padding: 1rem 0;
 }
 
 .accordion-group__accordion {
-  margin-bottom: 0.25rem;
+  margin: 0 0 0.25rem 0;
 }
 
-.accordion-group__accordion-panel {
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
-}
-
-.accordion-group__accordion-btn {
-  padding-top: 0.8rem;
-  padding-bottom: 0.8rem;
-}
-
-.accordion-group {
-  padding-top: 1.6rem;
-  padding-bottom: 1.6rem;
-}
-
-.accordion-group__accordion-panel {
-  padding-left: 0.8rem;
-  padding-right: 0.8rem;
-}
-
-/*
-@include generateResponsiveGutter($guttersBreakpointsMap, $smallGuttersList, $containerClassName, $rowClassName, $columnClassName, $smallGutterModifierName);
-@include generateResponsiveGutter($guttersBreakpointsMap, $largeGuttersList, $containerClassName, $rowClassName, $columnClassName, $largeGutterModifierName);*/
 .accordion-group__accordion-btn {
   background-color: #ccc;
   border-color: #878787;
   border-radius: 0.3rem;
+  border-style: solid;
   border-width: 0.05rem;
+  color: #000;
+  display: block;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  width: 100%;
 }
 
 .accordion-group__accordion-panel {
   border-color: #878787;
   border-radius: 0 0 0.3rem 0.3rem;
+  border-style: solid;
   border-width: 0 0.05rem 0.05rem 0.05rem;
+  padding: 0.5rem 1rem;
 }
 
 .accordion-group__accordion-btn_expanded {
-  border-radius: 0.3rem 0.3rem 0 0;
+  background-color: #8e8e8e;
+  border-color: #615d5d;
+  border-radius: 0.3rem;
+  border-style: solid;
+  border-width: 0.05rem;
 }

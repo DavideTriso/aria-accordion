@@ -3,5 +3,5 @@
 //-----------------------------
 
 .accordion-group {
-  @extend %r-ptb_8;
+  padding: $accordion-group--padding;
 }

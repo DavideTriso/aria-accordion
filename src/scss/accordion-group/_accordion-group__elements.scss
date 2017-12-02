@@ -1,0 +1,34 @@
+//-----------------------------
+//ELEMENTS
+//-----------------------------
+
+.accordion-group__accordion {
+  margin: $accordion-group__accordion--margin;
+}
+
+.accordion-group__accordion-head {
+  //
+}
+
+.accordion-group__accordion-heading {
+  //
+}
+
+.accordion-group__accordion-btn {
+  background-color: $accordion-group__accordion-btn--background-color;
+
+  @include border($accordion-group__accordion-btn--border);
+
+  color: #000;
+  display: block;
+  font-size: $accordion-group__accordion-btn--font-size;
+  padding: $accordion-group__accordion-btn--padding;
+  text-align: $accordion-group__accordion-btn--text-align;
+  width: 100%;
+}
+
+.accordion-group__accordion-panel {
+  @include border($accordion-group__accordion-panel--border);
+
+  padding: $accordion-group__accordion-panel--padding;
+}
