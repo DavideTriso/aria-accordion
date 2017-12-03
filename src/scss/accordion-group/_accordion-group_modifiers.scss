@@ -12,6 +12,14 @@
   @include border($accordion-group__accordion-btn_expanded--border);
 }
 
+.accordion-group__accordion-btn {
+  &:focus {
+    background-color: $accordion-group__accordion-btn_focus--background-color;
+
+    @include border($accordion-group__accordion-btn_focus--border);
+  }
+}
+
 .accordion-group__accordion-panel_expanded {
   //
 }

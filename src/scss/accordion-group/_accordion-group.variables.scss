@@ -6,16 +6,17 @@ $accordion-group--padding: 1rem 0 !default;
 $accordion-group__accordion--margin: 0 0 0.25rem 0 !default;
 
 //button
-$accordion-group__accordion-btn--background-color: #ccc !default;
-$accordion-group__accordion-btn--border: (borderColor: #878787, borderRadius: 0.3rem, borderWidth: 0.05rem, borderStyle: solid) !default;
+$accordion-group__accordion-btn--background-color: #e2e2e2 !default;
+$accordion-group__accordion-btn--border: (borderColor: #ccc, borderRadius: 0.3rem, borderWidth: 0.05rem, borderStyle: solid) !default;
 $accordion-group__accordion-btn--font-size: 1rem !default;
 $accordion-group__accordion-btn--padding: 0.5rem 1rem !default;
 $accordion-group__accordion-btn--text-align: left !default;
-
-$accordion-group__accordion-panel--border: (borderColor: #878787, borderRadius: 0 0 0.3rem 0.3rem, borderWidth: 0 0.05rem 0.05rem 0.05rem, borderStyle: solid) !default;
+$accordion-group__accordion-panel--border: (borderColor: #ccc, borderRadius: 0 0 0.3rem 0.3rem, borderWidth: 0 0.05rem 0.05rem 0.05rem, borderStyle: solid) !default;
 $accordion-group__accordion-panel--padding: 0.5rem 1rem !default;
 
 //MODIFIERS
 //button
-$accordion-group__accordion-btn_expanded--background-color: #8e8e8e !default;
-$accordion-group__accordion-btn_expanded--border: (borderColor: #615d5d, borderRadius: 0.3rem, borderWidth: 0.05rem, borderStyle: solid) !default;
+$accordion-group__accordion-btn_expanded--background-color: #bbc8d2 !default;
+$accordion-group__accordion-btn_expanded--border: (borderColor: #ccc, borderRadius: 0.3rem, borderWidth: 0.05rem, borderStyle: solid) !default;
+$accordion-group__accordion-btn_focus--background-color: #bbc8d2 !default;
+$accordion-group__accordion-btn_focus--border: (borderColor: #577b80, borderRadius: 0.3rem, borderWidth: 0.05rem, borderStyle: solid) !default;
