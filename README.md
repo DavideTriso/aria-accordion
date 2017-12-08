@@ -56,7 +56,7 @@ npm install t-aria-accordion
 
 1. Include the JS script **aria-accordion.js** - or the minified production script **aria-accordion.min.js** - in the head or the body of your HTML file.
 2. Include the CSS file  **aria-accordion.css** in the head of your HTML file or use the SCSS files in your project. Adapt the CSS rules to match your website's design.
-3. Initialize the widget within an inline script tag, or in an external JS file.
+3. Initialise the widget within an inline script tag, or in an external JS file.
 
 
 ### HTML
@@ -193,9 +193,6 @@ $(window).on('ariaAccordion.slideDown', function(event, accordionGroup, index){
 
 By default the plugin is configured to use the jQuery methods `slideDown()`, `slideUp()` to expand/collapse accordions. Setting the option **cssTransitions** to 'true' will disable the JS animations. This will make possible to implement the transitions with css. In fact, the plugin toggles the classes passed along with the options **expandedClass**, **btnExpandedClass** and **panelExpandedClass** when an accordion is toggled.
 
-## Planned features
-
-* Support for disclosure pattern.
 
 ## LICENSE
 
