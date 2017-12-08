@@ -3,5 +3,5 @@
 //-----------------------------
 
 .accordion-group {
-  padding: $accordion-group--padding;
+  @include padding($accordion-group--padding);
 }

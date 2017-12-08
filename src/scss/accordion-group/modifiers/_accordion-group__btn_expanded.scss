@@ -1,0 +1,5 @@
+.accordion-group__accordion-btn_expanded {
+  background-color: $accordion-group__accordion-btn_expanded--background-color;
+
+  @include border($accordion-group__accordion-btn_expanded--border);
+}

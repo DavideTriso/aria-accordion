@@ -1,18 +1,24 @@
 //BLOCK
-$accordion-group--padding: 1rem 0 !default;
+$accordion-group--padding: (top: 1rem, bottom: 1rem, left: 0, right: 0) !default;
 
 //ELEMENTS
 //accordion
-$accordion-group__accordion--margin: 0 0 0.25rem 0 !default;
+$accordion-group__accordion--margin: (top: 0, left: 0, bottom: 0.25rem, right: 0) !default;
+
+//heading
+$accordion-group__accordion-heading--margin: (top: 0, left: 0, right: 0, bottom: 0) !default;
 
 //button
 $accordion-group__accordion-btn--background-color: #e2e2e2 !default;
 $accordion-group__accordion-btn--border: (borderColor: #ccc, borderRadius: 0.3rem, borderWidth: 0.05rem, borderStyle: solid) !default;
-$accordion-group__accordion-btn--font-size: 1rem !default;
-$accordion-group__accordion-btn--padding: 0.5rem 1rem !default;
-$accordion-group__accordion-btn--text-align: left !default;
+$accordion-group__accordion-btn--font: (fontSize: 1rem) !default;
+$accordion-group__accordion-btn--padding: (top: 0.5rem, right: 1rem, bottom: 0.5rem, left: 1rem) !default;
+$accordion-group__accordion-btn--text: (textAlign: left) !default;
+$accordion-group__accordion-btn--sizes: (width: 100%) !default;
+
+//panel
 $accordion-group__accordion-panel--border: (borderColor: #ccc, borderRadius: 0 0 0.3rem 0.3rem, borderWidth: 0 0.05rem 0.05rem 0.05rem, borderStyle: solid) !default;
-$accordion-group__accordion-panel--padding: 0.5rem 1rem !default;
+$accordion-group__accordion-panel--padding: (top: 0.5rem, right: 1rem, bottom: 0.5rem, left: 1rem) !default;
 
 //MODIFIERS
 //button
