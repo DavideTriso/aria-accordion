@@ -1,7 +1,7 @@
 {
   "name": "t-aria-accordion",
   "license": "MIT",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "HTML, CSS and JS accordion UI-component for scalable projects.",
   "repository": {
     "type": "git",
@@ -19,6 +19,6 @@
     "require-dir": "^0.3.2"
   },
   "dependencies": {
-    "t-css-framework": "0.8.1"
+    "t-css-framework": "0.18.0"
   }
 }

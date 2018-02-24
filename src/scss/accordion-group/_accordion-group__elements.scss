@@ -15,22 +15,18 @@
 }
 
 .accordion-group__accordion-btn {
-  background-color: $accordion-group__accordion-btn--background-color;
-
+  @include background($accordion-group__accordion-btn--background);
   @include border($accordion-group__accordion-btn--border);
-
-  color: #000;
   display: block;
-
   @include font($accordion-group__accordion-btn--font);
   @include padding($accordion-group__accordion-btn--padding);
   @include text($accordion-group__accordion-btn--text);
   @include sizes($accordion-group__accordion-btn--sizes);
 
   &:focus {
-    background-color: $accordion-group__accordion-btn_focus--background-color;
+    @include background($accordion-group__accordion-btnPfocus--background);
 
-    @include border($accordion-group__accordion-btn_focus--border);
+    @include border($accordion-group__accordion-btnPfocus--border);
   }
 }
 
