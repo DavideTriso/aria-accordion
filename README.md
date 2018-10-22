@@ -9,7 +9,6 @@ HTML, CSS and JS **accordion** UI-component for scalable projects. **User-friend
 * JS plugin runs in strict mode
 * Compatible with UMD
 
-
 ## Dependencies
 
 **jQuery**
