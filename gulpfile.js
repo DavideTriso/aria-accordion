@@ -4,14 +4,16 @@ var gulp = require('gulp'),
   autoprefixer = require('gulp-autoprefixer'),
   cssnano = require('gulp-cssnano'),
   rename = require('gulp-rename'),
-  notify = require('gulp-notify');
+  notify = require('gulp-notify'),
+  uglify = require('gulp-uglify');
 sass.compiler = require('node-sass');
 
 
 //SCSS -> CSS
 //Compile SCSS and save compiled + minified CSS file to 'dist' folder
 gulp.task('scssDist', function () {
-  sass('src/scss/*.scss', { style: 'expanded' })
+  return gulp.src('src/scss/*.scss')
+    .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer('last 5 version'))
     .pipe(gulp.dest('dist'))
     .pipe(rename({ suffix: '.min' }))
@@ -22,12 +24,14 @@ gulp.task('scssDist', function () {
 
 //Save a copy of compiled CSS in 'docs' folder
 gulp.task('scssDocs', function () {
-  sass('src/scss/*.scss', { style: 'expanded' })
+  return gulp.src('src/scss/*.scss')
+    .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer('last 5 version'))
     .pipe(gulp.dest('docs'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(notify({ message: 'scssDocs task complete' }));
 });
+
 
 //JS -> JS + MIN.JS
 //Put a copy and a minified version of JS file in 'dist' folder
