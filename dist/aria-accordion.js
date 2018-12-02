@@ -8,7 +8,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 
-(function(factory) {
+(function (factory) {
   if (typeof define === 'function' && define.amd) {
     define(['jquery'], factory); //AMD
   } else if (typeof exports === 'object') {
@@ -16,7 +16,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   } else {
     factory(jQuery, window);
   }
-}(function($, window) {
+}(function ($, window) {
   'use strict';
 
   var pluginName = 'ariaAccordion', // the name of the plugin
@@ -87,7 +87,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
   // Avoid Plugin.prototype conflicts
   $.extend(AriaAccordion.prototype, {
-    init: function() {
+    init: function () {
       /*
        * To make the widget accessible to AT
        * is necessary to expose the relations between some of the elements by referencing their IDs
@@ -111,7 +111,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
        * We perform a loop through each accordion and set the missing IDs.
        * Within the same loop we also reference the ids within the aria-labelledby and aria-controls attrributes
        */
-      elements.acc.each(function(index) {
+      elements.acc.each(function (index) {
         setId(elements.heading.eq(index), elementId + '__accordion-heading--', index);
         setId(elements.panel.eq(index), elementId + '__accordion-panel--', index);
         setId(elements.btn.eq(index), elementId + '__accordion-btn--', index);
@@ -139,17 +139,17 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       if (typeof settings.contentRole === 'string') {
         elements.content.attr(a.r, settings.contentRole);
       } else if (Array.isArray(settings.contentRole)) {
-        elements.content.each(function(index) {
+        elements.content.each(function (index) {
           $(this).attr(a.r, settings.contentRole[index]);
         });
       }
 
       /*
        * Now it's time to intialise each accordion by expanding or collapsing them,
-       * based on the values of the setting expandOnPageLoad and expandOnlyOne
+       * based on the values of the setting expandOnlyOne
        */
-      if (settings.expandOnPageLoad || settings.expandOnlyOne) {
-        elements.acc.each(function(index) {
+      if (settings.expandOnlyOne) {
+        elements.acc.each(function (index) {
           if (index > 0) {
             self.slideUp(index, false);
           } else {
@@ -157,8 +157,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
           }
         });
       } else {
-        elements.acc.each(function(index) {
-          self.slideUp(index, false);
+        elements.acc.each(function (index) {
+          if ($(this).is('.' + self.settings.expandedClass)) {
+            self.slideDown(index, false)
+          } else {
+            self.slideUp(index, false);
+          }
         });
       }
 
@@ -169,7 +173,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
        * Also we use the plugin name as a namespace for the event
        * to not interfer with other event handlers.
        */
-      element.on('click.' + pluginName + '.' + count, '.' + settings.btnClass, function() {
+      element.on('click.' + pluginName + '.' + count, '.' + settings.btnClass, function () {
         self.toggle(elements.btn.index($(this)), true);
       });
 
@@ -179,7 +183,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
        * for the implemantation of keys navigation
        */
       if (settings.keyboardNavigation) {
-        element.on('keydown.' + pluginName + '.' + count, function(event) {
+        element.on('keydown.' + pluginName + '.' + count, function (event) {
           self.keyboardNavigation(event);
         });
       }
@@ -190,7 +194,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       //Increment count by one
       count = count + 1;
     },
-    toggle: function(accIndex, animate) {
+    toggle: function (accIndex, animate) {
       /*
        * This method checks wheter an accordion is expanded or collapsed,
        * and calls the method to toggle the accordion based on the current state.
@@ -229,7 +233,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         }
       }
     },
-    updateElementStatus: function(accIndex, status) {
+    updateElementStatus: function (accIndex, status) {
       /*
        * Update the array elementsStatus:
        * True if the accordion is expanded, false if collapsed.
@@ -239,7 +243,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
       this.elementsStatus[accIndex] = status;
     },
-    keyboardNavigation: function(event) {
+    keyboardNavigation: function (event) {
 
       /*
        * The keyboard interaction model for accordion is described here:
@@ -328,7 +332,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         }
       }
     },
-    expand: function(accIndex) {
+    expand: function (accIndex) {
       /*
        * To expand an accordion following actions must be performed:
        * 1 - update the values of the attributes aria-expanded, aria-hidden and aria-disabled
@@ -359,7 +363,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       //Update the status of the element
       self.updateElementStatus(accIndex, true);
     },
-    collapse: function(accIndex) {
+    collapse: function (accIndex) {
       /*
        * To collapse an accordion three actions must be performed:
        * 1 - update the values of the attributes aria-expanded, aria-hidden and aria-disabled
@@ -391,7 +395,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       //Update the status of the element
       self.updateElementStatus(accIndex, false);
     },
-    slideDown: function(accIndex, animate) {
+    slideDown: function (accIndex, animate) {
       /*
        * Perform the slide-down animation of the plugin
        * The JS animation should be performed, only if cssTransition is set to false.
@@ -414,7 +418,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       //trigger custom event on window for authors to listen for
       win.trigger(pluginName + '.slideDown', [self, accIndex,]);
     },
-    slideUp: function(accIndex, animate) {
+    slideUp: function (accIndex, animate) {
       /*
        * Perform the slide-up animation of the plugin
        * The JS animation should be performed, only if cssTransition is set to false.
@@ -437,7 +441,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       //trigger custom event on window for authors to listen for
       win.trigger(pluginName + '.slideUp', [self, accIndex,]);
     },
-    methodCaller: function(methodName, methodArg) {
+    methodCaller: function (methodName, methodArg) {
 
       /*
        * This function is the control center for any method call implemented in the plugin.
@@ -491,8 +495,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
   // A really lightweight plugin wrapper around the constructor,
   // preventing against multiple instantiations
-  $.fn[pluginName] = function(userSettings, methodArg) {
-    return this.each(function() {
+  $.fn[pluginName] = function (userSettings, methodArg) {
+    return this.each(function () {
       var self = this;
       /*
        * If following conditions matches, then the plugin must be initialsied:
@@ -522,7 +526,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     expandedClass: 'accordion-group__accordion_expanded',
     btnExpandedClass: 'accordion-group__accordion-btn_expanded',
     panelExpandedClass: 'accordion-group__accordion-panel_expanded',
-    expandOnPageLoad: true,
+    //expandOnPageLoad: true,
     expandOnlyOne: false,
     keyboardNavigation: true
   };

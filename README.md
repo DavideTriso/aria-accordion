@@ -38,7 +38,6 @@ contentRole | document | token, array of tokens | Role of accordion's content. A
 slideSpeed | 300 | int (>= 0) | Duration of collapse/expand animations.
 easing | swing | string | The easing function used for the slide-up and slide-down animation of the accordions. Applies only if **cssTransition** is set to false, otherwise this option will not have any effect on the transition. Accepted values are `swing` and `linear`. For more timing functions a jQuery easing plugin is needed.
 cssTransitions | false | bool | Use css transitions to expand/collapse accordions instead of jQuery slide animations. Read section 'Using CSS transitions' for more informations.
-expandOnPageLoad | true | bool | Show or hide first accordion in an accordion's group when widget is initialised.
 expandOnlyOne | false | bool | Only one accordion in the accordion's group can be expanded and one accordion must always be expanded.
 keyboardNavigation | true | bool | Allow user to move focus with arrow keys and other shortcuts. For more information see [https://www.w3.org/TR/wai-aria-practices-1.1/#accordion](https://www.w3.org/TR/wai-aria-practices-1.1/#accordion).
 
@@ -192,6 +191,10 @@ $(window).on('ariaAccordion.slideDown', function(event, accordionGroup, index){
 
 By default the plugin is configured to use the jQuery methods `slideDown()`, `slideUp()` to expand/collapse accordions. Setting the option **cssTransitions** to 'true' will disable the JS animations. This will make possible to implement the transitions with css. In fact, the plugin toggles the classes passed along with the options **expandedClass**, **btnExpandedClass** and **panelExpandedClass** when an accordion is toggled.
 
+
+## Open accordions on init
+
+Add the `expandedClass` (`.accordion-group__accordion_expanded`) to the accordion element in order to expand it when the widget is initialised. IMPORTANT: works only if `expandOnlyOne` is set to `false`. 
 
 ## LICENSE
 
